@@ -1,4 +1,4 @@
-#include "Robot.h"
+#include "libIterativeRobot/Robot.h"
 //#include "events/EventScheduler.h"
 //#include "events/JoystickButton.h"
 
@@ -18,29 +18,29 @@ void Robot::robotInit() {
 }
 
 void Robot::autonInit() {
-  //printf("Default autonInit() function\n");
+  printf("Default autonInit() function\n");
 }
 
 void Robot::autonPeriodic() {
-  //printf("Default autonPeriodic() function\n");
+  printf("Default autonPeriodic() function\n");
   //EventScheduler::getInstance()->update();
 }
 
 void Robot::teleopInit() {
-  //printf("Default teleopInit() function\n");
+  printf("Default teleopInit() function\n");
 }
 
 void Robot::teleopPeriodic() {
-  //printf("Default teleopPeriodic() function\n");
+  printf("Default teleopPeriodic() function\n");
   //EventScheduler::getInstance()->update();
 }
 
 void Robot::disabledInit() {
-  //printf("Default disabledInit() function\n");
+  printf("Default disabledInit() function\n");
 }
 
 void Robot::disabledPeriodic() {
-  //printf("Default disabledPeriodic() function");
+  printf("Default disabledPeriodic() function");
 }
 
 Robot* Robot::getInstance() {
