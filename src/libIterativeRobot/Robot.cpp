@@ -1,5 +1,5 @@
 #include "libIterativeRobot/Robot.h"
-//#include "events/EventScheduler.h"
+#include "events/EventScheduler.h"
 //#include "events/JoystickButton.h"
 
 using namespace libIterativeRobot;
@@ -22,8 +22,8 @@ void Robot::autonInit() {
 }
 
 void Robot::autonPeriodic() {
-  printf("Default autonPeriodic() function\n");
-  //EventScheduler::getInstance()->update();
+  // printf("Default autonPeriodic() function\n");
+  EventScheduler::getInstance()->update();
 }
 
 void Robot::teleopInit() {
@@ -31,8 +31,8 @@ void Robot::teleopInit() {
 }
 
 void Robot::teleopPeriodic() {
-  printf("Default teleopPeriodic() function\n");
-  //EventScheduler::getInstance()->update();
+  //printf("Default teleopPeriodic() function\n");
+  EventScheduler::getInstance()->update();
 }
 
 void Robot::disabledInit() {
@@ -40,7 +40,7 @@ void Robot::disabledInit() {
 }
 
 void Robot::disabledPeriodic() {
-  printf("Default disabledPeriodic() function");
+  //printf("Default disabledPeriodic() function\n");
 }
 
 Robot* Robot::getInstance() {

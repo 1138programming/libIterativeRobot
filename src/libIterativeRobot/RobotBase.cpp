@@ -63,12 +63,22 @@ void RobotBase::doOneCycle() {
       disabledInit();
     }
   } else {
-    // Robot is currently disabled
-    if (lastState == RobotState::Disabled) {
-      disabledPeriodic();
+    if (pros::competition::is_autonomous()) {
+      // Robot is in autonomous mode
+      if (lastState == RobotState::Auton) {
+        autonPeriodic();
+      } else {
+        lastState = RobotState::Auton;
+        autonInit();
+      }
     } else {
-      lastState = RobotState::Disabled;
-      disabledInit();
+      // Robot is in teleop
+      if (lastState == RobotState::Teleop) {
+        teleopPeriodic();
+      } else {
+        lastState = RobotState::Teleop;
+        teleopInit();
+      }
     }
   }
 }
