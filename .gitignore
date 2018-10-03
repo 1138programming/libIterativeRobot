@@ -31,3 +31,6 @@
 *.app
 *.bin
 *.elf
+
+# VS Code linter stuff
+.vscode/*
