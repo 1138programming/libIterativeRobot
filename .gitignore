@@ -34,3 +34,7 @@
 
 # VS Code linter stuff
 .vscode/*
+
+# Binaries + Libraries
+bin/*
+libIterativeRobot@*.zip
