@@ -29,6 +29,8 @@ EXCLUDE_SRC_FROM_LIB+=$(foreach file, $(SRCDIR)/opcontrol $(SRCDIR)/autonomous,$
 # whatever files you want here. This line is configured to add all header files
 # that are in the the include directory get exported
 TEMPLATE_FILES=$(INCDIR)/$(LIBNAME)/**/*.h $(INCDIR)/$(LIBNAME)/**/*.hpp
+TEMPLATE_FILES+=$(SRCDIR)/$(LIBNAME)/Robot.cpp $(SRCDIR)/$(LIBNAME)/commands \
+	$(SRCDIR)/$(LIBNAME)/subsystems
 
 .DEFAULT_GOAL=quick
 
