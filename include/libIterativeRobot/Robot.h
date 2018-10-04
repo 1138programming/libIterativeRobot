@@ -5,9 +5,7 @@
 #include "RobotBase.h"
 #include "subsystems/ExampleSubsystem.h"
 
-namespace libIterativeRobot {
-
-class Robot : public RobotBase {
+class Robot : public libIterativeRobot::RobotBase {
   private:
     static Robot* instance;
   protected:
@@ -23,8 +21,6 @@ class Robot : public RobotBase {
     static Robot* getInstance();
 
     static ExampleSubsystem* exampleSubsystem;
-};
-
 };
 
 

@@ -2,8 +2,6 @@
 #include "events/EventScheduler.h"
 //#include "events/JoystickButton.h"
 
-using namespace libIterativeRobot;
-
 Robot* Robot::instance = 0;
 ExampleSubsystem* Robot::exampleSubsystem = 0;
 
@@ -23,7 +21,7 @@ void Robot::autonInit() {
 
 void Robot::autonPeriodic() {
   // printf("Default autonPeriodic() function\n");
-  EventScheduler::getInstance()->update();
+  libIterativeRobot::EventScheduler::getInstance()->update();
 }
 
 void Robot::teleopInit() {
@@ -32,7 +30,7 @@ void Robot::teleopInit() {
 
 void Robot::teleopPeriodic() {
   //printf("Default teleopPeriodic() function\n");
-  EventScheduler::getInstance()->update();
+  libIterativeRobot::EventScheduler::getInstance()->update();
 }
 
 void Robot::disabledInit() {

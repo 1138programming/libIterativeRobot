@@ -1,8 +1,6 @@
 #include "./ExampleCommand.h"
 #include "../Robot.h"
 
-using namespace libIterativeRobot;
-
 ExampleCommand::ExampleCommand() {
   requires(Robot::exampleSubsystem);
 }

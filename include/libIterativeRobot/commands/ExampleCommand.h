@@ -3,9 +3,7 @@
 
 #include "libIterativeRobot/commands/Command.h"
 
-namespace libIterativeRobot {
-
-class ExampleCommand : public Command {
+class ExampleCommand : public libIterativeRobot::Command {
   public:
     bool canRun();
     void initialize();
@@ -14,8 +12,6 @@ class ExampleCommand : public Command {
     void end();
     void interrupted();
     ExampleCommand();
-};
-
 };
 
 #endif // _COMMANDS_EXAMPLECOMMAND_H_

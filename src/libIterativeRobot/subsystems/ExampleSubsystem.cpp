@@ -9,5 +9,5 @@ ExampleSubsystem::ExampleSubsystem() {
 
 void ExampleSubsystem::initDefaultCommand() {
   // Setup up a default command here
-  setDefaultCommand(new libIterativeRobot::ExampleCommand());
+  setDefaultCommand(new ExampleCommand());
 }
