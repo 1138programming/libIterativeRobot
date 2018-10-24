@@ -11,13 +11,19 @@ EventScheduler::EventScheduler() {
 }
 
 void EventScheduler::update() {
+  printf("Event scheduler update start\n");
+  delay(1000);
   // Calls each event listener's check conditions functoin
   for (EventListener* listener : eventListeners) {
+    printf("Checking listener conditions\n");
+    delay(1000);
     listener->checkConditions();
   }
 
   // Initializes each subsystem's default command
   for (Subsystem* subsystem : subsystems) {
+    print("Initializing default commands\n");
+    delay(1000);
     subsystem->initDefaultCommand();
   }
   subsystems.clear(); // Clears subsystems vector so that default commands are initialized only once
@@ -27,14 +33,22 @@ void EventScheduler::update() {
   CommandGroup* commandGroup; // Pointer to a command group
   bool canRun; // Stores whether each command or command group can run or not
 
+  print("Scheduling command groups\n");
+  delay(1000);
+
   // If the command group queue is not empty, loop through it and schedule command groups
   if (commandGroupQueue.size() != 0) {
     // Loops backwards through the command group queue. As a result, more recently added command groups are prioritized
     for (int i = commandGroupQueue.size() - 1; i >= 0; i--) {
+      print("Looping through commandgroup queue, i is %d\n", i);
+      delay(1000);
+
       commandGroup = commandGroupQueue[i]; // Sets commandGroup to the command group currently being checked for run-ability
 
       // If the command group's status is interrupted, the command group's interrupted function is called and it is removed from the command group queue
       if (commandGroup->status == Interrupted) {
+        print("Command interrupted\n");
+        delay(1000);
         commandGroup->interrupted();
         commandGroupQueue.erase(commandGroupQueue.begin() + i);
         continue; // Skips over the rest of the logic for the current command group
