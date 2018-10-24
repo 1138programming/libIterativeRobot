@@ -13,17 +13,18 @@ EventScheduler::EventScheduler() {
 void EventScheduler::update() {
   printf("Event scheduler update start\n");
   delay(1000);
-  // Calls each event listener's check conditions functoin
+  // Calls each event listener's check conditions function
+  printf("Checking listener conditions\n");
+  delay(1000);
   for (EventListener* listener : eventListeners) {
-    printf("Checking listener conditions\n");
-    delay(1000);
     listener->checkConditions();
   }
 
+  printf("Initializing default commands\n");
+  delay(1000);
+
   // Initializes each subsystem's default command
   for (Subsystem* subsystem : subsystems) {
-    printf("Initializing default commands\n");
-    delay(1000);
     subsystem->initDefaultCommand();
   }
   subsystems.clear(); // Clears subsystems vector so that default commands are initialized only once
@@ -79,11 +80,15 @@ void EventScheduler::update() {
 
       // Calls the command group's appropriate functions based off of whether it can run
       if (canRun) {
+        printf("Command group can run\n");
+        delay(1000);
         // Adds the command group's requirements to the list of requirements that are in use
         usedSubsystems.insert(usedSubsystems.end(), commandGroupRequirements.begin(), commandGroupRequirements.end());
 
         // If the command group is not running, initialize it first
         if (commandGroup->status != Running) {
+          printf("Initialized command group\n");
+          delay(1000);
           commandGroup->initialize();
           commandGroup->status = Running;
         }
@@ -92,13 +97,19 @@ void EventScheduler::update() {
 
         // If the command group is finished, call its end() function and remove it from the command group queue
         if (commandGroup->isFinished()) {
+          printf("Command group is finished\n");
+          delay(1000);
           commandGroup->end();
           commandGroup->status = Finished;
           commandGroupQueue.erase(commandGroupQueue.begin() + i);
         }
       } else {
+        printf("Command group cannot run\n");
+        delay(1000);
         // If the command group is running, call its interrupted() function
         if (commandGroup->status == Running) {
+          printf("Command group was interrupted\n");
+          delay(1000);
           commandGroup->interrupted();
           commandGroup->status = Interrupted;
         }
