@@ -22,7 +22,7 @@ void EventScheduler::update() {
 
   // Initializes each subsystem's default command
   for (Subsystem* subsystem : subsystems) {
-    print("Initializing default commands\n");
+    printf("Initializing default commands\n");
     delay(1000);
     subsystem->initDefaultCommand();
   }
@@ -33,35 +33,41 @@ void EventScheduler::update() {
   CommandGroup* commandGroup; // Pointer to a command group
   bool canRun; // Stores whether each command or command group can run or not
 
-  print("Scheduling command groups\n");
+  printf("Scheduling command groups\n");
   delay(1000);
 
   // If the command group queue is not empty, loop through it and schedule command groups
   if (commandGroupQueue.size() != 0) {
     // Loops backwards through the command group queue. As a result, more recently added command groups are prioritized
     for (int i = commandGroupQueue.size() - 1; i >= 0; i--) {
-      print("Looping through commandgroup queue, i is %d\n", i);
+      printf("Looping through commandgroup queue, i is %d\n", i);
       delay(1000);
 
       commandGroup = commandGroupQueue[i]; // Sets commandGroup to the command group currently being checked for run-ability
 
       // If the command group's status is interrupted, the command group's interrupted function is called and it is removed from the command group queue
       if (commandGroup->status == Interrupted) {
-        print("Command interrupted\n");
+        printf("Command interrupted\n");
         delay(1000);
         commandGroup->interrupted();
         commandGroupQueue.erase(commandGroupQueue.begin() + i);
         continue; // Skips over the rest of the logic for the current command group
       }
 
+      printf("Checking command group\n");
+      delay(1000);
       canRun = commandGroup->canRun(); // Sets canRun to the result of the command group's canRun() function
       std::vector<Subsystem*>& commandGroupRequirements = commandGroup->getRequirements(); // Vector storing the command group's requirements
 
       // Checks whether the command group can run based off of the its requirements and priority
       if ((usedSubsystems.size() == numSubsystems && commandGroupRequirements.size() != 0) || !canRun) {
+        printf("Command group cannot run\n");
+        delay(1000);
         canRun = false;
       } else {
         // Loops through the command group's requirements
+        printf("Looping through command group requirements\n");
+        delay(1000);
         for (Subsystem* aSubsystem : commandGroupRequirements) {
           // If the any requirement from the current command group is already in use by a higher priority command group, the command group cannot run
           if (std::find(usedSubsystems.begin(), usedSubsystems.end(), aSubsystem) != usedSubsystems.end()) {
