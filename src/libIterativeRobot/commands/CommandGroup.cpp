@@ -13,9 +13,16 @@ std::vector<Subsystem*>& CommandGroup::getRequirements() {
 
 bool CommandGroup::canRun() {
   // Loops through the current sequential step and checks if each command and command group can run
+  //comment("Commands length is %d\n", commands.size());
+  //pros::wait(1000);
   for (size_t i = 0; i < commands[sequentialIndex].size(); i++) {
-    if (!commands[sequentialIndex][i]->canRun())
+    //comment("Looping through commands, i is %d\n", i);
+    //pros::wait(1000);
+    if (!commands[sequentialIndex][i]->canRun()) {
+      //comment("Command group cannot run\n");
+      //pros::wait(1000);
       return false; // If any cannot run, the command group cannot run
+    }
   }
   return true; // If all can run, the command group can run
 }
