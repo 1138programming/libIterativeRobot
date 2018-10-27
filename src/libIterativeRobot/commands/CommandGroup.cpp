@@ -32,7 +32,7 @@ void CommandGroup::initialize() {
 
   // Loops through the added 2d vector and sets each element to 0
   for (size_t i = 0; i < commands.size(); i++) {
-    for (size_t j = 0; j < commands.size(); j++) {
+    for (size_t j = 0; j < commands[i].size(); j++) {
       added[i][j] = 0;
     }
   }
