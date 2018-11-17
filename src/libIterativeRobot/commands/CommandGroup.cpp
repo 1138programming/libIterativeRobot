@@ -8,19 +8,20 @@ CommandGroup::CommandGroup() {
 }
 
 std::vector<Subsystem*>& CommandGroup::getRequirements() {
+  //comment("Getting command group's current requirements\n");
   return requirements[sequentialIndex];
 }
 
 bool CommandGroup::canRun() {
-  // Loops through the current sequential step and checks if each command and command group can run
-  //comment("Commands length is %d\n", commands.size());
-  //pros::wait(1000);
-  for (size_t i = 0; i < commands[sequentialIndex].size(); i++) {
-    //comment("Looping through commands, i is %d\n", i);
+  //comment("Checking if command group can run\n");
+
+  //comment("  Current status is %d, command address is 0x%x, status address is 0x%x\n", this->status, this, &status);
+  for (Command* command : commands[sequentialIndex]) {
+
+    //comment("  Command status is %d, command address is 0x%x, status address is 0x%x\n", command->status, command, &command->status);
     //pros::wait(1000);
-    if (!commands[sequentialIndex][i]->canRun()) {
-      //comment("Command group cannot run\n");
-      //pros::wait(1000);
+
+    if (!command->canRun()) {
       return false; // If any cannot run, the command group cannot run
     }
   }
@@ -28,6 +29,10 @@ bool CommandGroup::canRun() {
 }
 
 void CommandGroup::initialize() {
+  //comment("Initializing command group\n");
+
+  status = Running;
+
   sequentialIndex = 0; // Initializes the sequential index to 0
 
   // Loops through the added 2d vector and sets each element to 0
@@ -39,6 +44,7 @@ void CommandGroup::initialize() {
 }
 
 void CommandGroup::execute() {
+  //comment("Executing command group\n");
   bool sequentialFinished = true; // Boolean to check if the current sequential step is finished
   bool sequentialInterrupted = false; // Boolean to check if the current sequential step has been interrupted
   Command* command; // Pointer to a command or command group
@@ -61,6 +67,7 @@ void CommandGroup::execute() {
       // If the command's status is interrupted or the command was added but is not running and has not finished (indicating it could not run because of a higher priority command), then set sequentialInterrupted to true
       if (command->status == Interrupted || (command->status != Running && command->status != Finished)) {
         sequentialInterrupted = true;
+        //comment("Command group status has been set to interrupted, command status is %d, current status is %d\n", command->status, status);
       }
     }
   }
@@ -71,16 +78,20 @@ void CommandGroup::execute() {
 }
 
 bool CommandGroup::isFinished() {
+  //comment("Checking if command group is finished\n");
   // Checks if the command group has finished all of its sequential steps
   return !(sequentialIndex < commands.size());
 }
 
 void CommandGroup::end() {
+  //comment("Command group ended\n");
+  status = Finished;
   // Resets sequentialIndex to 0
   sequentialIndex = 0;
 }
 
 void CommandGroup::interrupted() {
+  //comment("Command group was interrupted\n");
   // Resets the command group's status to idle to let it run again in the future
   status = Idle;
 
@@ -115,6 +126,7 @@ void CommandGroup::addParallelCommand(Command *aCommand) {
 
 
 void CommandGroup::run() {
+  //comment("Adding command group\n");
   // Adds the command group to the event scheduler
   EventScheduler::getInstance()->addCommandGroup(this);
 }

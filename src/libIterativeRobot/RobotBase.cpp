@@ -13,7 +13,7 @@ void RobotBase::robotInit() {
 }
 
 void RobotBase::autonInit() {
-  EventScheduler::getInstance()->clearCommandQueue();
+  EventScheduler::getInstance()->initialize();
   printf("Default autonInit() function\n");
 }
 
@@ -23,7 +23,7 @@ void RobotBase::autonPeriodic() {
 }
 
 void RobotBase::teleopInit() {
-  EventScheduler::getInstance()->clearCommandQueue();
+  EventScheduler::getInstance()->initialize();
   printf("Default teleopInit() function\n");
 }
 
@@ -33,7 +33,7 @@ void RobotBase::teleopPeriodic() {
 }
 
 void RobotBase::disabledInit() {
-  EventScheduler::getInstance()->clearCommandQueue();
+  EventScheduler::getInstance()->initialize();
   printf("Default disabledInit() function\n");
 }
 
