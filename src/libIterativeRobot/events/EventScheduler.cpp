@@ -24,10 +24,12 @@ void EventScheduler::update() {
       defaultAdded = true;
   }
 
-  //comment("Adding commands and command groups to the queue\n");
+  //comment("Adding commands and command groups to the queue, to be added queue size is %d\n", commandsToBeAdded.size());
   //pros::wait(1000);
   queueCommands();
   queueCommandGroups();
+  //comment("New to be added queue size is %d\n", commandsToBeAdded.size());
+  //pros::wait(1000);
 
   // The following chunk of code from lines 28-92 schedules command groups, running those that can run, finishing those that are finished, and interrupting those that have been interrupted
   std::vector<Subsystem*> usedSubsystems; // Vector keeping track of which subsystems have already been claimed by a command or command group
@@ -183,14 +185,34 @@ void EventScheduler::update() {
           command->status = Running;
         }
 
+        //comment("Commands to be added size is %d\n", commandsToBeAdded.size());
+        //pros::wait(1000);
         command->execute(); // Call the command's execute function
+        //comment("New commands to be added size is %d\n", commandsToBeAdded.size());
+        //pros::wait(1000);
+
+        if (commandsToBeAdded.size() > 0) {
+          //comment("Address of command to be added is 0x%x\n", commandsToBeAdded[0]);
+          //pros::wait(1000);
+        }
 
         // If the command is finished, call its end() function and remove it from the command queue if it is not a default command
         if (command->isFinished()) {
           command->end();
           command->status = Finished;
           if (command->priority > 0) {
+            //comment("Removing command, queue size is %d\n", commandQueue.size());
+            //pros::wait(1000);
+
             commandQueue.erase(commandQueue.begin() + i);
+
+            //comment("Queue size is %d\n", commandQueue.size());
+            //pros::wait(1000);
+
+            if (commandQueue.size() > 1) {
+              //comment("Address of command in queue is 0x%x", commandQueue[1]);
+              //pros::wait(1000);
+            }
           }
         }
       } else {
@@ -216,16 +238,12 @@ void EventScheduler::update() {
 }
 
 void EventScheduler::addCommand(Command* command) {
+  //comment("Add command method called\n");
+  //pros::wait(1000);
   // Makes sure the command is not in the queue yet
   if (!commandInQueue(command)) {
     // The command is added into the queue in order of priority. More recent commands take priority if the priorities are the same
-    for (size_t i = 0; i < commandQueue.size(); i++) {
-      if (command->priority < commandQueue[i]->priority) {
-        commandQueue.insert(commandQueue.begin() + i, command);
-        return;
-      }
-    }
-    commandQueue.push_back(command);
+    commandsToBeAdded.push_back(command);
   }
 }
 
@@ -237,10 +255,20 @@ void EventScheduler::addCommandGroup(CommandGroup* commandGroupToRun) {
 }
 
 void EventScheduler::queueCommands() {
-  for (Command* command : commandsToBeAdded)
+  for (Command* command : commandsToBeAdded) {
+    for (size_t i = 0; i < commandQueue.size(); i++) {
+      if (command->priority < commandQueue[i]->priority) {
+        commandQueue.insert(commandQueue.begin() + i, command);
+        goto endOfLoop;
+      }
+    }
     commandQueue.push_back(command);
+    endOfLoop:;
+  }
 
   commandsToBeAdded.clear();
+  //comment("Commands queued, to be added size is %d\n", commandsToBeAdded.size());
+  //pros::wait(1000);
 }
 
 void EventScheduler::queueCommandGroups() {
