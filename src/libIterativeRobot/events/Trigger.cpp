@@ -10,10 +10,10 @@ Trigger::Trigger() {
 
 void Trigger::checkConditions() {
   // Keeps track of the button's current state
-  std::int32_t currentButtonState = get();
+  bool currentState = get();
 
   // Decides which command or command group to run based on the last state and current state of the button. There are four possiblities
-  if (currentButtonState) {
+  if (currentState) {
     if (lastState) { // Possibility 1: current state is true and last state is true
       for (Command* command : runWhenActivatedCommands) { // Commands in runHeldCommands are run
         command->run();
@@ -48,7 +48,7 @@ void Trigger::checkConditions() {
   }
 
   // Last state is updated
-  lastState = currentButtonState;
+  lastState = currentState;
 }
 
 void Trigger::whenActivated(Command* command, Action action) {

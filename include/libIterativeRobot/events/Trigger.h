@@ -15,7 +15,7 @@ enum Action {
 
 class Trigger : public EventListener {
   private:
-    int lastState = false; // Keeps track of the last state of the button being checked
+    bool lastState = false; // Keeps track of the last state of the button being checked
 
     std::vector<Command*> runWhenActivatedCommands;
     std::vector<Command*> runWhileActiveCommands;
