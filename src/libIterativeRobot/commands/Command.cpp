@@ -14,31 +14,6 @@ void Command::requires(Subsystem* aSubsystem) {
 std::vector<Subsystem*>& Command::getRequirements() {
   return this->subsystemRequirements;
 }
-
-bool Command::canRun() {
-  return true;
-}
-
-void Command::initialize() {
-
-}
-
-void Command::execute() {
-
-}
-
-bool Command::isFinished() {
-  return true;
-}
-
-void Command::end() {
-
-}
-
-void Command::interrupted() {
-
-}
-
 /*
 
   Currently removed due to incompatibilities with the current EventScheduler

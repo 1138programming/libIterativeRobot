@@ -9,17 +9,26 @@ JoystickChannel::JoystickChannel(pros::Controller* controller, pros::controller_
   EventScheduler::getInstance()->addEventListener(this);
 }
 
-void JoystickChannel::checkConditions() {
-  if (pastThresholdCommand == NULL)
-    return;
-
-  int currentChannelState = controller->get_analog(channel);
-  if (currentChannelState > threshold || currentChannelState < -threshold) {
-    pastThresholdCommand->run();
-  }
+void JoystickChannel::whenPassingThresholdForward(Command* command, Action action) {
+  whenActivated(command, action);
 }
 
-void JoystickChannel::whilePastThreshold(Command* pastThresholdCommand, std::int32_t threshold) {
-  this->pastThresholdCommand = pastThresholdCommand;
+void JoystickChannel::whilePastThreshold(Command* command, Action action) {
+  whileActive(command, action);
+}
+
+void JoystickChannel::whenPassingThresholdReverse(Command* command, Action action) {
+  whenDeactivated(command, action);
+}
+
+void JoystickChannel::whileWithinThreshold(Command* command, Action action) {
+  whileInactive(command, action);
+}
+
+void JoystickChannel::setThreshold(std::int32_t threshold) {
   this->threshold = threshold;
+}
+
+bool JoystickChannel::get() {
+  return (abs(controller->get_analog(channel)) > threshold);
 }

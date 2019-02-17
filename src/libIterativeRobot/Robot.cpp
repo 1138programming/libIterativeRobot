@@ -17,8 +17,7 @@ void Robot::robotInit() {
 
 void Robot::autonInit() {
   printf("Default autonInit() function\n");
-  libIterativeRobot::EventScheduler::getInstance()->clearCommandQueue();
-  libIterativeRobot::EventScheduler::getInstance()->clearCommandGroupQueue();
+  libIterativeRobot::EventScheduler::getInstance()->initialize();
 }
 
 void Robot::autonPeriodic() {
@@ -28,8 +27,7 @@ void Robot::autonPeriodic() {
 
 void Robot::teleopInit() {
   printf("Default teleopInit() function\n");
-  libIterativeRobot::EventScheduler::getInstance()->clearCommandQueue();
-  libIterativeRobot::EventScheduler::getInstance()->clearCommandGroupQueue();
+  libIterativeRobot::EventScheduler::getInstance()->initialize();
 }
 
 void Robot::teleopPeriodic() {
@@ -39,8 +37,7 @@ void Robot::teleopPeriodic() {
 
 void Robot::disabledInit() {
   printf("Default disabledInit() function\n");
-  libIterativeRobot::EventScheduler::getInstance()->clearCommandQueue();
-  libIterativeRobot::EventScheduler::getInstance()->clearCommandGroupQueue();
+  libIterativeRobot::EventScheduler::getInstance()->initialize();
 }
 
 void Robot::disabledPeriodic() {
