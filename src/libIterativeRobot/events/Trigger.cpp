@@ -13,34 +13,34 @@ void Trigger::checkConditions() {
   // Decides which command or command group to run based on the last state and current state of the button. There are four possiblities
   if (currentState) {
     if (lastState) { // Possibility 1: current state is true and last state is true
-      for (Command* command : runWhenActivatedCommands) { // Commands in runHeldCommands are run
+      for (Command* command : runWhileActiveCommands) { // Commands in runWhileActiveCommands are run
         command->run();
       }
-      for (Command* command : stopWhenActivatedCommands) { // Commands in stopHeldCommands are stopped
+      for (Command* command : stopWhileActiveCommands) { // Commands in stopWhileActiveCommands are stopped
         command->stop();
       }
     } else { // Possibility 2: current state is true and last state is false
-      for (Command* command : runWhileInactiveCommands) { // Commands in runPressedCommand are run
+      for (Command* command : runWhenActivatedCommands) { // Commands in runWhenActivatedCommands are run
         command->run();
       }
-      for (Command* command : stopWhileInactiveCommands) { // Commands in stopPressedCommand are stopped
+      for (Command* command : stopWhenActivatedCommands) { // Commands in stopWhenActivatedCommands are stopped
         command->stop();
       }
     }
   } else {
     if (lastState) { // Possibility 3: current state is false and last state is true
-      for (Command* whenReleasedCommand : runWhenDeactivatedCommands) { // Commands in runWhenReleasedCommands are run
-        whenReleasedCommand->run();
+      for (Command* command : runWhenDeactivatedCommands) { // Commands in runWhenDeactivatedCommands are run
+        command->run();
       }
-      for (Command* whenReleasedCommand : stopWhenDeactivatedCommands) { // Commands in stopWhenReleasedCommands are stopped
-        whenReleasedCommand->stop();
+      for (Command* command : stopWhenDeactivatedCommands) { // Commands in stopWhenDeactivatedCommands are stopped
+        command->stop();
       }
     } else { // Possibility 4: current state is false and last state is false
-      for (Command* whileReleasedCommand : runWhileInactiveCommands) { // Commands in runWhileReleasedCommands are run
-        whileReleasedCommand->run();
+      for (Command* command : runWhileInactiveCommands) { // Commands in runWhileInactiveCommands are run
+        command->run();
       }
-      for (Command* whileReleasedCommand : stopWhileInactiveCommands) { // Commands in stopWhileReleasedCommands are stopped
-        whileReleasedCommand->stop();
+      for (Command* command : stopWhileInactiveCommands) { // Commands in stopWhileReleasedCommands are stopped
+        command->stop();
       }
     }
   }
