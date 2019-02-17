@@ -4,8 +4,6 @@
 using namespace libIterativeRobot;
 
 Trigger::Trigger() {
-  // Adds the Trigger instance to the event scheduler
-  EventScheduler::getInstance()->addEventListener(this);
 }
 
 void Trigger::checkConditions() {
