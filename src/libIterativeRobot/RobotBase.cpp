@@ -13,13 +13,11 @@ void RobotBase::robotInit() {
 }
 
 void RobotBase::autonInit() {
-  EventScheduler::getInstance()->initialize();
   printf("Default autonInit() function\n");
 }
 
 void RobotBase::autonPeriodic() {
   printf("Default autonPeriodic() function\n");
-  EventScheduler::getInstance()->update();
 }
 
 void RobotBase::teleopInit() {
@@ -29,11 +27,9 @@ void RobotBase::teleopInit() {
 
 void RobotBase::teleopPeriodic() {
   printf("Default teleopPeriodic() function\n");
-  EventScheduler::getInstance()->update();
 }
 
 void RobotBase::disabledInit() {
-  EventScheduler::getInstance()->initialize();
   printf("Default disabledInit() function\n");
 }
 
@@ -57,26 +53,32 @@ void RobotBase::doOneCycle() {
   if (pros::competition::is_disabled()) {
     // Robot is currently disabled
     if (lastState == RobotState::Disabled) {
+      EventScheduler::getInstance()->update();
       disabledPeriodic();
     } else {
       lastState = RobotState::Disabled;
+      EventScheduler::getInstance()->initialize();
       disabledInit();
     }
   } else {
     if (pros::competition::is_autonomous()) {
       // Robot is in autonomous mode
       if (lastState == RobotState::Auton) {
+        EventScheduler::getInstance()->update();
         autonPeriodic();
       } else {
         lastState = RobotState::Auton;
+        EventScheduler::getInstance()->initialize();
         autonInit();
       }
     } else {
       // Robot is in teleop
       if (lastState == RobotState::Teleop) {
+        EventScheduler::getInstance()->update();
         teleopPeriodic();
       } else {
         lastState = RobotState::Teleop;
+        EventScheduler::getInstance()->initialize();
         teleopInit();
       }
     }
