@@ -21,7 +21,6 @@ void RobotBase::autonPeriodic() {
 }
 
 void RobotBase::teleopInit() {
-  EventScheduler::getInstance()->initialize();
   printf("Default teleopInit() function\n");
 }
 
@@ -78,7 +77,7 @@ void RobotBase::doOneCycle() {
         teleopPeriodic();
       } else {
         lastState = RobotState::Teleop;
-        EventScheduler::getInstance()->initialize();
+        EventScheduler::getInstance()->initialize(true); // Add default commands too
         teleopInit();
       }
     }

@@ -354,10 +354,12 @@ bool EventScheduler::commandGroupInQueue(CommandGroup* aCommandGroup) {
   return inCommandGroupsToBeAdded || inCommandGroupQueue;
 }
 
-void EventScheduler::initialize() {
+void EventScheduler::initialize(bool addDefaultCommands) {
   clearCommandQueue();
   clearCommandGroupQueue();
-  defaultAdded = false;
+  if (addDefaultCommands) {
+    defaultAdded = false;
+  }
 }
 
 EventScheduler* EventScheduler::getInstance() {
