@@ -345,13 +345,13 @@ void EventScheduler::trackSubsystem(Subsystem *aSubsystem) {
 bool EventScheduler::commandInQueue(Command* aCommand) {
   bool inCommandsToBeAdded = std::find(commandsToBeAdded.begin(), commandsToBeAdded.end(), aCommand) != commandsToBeAdded.end();
   bool inCommandQueue = std::find(commandQueue.begin(), commandQueue.end(), aCommand) != commandQueue.end();
-  return inCommandsToBeAdded && inCommandQueue;
+  return inCommandsToBeAdded || inCommandQueue;
 }
 
 bool EventScheduler::commandGroupInQueue(CommandGroup* aCommandGroup) {
   bool inCommandGroupsToBeAdded = std::find(commandGroupsToBeAdded.begin(), commandGroupsToBeAdded.end(), aCommandGroup) != commandGroupsToBeAdded.end();
   bool inCommandGroupQueue = std::find(commandGroupQueue.begin(), commandGroupQueue.end(), aCommandGroup) != commandGroupQueue.end();
-  return inCommandGroupsToBeAdded && inCommandGroupQueue;
+  return inCommandGroupsToBeAdded || inCommandGroupQueue;
 }
 
 void EventScheduler::initialize() {
