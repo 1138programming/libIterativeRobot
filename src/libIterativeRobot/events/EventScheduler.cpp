@@ -24,12 +24,9 @@ void EventScheduler::update() {
       defaultAdded = true;
   }
 
-  //comment("Adding commands and command groups to the queue, to be added queue size is %d\n", commandsToBeAdded.size());
+  //comment("Adding command groups to the queue, command group buffer size is %d\n", commandGroupBuffer.size());
   //pros::wait(1000);
-  queueCommands();
   queueCommandGroups();
-  //comment("New to be added queue size is %d\n", commandsToBeAdded.size());
-  //pros::wait(1000);
 
   // The following chunk of code from lines 28-92 schedules command groups, running those that can run, finishing those that are finished, and interrupting those that have been interrupted
   std::vector<Subsystem*> usedSubsystems; // Vector keeping track of which subsystems have already been claimed by a command or command group
@@ -131,6 +128,9 @@ void EventScheduler::update() {
 
   //comment("Done scheduling command groups, starting on commands\n");
   //pros::wait(1000);
+  //comment("Adding commands to the queue, command buffer size is %d\n", commandBuffer.size());
+  //pros::wait(1000);
+  queueCommands();
 
   // The following chunk of code from lines 93-155 schedules commands, running those that can run, finishing those that are finished, and interrupting those that have been interrupted
   usedSubsystems.clear(); // Clear the used subsystems vector to prepare it for use for scheduling commands
@@ -181,23 +181,18 @@ void EventScheduler::update() {
 
         // If the command group is not running, initialize it first
         if (command->status != Running) {
+          //comment("Initializing command\n");
+          //pros::wait(1000);
           command->initialize();
           command->status = Running;
         }
 
-        //comment("Commands to be added size is %d\n", commandsToBeAdded.size());
-        //pros::wait(1000);
         command->execute(); // Call the command's execute function
-        //comment("New commands to be added size is %d\n", commandsToBeAdded.size());
-        //pros::wait(1000);
-
-        if (commandsToBeAdded.size() > 0) {
-          //comment("Address of command to be added is 0x%x\n", commandsToBeAdded[0]);
-          //pros::wait(1000);
-        }
 
         // If the command is finished, call its end() function and remove it from the command queue if it is not a default command
         if (command->isFinished()) {
+          //comment("Command is finished\n");
+          //pros::wait(1000);
           command->end();
           command->status = Finished;
           if (command->priority > 0) {
@@ -238,99 +233,90 @@ void EventScheduler::update() {
 }
 
 void EventScheduler::addCommand(Command* command) {
-  //comment("Add command method called\n");
-  //pros::wait(1000);
-  // Makes sure the command is not in the queue yet
-  if (!commandInQueue(command)) {
-    // The command is added into the queue in order of priority. More recent commands take priority if the priorities are the same
-    commandsToBeAdded.push_back(command);
+  // Makes sure the command is not in the scheduler yet and then adds it to the buffer
+  if (!commandInScheduler(command)) {
+    commandBuffer.push_back(command);
   }
 }
 
 void EventScheduler::addCommandGroup(CommandGroup* commandGroupToRun) {
-  // If the command group is not already in the queue, the command group is added to the end of the queue
-  if (!commandGroupInQueue(commandGroupToRun)) {
-    commandGroupsToBeAdded.push_back(commandGroupToRun);
+  // If the command group is not already in the scheduler, the command group is added to the end of the buffer
+  if (!commandGroupInScheduler(commandGroupToRun)) {
+    commandGroupBuffer.push_back(commandGroupToRun);
   }
 }
 
 void EventScheduler::queueCommands() {
-  for (Command* command : commandsToBeAdded) {
+  // Adds the commands in the command buffer into the command queue in order of priority
+  for (Command* command : commandBuffer) {
     for (size_t i = 0; i < commandQueue.size(); i++) {
       if (command->priority < commandQueue[i]->priority) {
         commandQueue.insert(commandQueue.begin() + i, command);
-        goto endOfLoop;
+        break;
       }
     }
     commandQueue.push_back(command);
-    endOfLoop:;
   }
 
-  commandsToBeAdded.clear();
-  //comment("Commands queued, to be added size is %d\n", commandsToBeAdded.size());
-  //pros::wait(1000);
+  // Clears the command buffer
+  commandBuffer.clear();
 }
 
 void EventScheduler::queueCommandGroups() {
-  for (CommandGroup* commandGroup : commandGroupsToBeAdded)
+  // Adds all command groups in the command group buffer into the command group queue
+  for (CommandGroup* commandGroup : commandGroupBuffer)
     commandGroupQueue.push_back(commandGroup);
 
-  commandGroupsToBeAdded.clear();
+  // Clears the command group buffer
+  commandGroupBuffer.clear();
 }
 
-void EventScheduler::removeCommand(Command* commandToRemove) {
+void EventScheduler::removeCommand(Command* command) {
   // Interrupts the command being removed
-  commandToRemove->interrupted();
-  commandToRemove->status = Interrupted;
+  command->interrupted();
+  command->status = Interrupted;
 
   // Removes the command
-  size_t index = std::find(commandsToBeAdded.begin(), commandsToBeAdded.end(), commandToRemove) - commandsToBeAdded.begin(); // Get the index of the command in the commandsToBeAdded vector
-  if (index >= commandsToBeAdded.size()) { // If the command is not in the commandsToBeAdded vector, check in the commandQueue vector
-    index = std::find(commandQueue.begin(), commandQueue.end(), commandToRemove) - commandQueue.begin(); // Get the index of the command in the commandQueue vector
+  size_t index = std::find(commandBuffer.begin(), commandBuffer.end(), command) - commandBuffer.begin(); // Get the index of the command in the commandBuffer vector
+  if (index >= commandBuffer.size()) { // If the command is not in the commandBuffer vector, check in the commandQueue vector
+    index = std::find(commandQueue.begin(), commandQueue.end(), command) - commandQueue.begin(); // Get the index of the command in the commandQueue vector
     if (index >= commandQueue.size()) // If the command is not in the commandQueue vector, return
       return;
     commandQueue.erase(commandQueue.begin() + index); // Remove command from commandQueue
   } else {
-    commandsToBeAdded.erase(commandsToBeAdded.begin() + index); // Remove command from commandsToBeAdded
+    commandBuffer.erase(commandBuffer.begin() + index); // Remove command from commandBuffer
   }
 }
 
-void EventScheduler::removeCommandGroup(CommandGroup* commandGroupToRemove) {
+void EventScheduler::removeCommandGroup(CommandGroup* commandGroup) {
   // Interrupts the command group being removed
-  commandGroupToRemove->interrupted();
+  commandGroup->interrupted();
 
   // Removes the command group
-  size_t index = std::find(commandGroupsToBeAdded.begin(), commandGroupsToBeAdded.end(), commandGroupToRemove) - commandGroupsToBeAdded.begin();  // Get the index of the command group in the commandGroupsToBeAdded vector
-  if (index >= commandGroupsToBeAdded.size()) { // If the command group is not in the commandGroupsToBeAdded vector, check in the commandGroupQueue vector
-    index = std::find(commandGroupQueue.begin(), commandGroupQueue.end(), commandGroupToRemove) - commandGroupQueue.begin(); // Get the index of the command group in the commandGroupsQueue vector
+  size_t index = std::find(commandGroupBuffer.begin(), commandGroupBuffer.end(), commandGroup) - commandGroupBuffer.begin();  // Get the index of the command group in the commandGroupBuffer vector
+  if (index >= commandGroupBuffer.size()) { // If the command group is not in the commandGroupBuffer vector, check in the commandGroupQueue vector
+    index = std::find(commandGroupQueue.begin(), commandGroupQueue.end(), commandGroup) - commandGroupQueue.begin(); // Get the index of the command group in the commandGroupsQueue vector
     if (index >= commandGroupQueue.size()) // If the command group is not in the commandGroupQueue vector, return
       return;
     commandGroupQueue.erase(commandGroupQueue.begin() + index); // Remove command group from commandGroupQueue
   } else {
-    commandGroupsToBeAdded.erase(commandGroupsToBeAdded.begin() + index); // Remove command group from commandGroupsToBeAdded
+    commandGroupBuffer.erase(commandGroupBuffer.begin() + index); // Remove command group from commandGroupBuffer
   }
 }
 
-void EventScheduler::clearCommandQueue() {
-  for (Command* command : commandsToBeAdded) {
-    removeCommand(command);
+void EventScheduler::clearScheduler() {
+  for (Command* command : commandBuffer) {
+    command->interrupted();
   }
 
-  // Removes every command from the command queue using removeCommand()
   for (Command* command : commandQueue) {
-    removeCommand(command);
-  }
-}
-
-void EventScheduler::clearCommandGroupQueue() {
-  // Removes every command group from the command group queue using removeCommandGroup()
-  for (CommandGroup* commandGroup : commandGroupsToBeAdded) {
-    removeCommandGroup(commandGroup);
+    command->interrupted();
   }
 
-  for (CommandGroup* commandGroup : commandGroupQueue) {
-    removeCommandGroup(commandGroup);
-  }
+  commandBuffer.clear();
+  commandQueue.clear();
+  commandGroupBuffer.clear();
+  commandGroupQueue.clear();
 }
 
 void EventScheduler::addEventListener(EventListener* eventListener) {
@@ -342,21 +328,20 @@ void EventScheduler::trackSubsystem(Subsystem *aSubsystem) {
   numSubsystems++; // Keeps track of the number of subsystems
 }
 
-bool EventScheduler::commandInQueue(Command* aCommand) {
-  bool inCommandsToBeAdded = std::find(commandsToBeAdded.begin(), commandsToBeAdded.end(), aCommand) != commandsToBeAdded.end();
+bool EventScheduler::commandInScheduler(Command* aCommand) {
+  bool inCommandsToBeAdded = std::find(commandBuffer.begin(), commandBuffer.end(), aCommand) != commandBuffer.end();
   bool inCommandQueue = std::find(commandQueue.begin(), commandQueue.end(), aCommand) != commandQueue.end();
   return inCommandsToBeAdded || inCommandQueue;
 }
 
-bool EventScheduler::commandGroupInQueue(CommandGroup* aCommandGroup) {
-  bool inCommandGroupsToBeAdded = std::find(commandGroupsToBeAdded.begin(), commandGroupsToBeAdded.end(), aCommandGroup) != commandGroupsToBeAdded.end();
+bool EventScheduler::commandGroupInScheduler(CommandGroup* aCommandGroup) {
+  bool inCommandGroupsToBeAdded = std::find(commandGroupBuffer.begin(), commandGroupBuffer.end(), aCommandGroup) != commandGroupBuffer.end();
   bool inCommandGroupQueue = std::find(commandGroupQueue.begin(), commandGroupQueue.end(), aCommandGroup) != commandGroupQueue.end();
   return inCommandGroupsToBeAdded || inCommandGroupQueue;
 }
 
 void EventScheduler::initialize(bool addDefaultCommands) {
-  clearCommandQueue();
-  clearCommandGroupQueue();
+  clearScheduler();
   if (addDefaultCommands) {
     defaultAdded = false;
   }

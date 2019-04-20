@@ -1,5 +1,5 @@
-#include "libIterativeRobot/events/EventListener.h"
-#include "libIterativeRobot/events/EventScheduler.h"
+#include "EventListener.h"
+#include "EventScheduler.h"
 
 using namespace libIterativeRobot;
 

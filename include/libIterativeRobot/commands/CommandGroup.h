@@ -1,7 +1,7 @@
 #ifndef _COMMANDS_COMMANDGROUP_H_
 #define _COMMANDS_COMMANDGROUP_H_
 
-#include "libIterativeRobot/commands/Command.h"
+#include "Command.h"
 #include "main.h"
 #include <vector>
 

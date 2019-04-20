@@ -38,5 +38,5 @@ TEMPLATE_USER_FILES=$(SRCDIR)/$(LIBNAME)/Robot.cpp $(SRCDIR)/$(LIBNAME)/commands
 ################################################################################
 ########## Nothing below this line should be edited by typical users ###########
 # Set to 1 to enable hot/cold linking
-USE_PACKAGE:=1
+USE_PACKAGE:=0
 -include ./common.mk
