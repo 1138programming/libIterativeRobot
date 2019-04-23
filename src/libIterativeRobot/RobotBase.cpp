@@ -67,7 +67,7 @@ void RobotBase::doOneCycle() {
         autonPeriodic();
       } else {
         lastState = RobotState::Auton;
-        EventScheduler::getInstance()->initialize();
+        EventScheduler::getInstance()->initialize(true);
         autonInit();
       }
     } else {

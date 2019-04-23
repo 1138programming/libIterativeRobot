@@ -11,6 +11,11 @@ EventScheduler::EventScheduler() {
 }
 
 void EventScheduler::update() {
+  toInitialize.clear();
+  toExecute.clear();
+  toInterrupt.clear();
+  toEnd.clear();
+
   // Calls each event listener's check conditions function
   for (EventListener* listener : eventListeners) {
     listener->checkConditions();
@@ -183,17 +188,20 @@ void EventScheduler::update() {
         if (command->status != Running) {
           //comment("Initializing command\n");
           //pros::wait(1000);
-          command->initialize();
+          //command->initialize();
+          toInitialize.push_back(command);
           command->status = Running;
         }
 
-        command->execute(); // Call the command's execute function
+        //command->execute(); // Call the command's execute function
+        toExecute.push_back(command);
 
         // If the command is finished, call its end() function and remove it from the command queue if it is not a default command
         if (command->isFinished()) {
           //comment("Command is finished\n");
           //pros::wait(1000);
-          command->end();
+          //command->end();
+          toEnd.push_back(command);
           command->status = Finished;
           if (command->priority > 0) {
             //comment("Removing command, queue size is %d\n", commandQueue.size());
@@ -215,7 +223,8 @@ void EventScheduler::update() {
         //pros::wait(1000);
         // If the command group is running, call its interrupted() function
         if (command->status == Running) {
-          command->interrupted();
+          //command->interrupted();
+          toInterrupt.push_back(command);
           command->status = Interrupted;
         }
 
@@ -229,6 +238,16 @@ void EventScheduler::update() {
     //comment("No commands in the queue\n");
     //pros::wait(1000);
   }
+
+  for (Command* command : toInterrupt)
+    command->interrupted();
+  for (Command* command : toInitialize)
+    command->initialize();
+  for (Command* command : toExecute)
+    command->execute();
+  for (Command* command : toEnd)
+    command->end();
+
   delay(5);
 }
 
