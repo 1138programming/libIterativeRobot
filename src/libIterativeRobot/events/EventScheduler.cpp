@@ -11,10 +11,9 @@ EventScheduler::EventScheduler() {
 }
 
 void EventScheduler::update() {
-  toInitialize.clear();
-  toExecute.clear();
   toInterrupt.clear();
-  toEnd.clear();
+  toExecute.clear();
+  indexes.clear();
 
   // Calls each event listener's check conditions function
   for (EventListener* listener : eventListeners) {
@@ -184,43 +183,46 @@ void EventScheduler::update() {
         // Adds the command's requirements to the list of requirements that are in use
         usedSubsystems.insert(usedSubsystems.end(), commandRequirements.begin(), commandRequirements.end());
 
-        // If the command group is not running, initialize it first
-        if (command->status != Running) {
-          //comment("Initializing command\n");
-          //pros::wait(1000);
-          //command->initialize();
-          // toInitialize.push_back(command);
-          command->initialize();
-          command->status = Running;
-        }
+        toExecute.push_back(command);
+        indexes.push_back(i);
 
-        //command->execute(); // Call the command's execute function
-        // toExecute.push_back(command);
-        command->execute();
-
-        // If the command is finished, call its end() function and remove it from the command queue if it is not a default command
-        if (command->isFinished()) {
-          //comment("Command is finished\n");
-          //pros::wait(1000);
-          //command->end();
-          // toEnd.push_back(command);
-          command->end();
-          command->status = Finished;
-          if (command->priority > 0) {
-            //comment("Removing command, queue size is %d\n", commandQueue.size());
-            //pros::wait(1000);
-
-            commandQueue.erase(commandQueue.begin() + i);
-
-            //comment("Queue size is %d\n", commandQueue.size());
-            //pros::wait(1000);
-
-            if (commandQueue.size() > 1) {
-              //comment("Address of command in queue is 0x%x", commandQueue[1]);
-              //pros::wait(1000);
-            }
-          }
-        }
+        // // If the command group is not running, initialize it first
+        // if (command->status != Running) {
+        //   //comment("Initializing command\n");
+        //   //pros::wait(1000);
+        //   //command->initialize();
+        //   //toInitialize.push_back(command);
+        //   command->initialize();
+        //   command->status = Running;
+        // }
+        //
+        // //command->execute(); // Call the command's execute function
+        // // toExecute.push_back(command);
+        // command->execute();
+        //
+        // // If the command is finished, call its end() function and remove it from the command queue if it is not a default command
+        // if (command->isFinished()) {
+        //   //comment("Command is finished\n");
+        //   //pros::wait(1000);
+        //   //command->end();
+        //   // toEnd.push_back(command);
+        //   command->end();
+        //   command->status = Finished;
+        //   if (command->priority > 0) {
+        //     //comment("Removing command, queue size is %d\n", commandQueue.size());
+        //     //pros::wait(1000);
+        //
+        //     commandQueue.erase(commandQueue.begin() + i);
+        //
+        //     //comment("Queue size is %d\n", commandQueue.size());
+        //     //pros::wait(1000);
+        //
+        //     if (commandQueue.size() > 1) {
+        //       //comment("Address of command in queue is 0x%x", commandQueue[1]);
+        //       //pros::wait(1000);
+        //     }
+        //   }
+        // }
       } else {
         //comment("Command cannot run\n");
         //pros::wait(1000);
@@ -238,19 +240,31 @@ void EventScheduler::update() {
       }
     }
   }
-  // else {
-  //   comment("No commands in the queue\n");
-  //   pros::wait(1000);
-  // }
 
-  // for (Command* command : toInterrupt)
-  //   command->interrupted();
-  // for (Command* command : toInitialize)
-  //   command->initialize();
-  // for (Command* command : toExecute)
-  //   command->execute();
-  // for (Command* command : toEnd)
-  //   command->end();
+  for (Command* command : toInterrupt) {
+    command->interrupted();
+  }
+
+  unsigned int i = 0;
+  for (Command* command : toExecute) {
+    // If the command group is not running, initialize it first
+    if (command->status != Running) {
+      command->initialize();
+      command->status = Running;
+    }
+
+    command->execute();
+
+    // If the command is finished, call its end() function and remove it from the command queue if it is not a default command
+    if (command->isFinished()) {
+      command->end();
+      command->status = Finished;
+      if (command->priority > 0) {
+        commandQueue.erase(commandQueue.begin() + indexes[i]);
+      }
+    }
+    i++;
+  }
 
   delay(5);
 }
