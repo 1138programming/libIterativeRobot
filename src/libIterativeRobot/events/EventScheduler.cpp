@@ -235,35 +235,54 @@ void EventScheduler::update() {
 
         // Remove the command group from the queue if it is not a default command
         if (command->priority > 0) {
-          commandQueue.erase(commandQueue.begin() + i);
+          //comment("Nulling interrupted command, index is %d\n", i);
+          //pros::wait(1000);
+          //commandQueue.erase(commandQueue.begin() + i);
+          commandQueue[i] = NULL;
         }
       }
     }
-  }
 
-  for (Command* command : toInterrupt) {
-    command->interrupted();
-  }
-
-  unsigned int i = 0;
-  for (Command* command : toExecute) {
-    // If the command group is not running, initialize it first
-    if (command->status != Running) {
-      command->initialize();
-      command->status = Running;
+    //comment("Interrupting commands\n");
+    //pros::wait(1000);
+    for (Command* command : toInterrupt) {
+      //comment("  Command interrupted\n");
+      //pros::wait(1000);
+      command->interrupted();
     }
 
-    command->execute();
+    //comment("Running commands\n");
+    //pros::wait(1000);
+    unsigned int i = 0;
+    for (Command* command : toExecute) {
+      //comment("  Running command %d, index in queue is %d\n", i, indexes[i]);
+      //pros::wait(1000);
+      // If the command group is not running, initialize it first
+      if (command->status != Running) {
+        command->initialize();
+        command->status = Running;
+      }
 
-    // If the command is finished, call its end() function and remove it from the command queue if it is not a default command
-    if (command->isFinished()) {
-      command->end();
-      command->status = Finished;
-      if (command->priority > 0) {
-        commandQueue.erase(commandQueue.begin() + indexes[i]);
+      command->execute();
+
+      // If the command is finished, call its end() function and remove it from the command queue if it is not a default command
+      if (command->isFinished()) {
+        command->end();
+        command->status = Finished;
+        if (command->priority > 0) {
+          //commandQueue.erase(commandQueue.begin() + indexes[i]);
+          commandQueue[indexes[i]] = NULL;
+        }
+      }
+      i++;
+    }
+
+    for (int i = commandQueue.size() - 1; i >= 0; i--) {
+      if (commandQueue[i] == NULL) {
+        //comment("Deleting null command\n");
+        commandQueue.erase(commandQueue.begin() + i);
       }
     }
-    i++;
   }
 
   delay(5);
