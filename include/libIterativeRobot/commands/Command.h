@@ -7,6 +7,7 @@
 
 namespace libIterativeRobot {
 
+// Keeps track of the status of the command
 enum Status {
   Idle = 0,
   Running,
@@ -16,16 +17,16 @@ enum Status {
 
 class Command {
   private:
-    std::vector<Subsystem*> subsystemRequirements;
+    std::vector<Subsystem*> subsystemRequirements; // Vector to keep track of which subsystems the command requires to run
   protected:
-    void requires(Subsystem* aSubsystem);
+    void requires(Subsystem* aSubsystem); // Function to add a subsystem as one of a command's requirements
   public:
-    static const int DefaultCommandPriority = 0;
+    static const int DefaultCommandPriority = 0; // Priority of a default command is 0
 
-    int priority = 50; // Commands can only be interrupted by commands with a higher priority
+    int priority = 1; // Commands can only be interrupted by commands with a higher priority
     Status status = Idle; // Keeps track of the status of the command
 
-    std::vector<Subsystem*>& getRequirements();
+    std::vector<Subsystem*>& getRequirements(); // Returns the command's requirements as a vector pointer
 
     virtual bool canRun() = 0; // Whether or not the command can run right now. If false, it is ignored
     virtual void initialize() = 0; // Set up the command for running
