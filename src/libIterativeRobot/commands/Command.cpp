@@ -8,7 +8,9 @@ Command::Command() {
 }
 
 void Command::requires(Subsystem* aSubsystem) {
-  subsystemRequirements.push_back(aSubsystem);
+  if (std::find(subsystemRequirements.begin(), subsystemRequirements.end(), aSubsystem) == subsystemRequirements.end()) {
+    subsystemRequirements.push_back(aSubsystem);
+  }
 }
 
 std::vector<Subsystem*>& Command::getRequirements() {

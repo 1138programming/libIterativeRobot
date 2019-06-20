@@ -15,11 +15,43 @@ enum Status {
   Interrupted
 };
 
+/**
+ * The Command class is the base class for all commands.
+ * Commands implement functionality for one or more subsystems,
+ * and their execution and interactions are handled by the EventScheduler.
+ * Commands are added to the EventScheduler
+ * when their run() method is called and the command starts if its canRun() method returns true.
+ * If its canRun() method returns false, the command does not start and is removed from the EventScheduler.
+ * Once a command starts, its initialize() method is called once and then its execute()
+ * method is called repeatedly. After each time the execute() method is called, the
+ * command's isFinished() method is called and the command ends when it returns true.
+ * After a command has finished, its end() method is called.
+ *
+ * Commands can also be removed from the EventScheduler by calling their stop() method. Calling the stop() method
+ * will interrupt a command.
+ *
+ * When a command is interrupted, its interrupted() method is called and it is removed from the EventScheduler
+ *
+ * Subsystems that a command uses should be declared by calling the requires(...) method in its constructor.
+ *
+ * Every command has a priority which determines how it will interact with other commands.
+ * If two commands use one or more of the same subsystems, the one with the higher priority will interrupt
+ * the one with the lower priority if the lower priority command is already running, or prevent it from starting
+ * if it has been added to the EventScheduler but has not yet started running.
+ *
+ * Default commands are special commands that have a priority of 0 and require only one subsystem.
+ * Unlike regular commands, when they finish or are interrupted, they are not removed by the EventScheduler.
+ * As a result, the EventScheduler continually attempts to run all default commands, and default commands
+ * are constantly run while no other commands require the same subsystem. A command is made into a default
+ * command
+ */
+
 class Command {
   private:
     std::vector<Subsystem*> subsystemRequirements; // Vector to keep track of which subsystems the command requires to run
   protected:
     void requires(Subsystem* aSubsystem); // Function to add a subsystem as one of a command's requirements
+    friend class Subsystem;
   public:
     static const int DefaultCommandPriority = 0; // Priority of a default command is 0
 

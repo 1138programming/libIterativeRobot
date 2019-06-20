@@ -7,6 +7,7 @@
 #include "libIterativeRobot/events/EventListener.h"
 #include "libIterativeRobot/subsystems/Subsystem.h"
 #include <vector>
+#include <algorithm>
 
 namespace libIterativeRobot {
 

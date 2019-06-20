@@ -1,5 +1,4 @@
 #include "libIterativeRobot/events/EventScheduler.h"
-#include <algorithm>
 
 using namespace libIterativeRobot;
 

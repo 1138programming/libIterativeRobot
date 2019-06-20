@@ -1,0 +1,53 @@
+\hypertarget{classlib_iterative_robot_1_1_event_scheduler}{}\section{lib\+Iterative\+Robot\+::Event\+Scheduler Class Reference}
+\label{classlib_iterative_robot_1_1_event_scheduler}\index{libIterativeRobot::EventScheduler@{libIterativeRobot::EventScheduler}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a9643c8e8dd7a87a1a3419415c7cc46bc}\label{classlib_iterative_robot_1_1_event_scheduler_a9643c8e8dd7a87a1a3419415c7cc46bc}} 
+void {\bfseries update} ()
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_ad6e214ce9686a58eb37fb71796531b4e}\label{classlib_iterative_robot_1_1_event_scheduler_ad6e214ce9686a58eb37fb71796531b4e}} 
+void {\bfseries add\+Event\+Listener} (\mbox{\hyperlink{classlib_iterative_robot_1_1_event_listener}{Event\+Listener}} $\ast$event\+Listener)
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_aac82a5f0c53789fe6170085b033efbbc}\label{classlib_iterative_robot_1_1_event_scheduler_aac82a5f0c53789fe6170085b033efbbc}} 
+void {\bfseries add\+Command} (\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$command\+To\+Run)
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a24dfdf47117ffa162f74042345f57d94}\label{classlib_iterative_robot_1_1_event_scheduler_a24dfdf47117ffa162f74042345f57d94}} 
+void {\bfseries add\+Command\+Group} (\mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} $\ast$command\+Group\+To\+Run)
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a038be4eb06e564fe47d326b458a8985c}\label{classlib_iterative_robot_1_1_event_scheduler_a038be4eb06e564fe47d326b458a8985c}} 
+void {\bfseries remove\+Command} (\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$command)
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a6c1501cbee6a630b2b63881aa200fdf4}\label{classlib_iterative_robot_1_1_event_scheduler_a6c1501cbee6a630b2b63881aa200fdf4}} 
+void {\bfseries remove\+Command\+Group} (\mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} $\ast$command\+Group)
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a1130cfd602dec9e4091571b47b60f378}\label{classlib_iterative_robot_1_1_event_scheduler_a1130cfd602dec9e4091571b47b60f378}} 
+void {\bfseries track\+Subsystem} (\mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}} $\ast$a\+Subsystem)
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_acc46d20d5b6e1b6d308bf64dd12ea791}\label{classlib_iterative_robot_1_1_event_scheduler_acc46d20d5b6e1b6d308bf64dd12ea791}} 
+bool {\bfseries command\+In\+Scheduler} (\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$a\+Command)
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_af47242d40b09df43698bb00cbe4f9300}\label{classlib_iterative_robot_1_1_event_scheduler_af47242d40b09df43698bb00cbe4f9300}} 
+bool {\bfseries command\+Group\+In\+Scheduler} (\mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} $\ast$a\+Command\+Group)
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a8d45ea3763e171da6e3990acdd864df3}\label{classlib_iterative_robot_1_1_event_scheduler_a8d45ea3763e171da6e3990acdd864df3}} 
+void {\bfseries initialize} (bool add\+Default\+Command=false)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a04480f5533265708f49b23e622ffe9cb}\label{classlib_iterative_robot_1_1_event_scheduler_a04480f5533265708f49b23e622ffe9cb}} 
+static \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} $\ast$ {\bfseries get\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a5c2a1365cdcf713b0dbe722b9156290e}\label{classlib_iterative_robot_1_1_event_scheduler_a5c2a1365cdcf713b0dbe722b9156290e}} 
+static const int {\bfseries millisecond\+Timeout} = 25
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/lib\+Iterative\+Robot/events/Event\+Scheduler.\+h\item 
+src/lib\+Iterative\+Robot/events/Event\+Scheduler.\+cpp\end{DoxyCompactItemize}

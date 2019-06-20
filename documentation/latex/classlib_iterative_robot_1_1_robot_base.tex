@@ -1,0 +1,118 @@
+\hypertarget{classlib_iterative_robot_1_1_robot_base}{}\section{lib\+Iterative\+Robot\+::Robot\+Base Class Reference}
+\label{classlib_iterative_robot_1_1_robot_base}\index{libIterativeRobot::RobotBase@{libIterativeRobot::RobotBase}}
+Inheritance diagram for lib\+Iterative\+Robot\+::Robot\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlib_iterative_robot_1_1_robot_base}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Robot\+Main $>$ }\\static void \mbox{\hyperlink{classlib_iterative_robot_1_1_robot_base_a5a57c611cc6c2444e1c8d2fd514bd25c}{run\+Robot}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_robot_base_a1e690e472e901ac99bb7ce6f3b6a33ea}{robot\+Init}} ()
+\item 
+virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_robot_base_a8137d84aef11ed00a46cbc1bbb727a60}{auton\+Init}} ()
+\item 
+virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_robot_base_ac34d3dcb9388d4a8564eb781919eb825}{auton\+Periodic}} ()
+\item 
+virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_robot_base_a290bea17acf9bc884a490472e9d2e039}{teleop\+Init}} ()
+\item 
+virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_robot_base_a564ee86d582b598dd0713c067b352aef}{teleop\+Periodic}} ()
+\item 
+virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_robot_base_a12cfc52a6bac5b5a9ad7e61b47e9ecd2}{disabled\+Init}} ()
+\item 
+virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_robot_base_a8e1e85e215343baaaf3bdeedb89d9890}{disabled\+Periodic}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_robot_base_a8137d84aef11ed00a46cbc1bbb727a60}\label{classlib_iterative_robot_1_1_robot_base_a8137d84aef11ed00a46cbc1bbb727a60}} 
+\index{libIterativeRobot::RobotBase@{libIterativeRobot::RobotBase}!autonInit@{autonInit}}
+\index{autonInit@{autonInit}!libIterativeRobot::RobotBase@{libIterativeRobot::RobotBase}}
+\subsubsection{\texorpdfstring{autonInit()}{autonInit()}}
+{\footnotesize\ttfamily void Robot\+Base\+::auton\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This runs once each time the autonomous period begins. 
+
+Reimplemented in \mbox{\hyperlink{class_robot_af5bd4d345ec522b70bdc5cf2b17ffa49}{Robot}}.
+
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_robot_base_ac34d3dcb9388d4a8564eb781919eb825}\label{classlib_iterative_robot_1_1_robot_base_ac34d3dcb9388d4a8564eb781919eb825}} 
+\index{libIterativeRobot::RobotBase@{libIterativeRobot::RobotBase}!autonPeriodic@{autonPeriodic}}
+\index{autonPeriodic@{autonPeriodic}!libIterativeRobot::RobotBase@{libIterativeRobot::RobotBase}}
+\subsubsection{\texorpdfstring{autonPeriodic()}{autonPeriodic()}}
+{\footnotesize\ttfamily void Robot\+Base\+::auton\+Periodic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This runs in a loop during the autonomous period. 
+
+Reimplemented in \mbox{\hyperlink{class_robot_a51cab9afb43b369593ca189101b25b26}{Robot}}.
+
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_robot_base_a12cfc52a6bac5b5a9ad7e61b47e9ecd2}\label{classlib_iterative_robot_1_1_robot_base_a12cfc52a6bac5b5a9ad7e61b47e9ecd2}} 
+\index{libIterativeRobot::RobotBase@{libIterativeRobot::RobotBase}!disabledInit@{disabledInit}}
+\index{disabledInit@{disabledInit}!libIterativeRobot::RobotBase@{libIterativeRobot::RobotBase}}
+\subsubsection{\texorpdfstring{disabledInit()}{disabledInit()}}
+{\footnotesize\ttfamily void Robot\+Base\+::disabled\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This runs once each time the robot is disabled. 
+
+Reimplemented in \mbox{\hyperlink{class_robot_a34f8bfa41ab64deae701c5583f619e78}{Robot}}.
+
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_robot_base_a8e1e85e215343baaaf3bdeedb89d9890}\label{classlib_iterative_robot_1_1_robot_base_a8e1e85e215343baaaf3bdeedb89d9890}} 
+\index{libIterativeRobot::RobotBase@{libIterativeRobot::RobotBase}!disabledPeriodic@{disabledPeriodic}}
+\index{disabledPeriodic@{disabledPeriodic}!libIterativeRobot::RobotBase@{libIterativeRobot::RobotBase}}
+\subsubsection{\texorpdfstring{disabledPeriodic()}{disabledPeriodic()}}
+{\footnotesize\ttfamily void Robot\+Base\+::disabled\+Periodic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This runs in a loop whenever the robot is disabled. 
+
+Reimplemented in \mbox{\hyperlink{class_robot_a9d35b3c9b4de467c7435d0cc6f17b33b}{Robot}}.
+
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_robot_base_a1e690e472e901ac99bb7ce6f3b6a33ea}\label{classlib_iterative_robot_1_1_robot_base_a1e690e472e901ac99bb7ce6f3b6a33ea}} 
+\index{libIterativeRobot::RobotBase@{libIterativeRobot::RobotBase}!robotInit@{robotInit}}
+\index{robotInit@{robotInit}!libIterativeRobot::RobotBase@{libIterativeRobot::RobotBase}}
+\subsubsection{\texorpdfstring{robotInit()}{robotInit()}}
+{\footnotesize\ttfamily void Robot\+Base\+::robot\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This runs once when the robot starts up. 
+
+Reimplemented in \mbox{\hyperlink{class_robot_a0ade19d412e58249d9f7a138d306130c}{Robot}}.
+
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_robot_base_a5a57c611cc6c2444e1c8d2fd514bd25c}\label{classlib_iterative_robot_1_1_robot_base_a5a57c611cc6c2444e1c8d2fd514bd25c}} 
+\index{libIterativeRobot::RobotBase@{libIterativeRobot::RobotBase}!runRobot@{runRobot}}
+\index{runRobot@{runRobot}!libIterativeRobot::RobotBase@{libIterativeRobot::RobotBase}}
+\subsubsection{\texorpdfstring{runRobot()}{runRobot()}}
+{\footnotesize\ttfamily template$<$class Robot\+Main $>$ \\
+static void lib\+Iterative\+Robot\+::\+Robot\+Base\+::run\+Robot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Run the robot.
+
+This should be called with the main robot class as the template argument. For example, if your robot is named {\ttfamily Example\+Robot}, you would call it with {\ttfamily \mbox{\hyperlink{classlib_iterative_robot_1_1_robot_base_a5a57c611cc6c2444e1c8d2fd514bd25c}{Robot\+Base\+::run\+Robot}}$<$Example\+Robot$>$()} \mbox{\Hypertarget{classlib_iterative_robot_1_1_robot_base_a290bea17acf9bc884a490472e9d2e039}\label{classlib_iterative_robot_1_1_robot_base_a290bea17acf9bc884a490472e9d2e039}} 
+\index{libIterativeRobot::RobotBase@{libIterativeRobot::RobotBase}!teleopInit@{teleopInit}}
+\index{teleopInit@{teleopInit}!libIterativeRobot::RobotBase@{libIterativeRobot::RobotBase}}
+\subsubsection{\texorpdfstring{teleopInit()}{teleopInit()}}
+{\footnotesize\ttfamily void Robot\+Base\+::teleop\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This runs once each time the teleoperated period begins. 
+
+Reimplemented in \mbox{\hyperlink{class_robot_a8fc4fbb8f758d7223d062e1b4a915232}{Robot}}.
+
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_robot_base_a564ee86d582b598dd0713c067b352aef}\label{classlib_iterative_robot_1_1_robot_base_a564ee86d582b598dd0713c067b352aef}} 
+\index{libIterativeRobot::RobotBase@{libIterativeRobot::RobotBase}!teleopPeriodic@{teleopPeriodic}}
+\index{teleopPeriodic@{teleopPeriodic}!libIterativeRobot::RobotBase@{libIterativeRobot::RobotBase}}
+\subsubsection{\texorpdfstring{teleopPeriodic()}{teleopPeriodic()}}
+{\footnotesize\ttfamily void Robot\+Base\+::teleop\+Periodic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This runs in a loop during the teleoperated period. 
+
+Reimplemented in \mbox{\hyperlink{class_robot_a78f62f5d6eb05e27bfa1998fc35a519c}{Robot}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/lib\+Iterative\+Robot/Robot\+Base.\+h\item 
+src/lib\+Iterative\+Robot/Robot\+Base.\+cpp\end{DoxyCompactItemize}

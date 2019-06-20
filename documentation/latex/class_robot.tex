@@ -1,0 +1,116 @@
+\hypertarget{class_robot}{}\section{Robot Class Reference}
+\label{class_robot}\index{Robot@{Robot}}
+Inheritance diagram for Robot\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_robot}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_robot_ac6f19dc31b435f8a2d43944ba49286d0}\label{class_robot_ac6f19dc31b435f8a2d43944ba49286d0}} 
+static \mbox{\hyperlink{class_robot}{Robot}} $\ast$ {\bfseries get\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_robot_a64c0207f1f73a8a95b5c5dd4ba95209d}\label{class_robot_a64c0207f1f73a8a95b5c5dd4ba95209d}} 
+static \mbox{\hyperlink{class_example_subsystem}{Example\+Subsystem}} $\ast$ {\bfseries example\+Subsystem} = 0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_robot_a0ade19d412e58249d9f7a138d306130c}{robot\+Init}} ()
+\item 
+void \mbox{\hyperlink{class_robot_af5bd4d345ec522b70bdc5cf2b17ffa49}{auton\+Init}} ()
+\item 
+void \mbox{\hyperlink{class_robot_a51cab9afb43b369593ca189101b25b26}{auton\+Periodic}} ()
+\item 
+void \mbox{\hyperlink{class_robot_a8fc4fbb8f758d7223d062e1b4a915232}{teleop\+Init}} ()
+\item 
+void \mbox{\hyperlink{class_robot_a78f62f5d6eb05e27bfa1998fc35a519c}{teleop\+Periodic}} ()
+\item 
+void \mbox{\hyperlink{class_robot_a34f8bfa41ab64deae701c5583f619e78}{disabled\+Init}} ()
+\item 
+void \mbox{\hyperlink{class_robot_a9d35b3c9b4de467c7435d0cc6f17b33b}{disabled\+Periodic}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_robot_af5bd4d345ec522b70bdc5cf2b17ffa49}\label{class_robot_af5bd4d345ec522b70bdc5cf2b17ffa49}} 
+\index{Robot@{Robot}!autonInit@{autonInit}}
+\index{autonInit@{autonInit}!Robot@{Robot}}
+\subsubsection{\texorpdfstring{autonInit()}{autonInit()}}
+{\footnotesize\ttfamily void Robot\+::auton\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This runs once each time the autonomous period begins. 
+
+Reimplemented from \mbox{\hyperlink{classlib_iterative_robot_1_1_robot_base_a8137d84aef11ed00a46cbc1bbb727a60}{lib\+Iterative\+Robot\+::\+Robot\+Base}}.
+
+\mbox{\Hypertarget{class_robot_a51cab9afb43b369593ca189101b25b26}\label{class_robot_a51cab9afb43b369593ca189101b25b26}} 
+\index{Robot@{Robot}!autonPeriodic@{autonPeriodic}}
+\index{autonPeriodic@{autonPeriodic}!Robot@{Robot}}
+\subsubsection{\texorpdfstring{autonPeriodic()}{autonPeriodic()}}
+{\footnotesize\ttfamily void Robot\+::auton\+Periodic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This runs in a loop during the autonomous period. 
+
+Reimplemented from \mbox{\hyperlink{classlib_iterative_robot_1_1_robot_base_ac34d3dcb9388d4a8564eb781919eb825}{lib\+Iterative\+Robot\+::\+Robot\+Base}}.
+
+\mbox{\Hypertarget{class_robot_a34f8bfa41ab64deae701c5583f619e78}\label{class_robot_a34f8bfa41ab64deae701c5583f619e78}} 
+\index{Robot@{Robot}!disabledInit@{disabledInit}}
+\index{disabledInit@{disabledInit}!Robot@{Robot}}
+\subsubsection{\texorpdfstring{disabledInit()}{disabledInit()}}
+{\footnotesize\ttfamily void Robot\+::disabled\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This runs once each time the robot is disabled. 
+
+Reimplemented from \mbox{\hyperlink{classlib_iterative_robot_1_1_robot_base_a12cfc52a6bac5b5a9ad7e61b47e9ecd2}{lib\+Iterative\+Robot\+::\+Robot\+Base}}.
+
+\mbox{\Hypertarget{class_robot_a9d35b3c9b4de467c7435d0cc6f17b33b}\label{class_robot_a9d35b3c9b4de467c7435d0cc6f17b33b}} 
+\index{Robot@{Robot}!disabledPeriodic@{disabledPeriodic}}
+\index{disabledPeriodic@{disabledPeriodic}!Robot@{Robot}}
+\subsubsection{\texorpdfstring{disabledPeriodic()}{disabledPeriodic()}}
+{\footnotesize\ttfamily void Robot\+::disabled\+Periodic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This runs in a loop whenever the robot is disabled. 
+
+Reimplemented from \mbox{\hyperlink{classlib_iterative_robot_1_1_robot_base_a8e1e85e215343baaaf3bdeedb89d9890}{lib\+Iterative\+Robot\+::\+Robot\+Base}}.
+
+\mbox{\Hypertarget{class_robot_a0ade19d412e58249d9f7a138d306130c}\label{class_robot_a0ade19d412e58249d9f7a138d306130c}} 
+\index{Robot@{Robot}!robotInit@{robotInit}}
+\index{robotInit@{robotInit}!Robot@{Robot}}
+\subsubsection{\texorpdfstring{robotInit()}{robotInit()}}
+{\footnotesize\ttfamily void Robot\+::robot\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This runs once when the robot starts up. 
+
+Reimplemented from \mbox{\hyperlink{classlib_iterative_robot_1_1_robot_base_a1e690e472e901ac99bb7ce6f3b6a33ea}{lib\+Iterative\+Robot\+::\+Robot\+Base}}.
+
+\mbox{\Hypertarget{class_robot_a8fc4fbb8f758d7223d062e1b4a915232}\label{class_robot_a8fc4fbb8f758d7223d062e1b4a915232}} 
+\index{Robot@{Robot}!teleopInit@{teleopInit}}
+\index{teleopInit@{teleopInit}!Robot@{Robot}}
+\subsubsection{\texorpdfstring{teleopInit()}{teleopInit()}}
+{\footnotesize\ttfamily void Robot\+::teleop\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This runs once each time the teleoperated period begins. 
+
+Reimplemented from \mbox{\hyperlink{classlib_iterative_robot_1_1_robot_base_a290bea17acf9bc884a490472e9d2e039}{lib\+Iterative\+Robot\+::\+Robot\+Base}}.
+
+\mbox{\Hypertarget{class_robot_a78f62f5d6eb05e27bfa1998fc35a519c}\label{class_robot_a78f62f5d6eb05e27bfa1998fc35a519c}} 
+\index{Robot@{Robot}!teleopPeriodic@{teleopPeriodic}}
+\index{teleopPeriodic@{teleopPeriodic}!Robot@{Robot}}
+\subsubsection{\texorpdfstring{teleopPeriodic()}{teleopPeriodic()}}
+{\footnotesize\ttfamily void Robot\+::teleop\+Periodic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This runs in a loop during the teleoperated period. 
+
+Reimplemented from \mbox{\hyperlink{classlib_iterative_robot_1_1_robot_base_a564ee86d582b598dd0713c067b352aef}{lib\+Iterative\+Robot\+::\+Robot\+Base}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/lib\+Iterative\+Robot/Robot.\+h\item 
+src/lib\+Iterative\+Robot/Robot.\+cpp\end{DoxyCompactItemize}
