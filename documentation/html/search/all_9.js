@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['teleopinit',['teleopInit',['../class_robot.html#a8fc4fbb8f758d7223d062e1b4a915232',1,'Robot::teleopInit()'],['../classlib_iterative_robot_1_1_robot_base.html#a290bea17acf9bc884a490472e9d2e039',1,'libIterativeRobot::RobotBase::teleopInit()']]],
-  ['teleopperiodic',['teleopPeriodic',['../class_robot.html#a78f62f5d6eb05e27bfa1998fc35a519c',1,'Robot::teleopPeriodic()'],['../classlib_iterative_robot_1_1_robot_base.html#a564ee86d582b598dd0713c067b352aef',1,'libIterativeRobot::RobotBase::teleopPeriodic()']]],
-  ['trigger',['Trigger',['../classlib_iterative_robot_1_1_trigger.html',1,'libIterativeRobot']]]
+  ['setdefaultcommand',['setDefaultCommand',['../classlib_iterative_robot_1_1_subsystem.html#a6fff5c5756245ac750c2b26ee0ed2be7',1,'libIterativeRobot::Subsystem']]],
+  ['status',['status',['../classlib_iterative_robot_1_1_command.html#a54548a957a6b4097837c41fcc660467e',1,'libIterativeRobot::Command']]],
+  ['stop',['stop',['../classlib_iterative_robot_1_1_command.html#ac91308101424f447f80665244b554171',1,'libIterativeRobot::Command']]],
+  ['subsystem',['Subsystem',['../classlib_iterative_robot_1_1_subsystem.html',1,'libIterativeRobot::Subsystem'],['../classlib_iterative_robot_1_1_command.html#a9b67dc4c93b18626e753aa0938abbf7d',1,'libIterativeRobot::Command::Subsystem()']]]
 ];

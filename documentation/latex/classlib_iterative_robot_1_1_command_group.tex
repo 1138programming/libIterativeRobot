@@ -12,23 +12,17 @@ Inheritance diagram for lib\+Iterative\+Robot\+::Command\+Group\+:\begin{figure}
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_abf3d539920648f9dec9dfdef30699c82}\label{classlib_iterative_robot_1_1_command_group_abf3d539920648f9dec9dfdef30699c82}} 
 std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}} $\ast$ $>$ \& {\bfseries get\+Requirements} ()
 \item 
-\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_abd75c9b52e6b4ae5af1b6724e865311f}\label{classlib_iterative_robot_1_1_command_group_abd75c9b52e6b4ae5af1b6724e865311f}} 
-bool {\bfseries can\+Run} ()
+bool \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_abd75c9b52e6b4ae5af1b6724e865311f}{can\+Run}} ()
 \item 
-\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_a99800c5dbd05ab750aa0bb27518d0467}\label{classlib_iterative_robot_1_1_command_group_a99800c5dbd05ab750aa0bb27518d0467}} 
-void {\bfseries initialize} ()
+void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a99800c5dbd05ab750aa0bb27518d0467}{initialize}} ()
 \item 
-\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_a5e91d370cafde43548d79945ccb4d8fe}\label{classlib_iterative_robot_1_1_command_group_a5e91d370cafde43548d79945ccb4d8fe}} 
-void {\bfseries execute} ()
+void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a5e91d370cafde43548d79945ccb4d8fe}{execute}} ()
 \item 
-\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_a96807a2763adf9e21ebf2cb9e3574e3c}\label{classlib_iterative_robot_1_1_command_group_a96807a2763adf9e21ebf2cb9e3574e3c}} 
-bool {\bfseries is\+Finished} ()
+bool \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a96807a2763adf9e21ebf2cb9e3574e3c}{is\+Finished}} ()
 \item 
-\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_a28ad3a1c2f6b4f9aea10efa1a824895e}\label{classlib_iterative_robot_1_1_command_group_a28ad3a1c2f6b4f9aea10efa1a824895e}} 
-void {\bfseries end} ()
+void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a28ad3a1c2f6b4f9aea10efa1a824895e}{end}} ()
 \item 
-\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_a5174a8e63675bead12b84e39df0ae90e}\label{classlib_iterative_robot_1_1_command_group_a5174a8e63675bead12b84e39df0ae90e}} 
-void {\bfseries interrupted} ()
+void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a5174a8e63675bead12b84e39df0ae90e}{interrupted}} ()
 \item 
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_ae6cdd735460cf917243bdbfe451b651a}\label{classlib_iterative_robot_1_1_command_group_ae6cdd735460cf917243bdbfe451b651a}} 
 void {\bfseries add\+Sequential\+Command} (\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$a\+Command)
@@ -43,6 +37,69 @@ void {\bfseries run} ()
 void {\bfseries stop} ()
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_abd75c9b52e6b4ae5af1b6724e865311f}\label{classlib_iterative_robot_1_1_command_group_abd75c9b52e6b4ae5af1b6724e865311f}} 
+\index{libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}!canRun@{canRun}}
+\index{canRun@{canRun}!libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}}
+\subsubsection{\texorpdfstring{canRun()}{canRun()}}
+{\footnotesize\ttfamily bool Command\+Group\+::can\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the command\textquotesingle{}s requirements as a vector pointer 
+
+Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_aebef0fdf029a15ee48fbb778c4265609}{lib\+Iterative\+Robot\+::\+Command}}.
+
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_a28ad3a1c2f6b4f9aea10efa1a824895e}\label{classlib_iterative_robot_1_1_command_group_a28ad3a1c2f6b4f9aea10efa1a824895e}} 
+\index{libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}!end@{end}}
+\index{end@{end}!libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}}
+\subsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily void Command\+Group\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns whether or not the command is finished. The \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a5e91d370cafde43548d79945ccb4d8fe}{execute()}} function is called continuously until this method returns true or the command is interrupted 
+
+Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_ab30847f09859387b70bb7846f7ce7ca4}{lib\+Iterative\+Robot\+::\+Command}}.
+
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_a5e91d370cafde43548d79945ccb4d8fe}\label{classlib_iterative_robot_1_1_command_group_a5e91d370cafde43548d79945ccb4d8fe}} 
+\index{libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}!execute@{execute}}
+\index{execute@{execute}!libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Command\+Group\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets up the command for execution. This method is called once before the command begins running 
+
+Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a4b38164af1a8645fae2fdae296317cf4}{lib\+Iterative\+Robot\+::\+Command}}.
+
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_a99800c5dbd05ab750aa0bb27518d0467}\label{classlib_iterative_robot_1_1_command_group_a99800c5dbd05ab750aa0bb27518d0467}} 
+\index{libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}!initialize@{initialize}}
+\index{initialize@{initialize}!libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Command\+Group\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns whether or not the command can run right now. If false, the command is ignored 
+
+Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a14543c9d38b07e52f9ffb2af88a63f60}{lib\+Iterative\+Robot\+::\+Command}}.
+
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_a5174a8e63675bead12b84e39df0ae90e}\label{classlib_iterative_robot_1_1_command_group_a5174a8e63675bead12b84e39df0ae90e}} 
+\index{libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}!interrupted@{interrupted}}
+\index{interrupted@{interrupted}!libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}}
+\subsubsection{\texorpdfstring{interrupted()}{interrupted()}}
+{\footnotesize\ttfamily void Command\+Group\+::interrupted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Runs once when command is finished 
+
+Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a1c17b601d1b69822cabadb92069d1747}{lib\+Iterative\+Robot\+::\+Command}}.
+
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_a96807a2763adf9e21ebf2cb9e3574e3c}\label{classlib_iterative_robot_1_1_command_group_a96807a2763adf9e21ebf2cb9e3574e3c}} 
+\index{libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}!isFinished@{isFinished}}
+\index{isFinished@{isFinished}!libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}}
+\subsubsection{\texorpdfstring{isFinished()}{isFinished()}}
+{\footnotesize\ttfamily bool Command\+Group\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Runs the command 
+
+Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a8e4dccdd88f432a716090f532ba097f7}{lib\+Iterative\+Robot\+::\+Command}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

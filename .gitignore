@@ -38,3 +38,6 @@
 # Binaries + Libraries
 bin/*
 libIterativeRobot@*.zip
+
+# Other stuff
+documentation/*

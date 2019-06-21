@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['robotinit',['robotInit',['../class_robot.html#a0ade19d412e58249d9f7a138d306130c',1,'Robot::robotInit()'],['../classlib_iterative_robot_1_1_robot_base.html#a1e690e472e901ac99bb7ce6f3b6a33ea',1,'libIterativeRobot::RobotBase::robotInit()']]],
-  ['runrobot',['runRobot',['../classlib_iterative_robot_1_1_robot_base.html#a5a57c611cc6c2444e1c8d2fd514bd25c',1,'libIterativeRobot::RobotBase']]]
+  ['getdefaultcommand',['getDefaultCommand',['../classlib_iterative_robot_1_1_subsystem.html#a7e0c4904d9ff8ad2e4b6bc98d0f9579f',1,'libIterativeRobot::Subsystem']]],
+  ['getrequirements',['getRequirements',['../classlib_iterative_robot_1_1_command.html#a447ba6e394f165c6d358471a8bbdc76a',1,'libIterativeRobot::Command']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['disabledinit',['disabledInit',['../class_robot.html#a34f8bfa41ab64deae701c5583f619e78',1,'Robot::disabledInit()'],['../classlib_iterative_robot_1_1_robot_base.html#a12cfc52a6bac5b5a9ad7e61b47e9ecd2',1,'libIterativeRobot::RobotBase::disabledInit()']]],
-  ['disabledperiodic',['disabledPeriodic',['../class_robot.html#a9d35b3c9b4de467c7435d0cc6f17b33b',1,'Robot::disabledPeriodic()'],['../classlib_iterative_robot_1_1_robot_base.html#a8e1e85e215343baaaf3bdeedb89d9890',1,'libIterativeRobot::RobotBase::disabledPeriodic()']]]
+  ['canrun',['canRun',['../classlib_iterative_robot_1_1_command.html#aebef0fdf029a15ee48fbb778c4265609',1,'libIterativeRobot::Command::canRun()'],['../classlib_iterative_robot_1_1_command_group.html#abd75c9b52e6b4ae5af1b6724e865311f',1,'libIterativeRobot::CommandGroup::canRun()'],['../class_example_command.html#ad1df0170d99bcef6c6bc1676551f9539',1,'ExampleCommand::canRun()']]],
+  ['command',['Command',['../classlib_iterative_robot_1_1_command.html#a18df2d81039392daeb0b78c346a70537',1,'libIterativeRobot::Command']]]
 ];
