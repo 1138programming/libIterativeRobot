@@ -5,10 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: libIterativeRobot::RobotBase Class Reference</title>
+<title>Refactored-Chainsaw: libIterativeRobot::RobotBase Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -21,8 +29,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Refactored-Chainsaw
    </div>
+   <div id="projectbrief">We don&#39;t know what it means either</div>
   </td>
  </tr>
  </tbody>
@@ -45,6 +54,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classlib_iterative_robot_1_1_robot_base.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,23 +85,24 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>libIterativeRobot</b></li><li class="navelem"><a class="el" href="classlib_iterative_robot_1_1_robot_base.html">RobotBase</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classlib_iterative_robot_1_1_robot_base-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">libIterativeRobot::RobotBase Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for libIterativeRobot::RobotBase:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for libIterativeRobot::RobotBase:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="classlib_iterative_robot_1_1_robot_base.png" usemap="#libIterativeRobot::RobotBase_map" alt=""/>
   <map id="libIterativeRobot::RobotBase_map" name="libIterativeRobot::RobotBase_map">
@@ -105,6 +132,34 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a12cfc52a6bac5b5a9ad7e61b47e9ecd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e1e85e215343baaaf3bdeedb89d9890"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_robot_base.html#a8e1e85e215343baaaf3bdeedb89d9890">disabledPeriodic</a> ()</td></tr>
 <tr class="separator:a8e1e85e215343baaaf3bdeedb89d9890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a4a63ae91c048bc2f371b175527b3a461"><td class="memItemLeft" align="right" valign="top"><a id="a4a63ae91c048bc2f371b175527b3a461"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>RobotState</b> { <b>None</b>, 
+<b>Auton</b>, 
+<b>Teleop</b>, 
+<b>Disabled</b>
+ }</td></tr>
+<tr class="separator:a4a63ae91c048bc2f371b175527b3a461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:abb65e46433c76fe9d99facd46c1daf95"><td class="memItemLeft" align="right" valign="top"><a id="abb65e46433c76fe9d99facd46c1daf95"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>doOneCycle</b> ()</td></tr>
+<tr class="separator:abb65e46433c76fe9d99facd46c1daf95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a1540d2ecd75e3a55904f78b7052bc39c"><td class="memTemplParams" colspan="2"><a id="a1540d2ecd75e3a55904f78b7052bc39c"></a>
+template&lt;class RobotMain &gt; </td></tr>
+<tr class="memitem:a1540d2ecd75e3a55904f78b7052bc39c"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>_privateRunRobot</b> ()</td></tr>
+<tr class="separator:a1540d2ecd75e3a55904f78b7052bc39c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3c7fd3122a6bd9772e10ca35145530d2"><td class="memItemLeft" align="right" valign="top"><a id="a3c7fd3122a6bd9772e10ca35145530d2"></a>
+RobotState&#160;</td><td class="memItemRight" valign="bottom"><b>lastState</b> = RobotState::None</td></tr>
+<tr class="separator:a3c7fd3122a6bd9772e10ca35145530d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a8137d84aef11ed00a46cbc1bbb727a60"></a>
@@ -337,11 +392,15 @@ template&lt;class RobotMain &gt; </div>
 <li>src/libIterativeRobot/RobotBase.cpp</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.15
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>libIterativeRobot</b></li><li class="navelem"><a class="el" href="classlib_iterative_robot_1_1_robot_base.html">RobotBase</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
+  </ul>
+</div>
 </body>
 </html>

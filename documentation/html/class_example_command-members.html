@@ -5,10 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Member List</title>
+<title>Refactored-Chainsaw: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -21,8 +29,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Refactored-Chainsaw
    </div>
+   <div id="projectbrief">We don&#39;t know what it means either</div>
   </td>
  </tr>
  </tbody>
@@ -45,6 +54,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_example_command.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,7 +85,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">ExampleCommand Member List</div>  </div>
@@ -70,25 +95,27 @@ $(function() {
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_example_command.html#ad1df0170d99bcef6c6bc1676551f9539">canRun</a>()</td><td class="entry"><a class="el" href="class_example_command.html">ExampleCommand</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html#a18df2d81039392daeb0b78c346a70537">Command</a>()</td><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>DefaultCommandPriority</b> (defined in <a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a>)</td><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html#a37cc89119a9f76d0dda57ea21c877c7c">DefaultCommandPriority</a></td><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_example_command.html#ac3da078fdf1e7a7f94488db815bb0457">end</a>()</td><td class="entry"><a class="el" href="class_example_command.html">ExampleCommand</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ExampleCommand</b>() (defined in <a class="el" href="class_example_command.html">ExampleCommand</a>)</td><td class="entry"><a class="el" href="class_example_command.html">ExampleCommand</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_example_command.html#af6fead537dd568d80aa3097ca207eda5">execute</a>()</td><td class="entry"><a class="el" href="class_example_command.html">ExampleCommand</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html#a447ba6e394f165c6d358471a8bbdc76a">getRequirements</a>()</td><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html#a447ba6e394f165c6d358471a8bbdc76a">getRequirements</a>()</td><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_example_command.html#ae7bea17127c1697acbf90d6022eb5b5d">initialize</a>()</td><td class="entry"><a class="el" href="class_example_command.html">ExampleCommand</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_example_command.html#ae5a4bb67aa6e6c6234c3dca8eb7ad7ec">interrupted</a>()</td><td class="entry"><a class="el" href="class_example_command.html">ExampleCommand</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_example_command.html#ab4e52d526bda7fe22705b2d3c44286e0">isFinished</a>()</td><td class="entry"><a class="el" href="class_example_command.html">ExampleCommand</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html#af2fd312376da33f5eba582db90389511">priority</a></td><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html#ad7b7f328974f5f17a2a4b1593b6c9eb5">requires</a>(Subsystem *aSubsystem)</td><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html#a3f3790d1b8033d7253a9f44481032ee9">run</a>()</td><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html#a54548a957a6b4097837c41fcc660467e">status</a></td><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html#ac91308101424f447f80665244b554171">stop</a>()</td><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html#ad7b7f328974f5f17a2a4b1593b6c9eb5">requires</a>(Subsystem *aSubsystem)</td><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html#a3f3790d1b8033d7253a9f44481032ee9">run</a>()</td><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html#a54548a957a6b4097837c41fcc660467e">status</a></td><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html#ac91308101424f447f80665244b554171">stop</a>()</td><td class="entry"><a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.15
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
+  </ul>
+</div>
 </body>
 </html>

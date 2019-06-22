@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['priority',['priority',['../classlib_iterative_robot_1_1_command.html#af2fd312376da33f5eba582db90389511',1,'libIterativeRobot::Command']]]
+  ['defaultcommandpriority',['DefaultCommandPriority',['../classlib_iterative_robot_1_1_command.html#a37cc89119a9f76d0dda57ea21c877c7c',1,'libIterativeRobot::Command']]]
 ];

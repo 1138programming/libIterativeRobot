@@ -45,6 +45,60 @@ static \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Sch
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a5c2a1365cdcf713b0dbe722b9156290e}\label{classlib_iterative_robot_1_1_event_scheduler_a5c2a1365cdcf713b0dbe722b9156290e}} 
 static const int {\bfseries millisecond\+Timeout} = 25
 \end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a92692ad8573d974bae62c62fccf808c4}\label{classlib_iterative_robot_1_1_event_scheduler_a92692ad8573d974bae62c62fccf808c4}} 
+void {\bfseries clear\+Scheduler} ()
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a0334c1b83511053b6da8583caf6b87be}\label{classlib_iterative_robot_1_1_event_scheduler_a0334c1b83511053b6da8583caf6b87be}} 
+void {\bfseries queue\+Commands} ()
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a4df12d213a4ea996c942fdf1b85033b1}\label{classlib_iterative_robot_1_1_event_scheduler_a4df12d213a4ea996c942fdf1b85033b1}} 
+void {\bfseries queue\+Command\+Groups} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a54fd5203a21eb54497840e03ec179f30}\label{classlib_iterative_robot_1_1_event_scheduler_a54fd5203a21eb54497840e03ec179f30}} 
+size\+\_\+t {\bfseries num\+Subsystems} = 0
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a37e13e6049f502dbadbc0c81345ff206}\label{classlib_iterative_robot_1_1_event_scheduler_a37e13e6049f502dbadbc0c81345ff206}} 
+std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}} $\ast$ $>$ {\bfseries subsystems}
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_abc088d35399b0b1eaa20d573acbdd21e}\label{classlib_iterative_robot_1_1_event_scheduler_abc088d35399b0b1eaa20d573acbdd21e}} 
+std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_event_listener}{Event\+Listener}} $\ast$ $>$ {\bfseries event\+Listeners}
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a24710c3528945cb3ed1e9ae61267b570}\label{classlib_iterative_robot_1_1_event_scheduler_a24710c3528945cb3ed1e9ae61267b570}} 
+std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$ $>$ {\bfseries command\+Queue}
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a355d50b2ab9edbb9295cd0a540422be6}\label{classlib_iterative_robot_1_1_event_scheduler_a355d50b2ab9edbb9295cd0a540422be6}} 
+std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} $\ast$ $>$ {\bfseries command\+Group\+Queue}
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a1ddae49a738b69e0e73b4b529a585226}\label{classlib_iterative_robot_1_1_event_scheduler_a1ddae49a738b69e0e73b4b529a585226}} 
+std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$ $>$ {\bfseries command\+Buffer}
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a37b0c1d9ec0c00e7729bec67ebbd9986}\label{classlib_iterative_robot_1_1_event_scheduler_a37b0c1d9ec0c00e7729bec67ebbd9986}} 
+std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} $\ast$ $>$ {\bfseries command\+Group\+Buffer}
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a91ac686fb045bce48f6debdb0a351c20}\label{classlib_iterative_robot_1_1_event_scheduler_a91ac686fb045bce48f6debdb0a351c20}} 
+std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$ $>$ {\bfseries to\+Execute}
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a71178c1be52c39a822b93f8bb9574fe0}\label{classlib_iterative_robot_1_1_event_scheduler_a71178c1be52c39a822b93f8bb9574fe0}} 
+std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$ $>$ {\bfseries to\+Interrupt}
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a1abfda2ac89947e8bb5c06478c87a5ba}\label{classlib_iterative_robot_1_1_event_scheduler_a1abfda2ac89947e8bb5c06478c87a5ba}} 
+std\+::vector$<$ size\+\_\+t $>$ {\bfseries indexes}
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_ab621dadcaf39710a2c591c72ade16885}\label{classlib_iterative_robot_1_1_event_scheduler_ab621dadcaf39710a2c591c72ade16885}} 
+bool {\bfseries default\+Added} = false
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a1f4587720421057eebddc0248bf9a05f}\label{classlib_iterative_robot_1_1_event_scheduler_a1f4587720421057eebddc0248bf9a05f}} 
+static \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} $\ast$ {\bfseries instance} = N\+U\+LL
+\end{DoxyCompactItemize}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

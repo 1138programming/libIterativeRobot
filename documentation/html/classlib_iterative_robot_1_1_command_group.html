@@ -5,10 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: libIterativeRobot::CommandGroup Class Reference</title>
+<title>Refactored-Chainsaw: libIterativeRobot::CommandGroup Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -21,8 +29,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Refactored-Chainsaw
    </div>
+   <div id="projectbrief">We don&#39;t know what it means either</div>
   </td>
  </tr>
  </tbody>
@@ -45,6 +54,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classlib_iterative_robot_1_1_command_group.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,22 +85,20 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>libIterativeRobot</b></li><li class="navelem"><a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classlib_iterative_robot_1_1_command_group-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">libIterativeRobot::CommandGroup Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for libIterativeRobot::CommandGroup:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for libIterativeRobot::CommandGroup:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="classlib_iterative_robot_1_1_command_group.png" usemap="#libIterativeRobot::CommandGroup_map" alt=""/>
   <map id="libIterativeRobot::CommandGroup_map" name="libIterativeRobot::CommandGroup_map">
@@ -89,16 +113,25 @@ Public Member Functions</h2></td></tr>
 std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getRequirements</b> ()</td></tr>
 <tr class="separator:abf3d539920648f9dec9dfdef30699c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd75c9b52e6b4ae5af1b6724e865311f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command_group.html#abd75c9b52e6b4ae5af1b6724e865311f">canRun</a> ()</td></tr>
+<tr class="memdesc:abd75c9b52e6b4ae5af1b6724e865311f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the command can run or not.  <a href="#abd75c9b52e6b4ae5af1b6724e865311f">More...</a><br /></td></tr>
 <tr class="separator:abd75c9b52e6b4ae5af1b6724e865311f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99800c5dbd05ab750aa0bb27518d0467"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command_group.html#a99800c5dbd05ab750aa0bb27518d0467">initialize</a> ()</td></tr>
+<tr class="memdesc:a99800c5dbd05ab750aa0bb27518d0467"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once before the command runs.  <a href="#a99800c5dbd05ab750aa0bb27518d0467">More...</a><br /></td></tr>
 <tr class="separator:a99800c5dbd05ab750aa0bb27518d0467"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e91d370cafde43548d79945ccb4d8fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command_group.html#a5e91d370cafde43548d79945ccb4d8fe">execute</a> ()</td></tr>
+<tr class="memitem:a5e91d370cafde43548d79945ccb4d8fe"><td class="memItemLeft" align="right" valign="top"><a id="a5e91d370cafde43548d79945ccb4d8fe"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command_group.html#a5e91d370cafde43548d79945ccb4d8fe">execute</a> ()</td></tr>
+<tr class="memdesc:a5e91d370cafde43548d79945ccb4d8fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the command. <br /></td></tr>
 <tr class="separator:a5e91d370cafde43548d79945ccb4d8fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96807a2763adf9e21ebf2cb9e3574e3c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command_group.html#a96807a2763adf9e21ebf2cb9e3574e3c">isFinished</a> ()</td></tr>
+<tr class="memdesc:a96807a2763adf9e21ebf2cb9e3574e3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> while the command is running to check if it is finished.  <a href="#a96807a2763adf9e21ebf2cb9e3574e3c">More...</a><br /></td></tr>
 <tr class="separator:a96807a2763adf9e21ebf2cb9e3574e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28ad3a1c2f6b4f9aea10efa1a824895e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command_group.html#a28ad3a1c2f6b4f9aea10efa1a824895e">end</a> ()</td></tr>
+<tr class="memitem:a28ad3a1c2f6b4f9aea10efa1a824895e"><td class="memItemLeft" align="right" valign="top"><a id="a28ad3a1c2f6b4f9aea10efa1a824895e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command_group.html#a28ad3a1c2f6b4f9aea10efa1a824895e">end</a> ()</td></tr>
+<tr class="memdesc:a28ad3a1c2f6b4f9aea10efa1a824895e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs once when command is finished. <br /></td></tr>
 <tr class="separator:a28ad3a1c2f6b4f9aea10efa1a824895e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5174a8e63675bead12b84e39df0ae90e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command_group.html#a5174a8e63675bead12b84e39df0ae90e">interrupted</a> ()</td></tr>
+<tr class="memitem:a5174a8e63675bead12b84e39df0ae90e"><td class="memItemLeft" align="right" valign="top"><a id="a5174a8e63675bead12b84e39df0ae90e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command_group.html#a5174a8e63675bead12b84e39df0ae90e">interrupted</a> ()</td></tr>
+<tr class="memdesc:a5174a8e63675bead12b84e39df0ae90e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs once when a command is interrupted. <br /></td></tr>
 <tr class="separator:a5174a8e63675bead12b84e39df0ae90e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6cdd735460cf917243bdbfe451b651a"><td class="memItemLeft" align="right" valign="top"><a id="ae6cdd735460cf917243bdbfe451b651a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>addSequentialCommand</b> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *aCommand)</td></tr>
@@ -113,29 +146,51 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>stop</b> ()</td></tr>
 <tr class="separator:ad521849c9a7f1b3f952b318ee424c5b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classlib_iterative_robot_1_1_command"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classlib_iterative_robot_1_1_command')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td></tr>
-<tr class="memitem:a447ba6e394f165c6d358471a8bbdc76a inherit pub_methods_classlib_iterative_robot_1_1_command"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#a447ba6e394f165c6d358471a8bbdc76a">getRequirements</a> ()</td></tr>
-<tr class="separator:a447ba6e394f165c6d358471a8bbdc76a inherit pub_methods_classlib_iterative_robot_1_1_command"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f3790d1b8033d7253a9f44481032ee9 inherit pub_methods_classlib_iterative_robot_1_1_command"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#a3f3790d1b8033d7253a9f44481032ee9">run</a> ()</td></tr>
+<tr class="memitem:a3f3790d1b8033d7253a9f44481032ee9 inherit pub_methods_classlib_iterative_robot_1_1_command"><td class="memItemLeft" align="right" valign="top"><a id="a3f3790d1b8033d7253a9f44481032ee9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#a3f3790d1b8033d7253a9f44481032ee9">run</a> ()</td></tr>
+<tr class="memdesc:a3f3790d1b8033d7253a9f44481032ee9 inherit pub_methods_classlib_iterative_robot_1_1_command"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the command to the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>. <br /></td></tr>
 <tr class="separator:a3f3790d1b8033d7253a9f44481032ee9 inherit pub_methods_classlib_iterative_robot_1_1_command"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac91308101424f447f80665244b554171 inherit pub_methods_classlib_iterative_robot_1_1_command"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#ac91308101424f447f80665244b554171">stop</a> ()</td></tr>
+<tr class="memitem:ac91308101424f447f80665244b554171 inherit pub_methods_classlib_iterative_robot_1_1_command"><td class="memItemLeft" align="right" valign="top"><a id="ac91308101424f447f80665244b554171"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#ac91308101424f447f80665244b554171">stop</a> ()</td></tr>
+<tr class="memdesc:ac91308101424f447f80665244b554171 inherit pub_methods_classlib_iterative_robot_1_1_command"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the command from the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> and interrupts it. <br /></td></tr>
 <tr class="separator:ac91308101424f447f80665244b554171 inherit pub_methods_classlib_iterative_robot_1_1_command"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18df2d81039392daeb0b78c346a70537 inherit pub_methods_classlib_iterative_robot_1_1_command"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#a18df2d81039392daeb0b78c346a70537">Command</a> ()</td></tr>
+<tr class="memdesc:a18df2d81039392daeb0b78c346a70537 inherit pub_methods_classlib_iterative_robot_1_1_command"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new command.  <a href="classlib_iterative_robot_1_1_command.html#a18df2d81039392daeb0b78c346a70537">More...</a><br /></td></tr>
 <tr class="separator:a18df2d81039392daeb0b78c346a70537 inherit pub_methods_classlib_iterative_robot_1_1_command"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa7a293ed14071e183070e00580ccbecf"><td class="memItemLeft" align="right" valign="top"><a id="aa7a293ed14071e183070e00580ccbecf"></a>
+std::vector&lt; std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>commands</b></td></tr>
+<tr class="separator:aa7a293ed14071e183070e00580ccbecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad804d6ab2feaec9e95dde18706548a89"><td class="memItemLeft" align="right" valign="top"><a id="ad804d6ab2feaec9e95dde18706548a89"></a>
+std::vector&lt; std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a> * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>requirements</b></td></tr>
+<tr class="separator:ad804d6ab2feaec9e95dde18706548a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93fe86db750ed4c728626eace7e66a2f"><td class="memItemLeft" align="right" valign="top"><a id="a93fe86db750ed4c728626eace7e66a2f"></a>
+std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>added</b></td></tr>
+<tr class="separator:a93fe86db750ed4c728626eace7e66a2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6ba0e30e4caa58f4b019ab496487ab7"><td class="memItemLeft" align="right" valign="top"><a id="ae6ba0e30e4caa58f4b019ab496487ab7"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>sequentialIndex</b> = 0</td></tr>
+<tr class="separator:ae6ba0e30e4caa58f4b019ab496487ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_attribs_classlib_iterative_robot_1_1_command"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classlib_iterative_robot_1_1_command')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td></tr>
-<tr class="memitem:af2fd312376da33f5eba582db90389511 inherit pub_attribs_classlib_iterative_robot_1_1_command"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#af2fd312376da33f5eba582db90389511">priority</a> = 1</td></tr>
-<tr class="separator:af2fd312376da33f5eba582db90389511 inherit pub_attribs_classlib_iterative_robot_1_1_command"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_attribs_classlib_iterative_robot_1_1_command"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classlib_iterative_robot_1_1_command')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td></tr>
 <tr class="memitem:a37cc89119a9f76d0dda57ea21c877c7c inherit pub_static_attribs_classlib_iterative_robot_1_1_command"><td class="memItemLeft" align="right" valign="top"><a id="a37cc89119a9f76d0dda57ea21c877c7c"></a>
-static const int&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultCommandPriority</b> = 0</td></tr>
+static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#a37cc89119a9f76d0dda57ea21c877c7c">DefaultCommandPriority</a> = 0</td></tr>
+<tr class="memdesc:a37cc89119a9f76d0dda57ea21c877c7c inherit pub_static_attribs_classlib_iterative_robot_1_1_command"><td class="mdescLeft">&#160;</td><td class="mdescRight">The priority of a default command is 0. <br /></td></tr>
 <tr class="separator:a37cc89119a9f76d0dda57ea21c877c7c inherit pub_static_attribs_classlib_iterative_robot_1_1_command"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classlib_iterative_robot_1_1_command"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classlib_iterative_robot_1_1_command')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td></tr>
 <tr class="memitem:ad7b7f328974f5f17a2a4b1593b6c9eb5 inherit pro_methods_classlib_iterative_robot_1_1_command"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#ad7b7f328974f5f17a2a4b1593b6c9eb5">requires</a> (<a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a> *aSubsystem)</td></tr>
+<tr class="memdesc:ad7b7f328974f5f17a2a4b1593b6c9eb5 inherit pro_methods_classlib_iterative_robot_1_1_command"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a subsystem as one of a command's requirements.  <a href="classlib_iterative_robot_1_1_command.html#ad7b7f328974f5f17a2a4b1593b6c9eb5">More...</a><br /></td></tr>
 <tr class="separator:ad7b7f328974f5f17a2a4b1593b6c9eb5 inherit pro_methods_classlib_iterative_robot_1_1_command"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a447ba6e394f165c6d358471a8bbdc76a inherit pro_methods_classlib_iterative_robot_1_1_command"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#a447ba6e394f165c6d358471a8bbdc76a">getRequirements</a> ()</td></tr>
+<tr class="memdesc:a447ba6e394f165c6d358471a8bbdc76a inherit pro_methods_classlib_iterative_robot_1_1_command"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the requirements that a command uses.  <a href="classlib_iterative_robot_1_1_command.html#a447ba6e394f165c6d358471a8bbdc76a">More...</a><br /></td></tr>
+<tr class="separator:a447ba6e394f165c6d358471a8bbdc76a inherit pro_methods_classlib_iterative_robot_1_1_command"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classlib_iterative_robot_1_1_command"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classlib_iterative_robot_1_1_command')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classlib_iterative_robot_1_1_command.html">libIterativeRobot::Command</a></td></tr>
-<tr class="memitem:a54548a957a6b4097837c41fcc660467e inherit pro_attribs_classlib_iterative_robot_1_1_command"><td class="memItemLeft" align="right" valign="top">Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#a54548a957a6b4097837c41fcc660467e">status</a> = Idle</td></tr>
+<tr class="memitem:a54548a957a6b4097837c41fcc660467e inherit pro_attribs_classlib_iterative_robot_1_1_command"><td class="memItemLeft" align="right" valign="top"><a id="a54548a957a6b4097837c41fcc660467e"></a>
+Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#a54548a957a6b4097837c41fcc660467e">status</a> = Idle</td></tr>
+<tr class="memdesc:a54548a957a6b4097837c41fcc660467e inherit pro_attribs_classlib_iterative_robot_1_1_command"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps track of the status of the command. <br /></td></tr>
 <tr class="separator:a54548a957a6b4097837c41fcc660467e inherit pro_attribs_classlib_iterative_robot_1_1_command"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -161,65 +216,11 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultCo
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the command's requirements as a vector pointer </p>
+
+<p>Whether the command can run or not. </p>
+<p>Called by the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> before a command starts running to check whether it can run or not </p><dl class="section return"><dt>Returns</dt><dd>Whether or not the command can run </dd></dl>
 
 <p>Implements <a class="el" href="classlib_iterative_robot_1_1_command.html#aebef0fdf029a15ee48fbb778c4265609">libIterativeRobot::Command</a>.</p>
-
-</div>
-</div>
-<a id="a28ad3a1c2f6b4f9aea10efa1a824895e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28ad3a1c2f6b4f9aea10efa1a824895e">&#9670;&nbsp;</a></span>end()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CommandGroup::end </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Returns whether or not the command is finished. The <a class="el" href="classlib_iterative_robot_1_1_command_group.html#a5e91d370cafde43548d79945ccb4d8fe">execute()</a> function is called continuously until this method returns true or the command is interrupted </p>
-
-<p>Implements <a class="el" href="classlib_iterative_robot_1_1_command.html#ab30847f09859387b70bb7846f7ce7ca4">libIterativeRobot::Command</a>.</p>
-
-</div>
-</div>
-<a id="a5e91d370cafde43548d79945ccb4d8fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e91d370cafde43548d79945ccb4d8fe">&#9670;&nbsp;</a></span>execute()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CommandGroup::execute </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Sets up the command for execution. This method is called once before the command begins running </p>
-
-<p>Implements <a class="el" href="classlib_iterative_robot_1_1_command.html#a4b38164af1a8645fae2fdae296317cf4">libIterativeRobot::Command</a>.</p>
 
 </div>
 </div>
@@ -245,37 +246,11 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultCo
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns whether or not the command can run right now. If false, the command is ignored </p>
+
+<p>Called once before the command runs. </p>
+<p>Code needed to sets up the command for execution can be put here. This method is called once before the command begins running </p>
 
 <p>Implements <a class="el" href="classlib_iterative_robot_1_1_command.html#a14543c9d38b07e52f9ffb2af88a63f60">libIterativeRobot::Command</a>.</p>
-
-</div>
-</div>
-<a id="a5174a8e63675bead12b84e39df0ae90e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5174a8e63675bead12b84e39df0ae90e">&#9670;&nbsp;</a></span>interrupted()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CommandGroup::interrupted </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Runs once when command is finished </p>
-
-<p>Implements <a class="el" href="classlib_iterative_robot_1_1_command.html#a1c17b601d1b69822cabadb92069d1747">libIterativeRobot::Command</a>.</p>
 
 </div>
 </div>
@@ -301,7 +276,9 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultCo
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Runs the command </p>
+
+<p>Called by the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> while the command is running to check if it is finished. </p>
+<dl class="section return"><dt>Returns</dt><dd>Whether or not the command is finished </dd></dl>
 
 <p>Implements <a class="el" href="classlib_iterative_robot_1_1_command.html#a8e4dccdd88f432a716090f532ba097f7">libIterativeRobot::Command</a>.</p>
 
@@ -312,11 +289,15 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultCo
 <li>src/libIterativeRobot/commands/CommandGroup.cpp</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.15
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>libIterativeRobot</b></li><li class="navelem"><a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
+  </ul>
+</div>
 </body>
 </html>

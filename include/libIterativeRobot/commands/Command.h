@@ -2,16 +2,30 @@
 #define _COMMANDS_COMMAND_H_
 
 #include "main.h"
-#include <vector>
 #include "libIterativeRobot/subsystems/Subsystem.h"
+#include <vector>
 
 namespace libIterativeRobot {
+
+/**
+ * @mainpage Refactored-Chainsaw documentation
+ */
+
+/**
+ * Here is an embedded script:
+ * @htmlonly
+ * <p>Test!</p>
+ * <script>
+ *  alert("Script is working!");
+ * </script>
+ * @endhtmlonly
+ */
 
 /**
  * The Status of a command indicates what the EventScheduler should do with it. An Idle status means that the command
  * has not yet been initialized. Once initialized, a command's status is set to Running. After a command's isFinished
  * function returns true, the command's status is set to Finished. If a command is interrupted, its status is set to
- * Interrupted.
+ * Interrupted
  */
 enum Status {
   Idle = 0,
@@ -25,11 +39,11 @@ enum Status {
  * Commands implement functionality for one or more subsystems,
  * and their execution and interactions are handled by the EventScheduler.
  * Commands are added to the EventScheduler
- * when their run() method is called and the command starts if its canRun() method returns true.
+ * when their run() method is called, and the command starts if its canRun() method returns true.
  * If its canRun() method returns false, the command does not start and is removed from the EventScheduler.
  * Once a command starts, its initialize() method is called once and then its execute()
  * method is called repeatedly. After each time the execute() method is called, the
- * command's isFinished() method is called and the command ends when it returns true.
+ * command's isFinished() method is called. The command stops running when isFinished() returns true.
  * After a command has finished, its end() method is called.
  *
  * Commands can also be removed from the EventScheduler by calling their stop() method. Calling the stop() method
@@ -37,7 +51,7 @@ enum Status {
  *
  * When a command is interrupted, its interrupted() method is called and it is removed from the EventScheduler
  *
- * Subsystems that a command uses should be declared by calling the requires(...) method in its constructor.
+ * Subsystems that a command uses should be declared by calling the requires() method in its constructor.
  *
  * Every command has a priority which determines how it will interact with other commands.
  * If two commands use one or more of the same subsystems, the one with the higher priority will interrupt
@@ -51,35 +65,108 @@ enum Status {
  * if it is passed to a subsystem's setDefaultCommand() method. The subsystem that the default command requires
  * is automatically added to its list of requirements, so it is not necessary to use the requires() method to add it.
  */
-
 class Command {
   private:
-    std::vector<Subsystem*> subsystemRequirements; /** Keeps track of which subsystems the command requires to run */
+    /**
+     * Keeps track of which subsystems the command requires to run
+     *
+     * @htmlonly
+     * <script>
+     * var rows = document.querySelectorAll(".memItemRight");
+     * for (var i = 0; i < rows.length; i++) {
+	   *   let index = rows[i].innerHTML.indexOf("=0");
+     *   if (index !== -1)
+	   *     rows[i].innerHTML = rows[i].innerHTML.slice(0, index) + " = 0";
+     * }
+     * </script>
+     * @endhtmlonly
+     */
+    std::vector<Subsystem*> subsystemRequirements;
+
+    /**
+     * Higher priority commands interrupt lower priority commands
+     */
+    int priority = 1;
   protected:
-    void requires(Subsystem* aSubsystem); /** Adds a subsystem as one of a command's requirements */
-    Status status = Idle; /** Keeps track of the status of the command */
+    /**
+     * @brief Adds a subsystem as one of a command's requirements
+     * @param aSubsystem The subsystem that the command requires
+     */
+    void requires(Subsystem* aSubsystem);
+
+    /**
+     * @brief Keeps track of the status of the command
+     */
+    Status status = Idle;
+
+    /**
+     * @brief Gets the requirements that a command uses
+     *
+     * Used by the EventScheduler to decide whether the command can run.
+     * @return The command's requirements as a vector pointer
+     */
+    std::vector<Subsystem*>& getRequirements();
 
     friend class Subsystem;
     friend class EventScheduler;
   public:
-    static const int DefaultCommandPriority = 0; /** The priority of a default command is 0 */
+    /**
+     * @brief The priority of a default command is 0.
+     */
+    static const int DefaultCommandPriority = 0;
 
-    int priority = 1; /** Higher priority commands interrupt lower priority commands */
+    /**
+     * @brief Whether the command can run or not
+     *
+     * Called by the EventScheduler before a command starts running to check whether it can run or not
+     * @return Whether or not the command can run
+     */
+    virtual bool canRun() = 0;
 
-    std::vector<Subsystem*>& getRequirements(); /** Returns the command's requirements as a vector pointer */
+    /**
+     * @brief Called once before the command runs
+     *
+     * Code needed to sets up the command for execution can be put here.
+     * This method is called once before the command begins running
+     */
+    virtual void initialize() = 0;
 
-    virtual bool canRun() = 0; /** Returns whether or not the command can run right now. If false, the command is ignored */
-    virtual void initialize() = 0; /** Sets up the command for execution. This method is called once before the command begins running */
-    virtual void execute() = 0; /** Runs the command */
-    virtual bool isFinished() = 0; /** Returns whether or not the command is finished. The execute() function is called continuously until this method returns true or the command is interrupted */
-    virtual void end() = 0; /** Runs once when command is finished */
-    virtual void interrupted() = 0; /** Runs once when command is interrupted */
+    /**
+     * @brief Runs the command
+     */
+    virtual void execute() = 0;
 
-    void run(); /** Adds the command to the EventScheduler */
-    void stop(); /** Removes the command from the EventScheduler and interrupts it */
+    /**
+     * @brief Called by the EventScheduler while the command is running to check if it is finished
+     * @return Whether or not the command is finished
+     */
+    virtual bool isFinished() = 0;
 
-    // ...and finally, the constructor!
-    Command(); /** Creates a new command */
+    /**
+     * @brief Runs once when command is finished.
+     */
+    virtual void end() = 0;
+
+    /**
+     * @brief Runs once when a command is interrupted.
+     */
+    virtual void interrupted() = 0;
+
+    /**
+     * @brief Adds the command to the EventScheduler.
+     */
+    void run();
+
+    /**
+     * @brief Removes the command from the EventScheduler and interrupts it.
+     */
+    void stop();
+
+    /**
+     * @brief Creates a new command.
+     * @return A command
+     */
+    Command();
 };
 
 }; // namespace libIterativeRobot

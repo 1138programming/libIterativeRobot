@@ -10,17 +10,20 @@ Inheritance diagram for Example\+Command\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{class_example_command_ad1df0170d99bcef6c6bc1676551f9539}{can\+Run}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Whether the command can run or not. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_example_command_ae7bea17127c1697acbf90d6022eb5b5d}{initialize}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Called once before the command runs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_example_command_af6fead537dd568d80aa3097ca207eda5}\label{class_example_command_af6fead537dd568d80aa3097ca207eda5}} 
 void \mbox{\hyperlink{class_example_command_af6fead537dd568d80aa3097ca207eda5}{execute}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Runs the command. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_example_command_ab4e52d526bda7fe22705b2d3c44286e0}{is\+Finished}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Called by the Event\+Scheduler while the command is running to check if it is finished. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_example_command_ac3da078fdf1e7a7f94488db815bb0457}\label{class_example_command_ac3da078fdf1e7a7f94488db815bb0457}} 
 void \mbox{\hyperlink{class_example_command_ac3da078fdf1e7a7f94488db815bb0457}{end}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Runs once when command is finished. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_example_command_ae5a4bb67aa6e6c6234c3dca8eb7ad7ec}\label{class_example_command_ae5a4bb67aa6e6c6234c3dca8eb7ad7ec}} 
 void \mbox{\hyperlink{class_example_command_ae5a4bb67aa6e6c6234c3dca8eb7ad7ec}{interrupted}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Runs once when a command is interrupted. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -31,29 +34,16 @@ void \mbox{\hyperlink{class_example_command_ae5a4bb67aa6e6c6234c3dca8eb7ad7ec}{i
 \subsubsection{\texorpdfstring{canRun()}{canRun()}}
 {\footnotesize\ttfamily bool Example\+Command\+::can\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Returns the command\textquotesingle{}s requirements as a vector pointer 
+
+
+Whether the command can run or not. 
+
+Called by the Event\+Scheduler before a command starts running to check whether it can run or not \begin{DoxyReturn}{Returns}
+Whether or not the command can run 
+\end{DoxyReturn}
+
 
 Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_aebef0fdf029a15ee48fbb778c4265609}{lib\+Iterative\+Robot\+::\+Command}}.
-
-\mbox{\Hypertarget{class_example_command_ac3da078fdf1e7a7f94488db815bb0457}\label{class_example_command_ac3da078fdf1e7a7f94488db815bb0457}} 
-\index{ExampleCommand@{ExampleCommand}!end@{end}}
-\index{end@{end}!ExampleCommand@{ExampleCommand}}
-\subsubsection{\texorpdfstring{end()}{end()}}
-{\footnotesize\ttfamily void Example\+Command\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-Returns whether or not the command is finished. The \mbox{\hyperlink{class_example_command_af6fead537dd568d80aa3097ca207eda5}{execute()}} function is called continuously until this method returns true or the command is interrupted 
-
-Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_ab30847f09859387b70bb7846f7ce7ca4}{lib\+Iterative\+Robot\+::\+Command}}.
-
-\mbox{\Hypertarget{class_example_command_af6fead537dd568d80aa3097ca207eda5}\label{class_example_command_af6fead537dd568d80aa3097ca207eda5}} 
-\index{ExampleCommand@{ExampleCommand}!execute@{execute}}
-\index{execute@{execute}!ExampleCommand@{ExampleCommand}}
-\subsubsection{\texorpdfstring{execute()}{execute()}}
-{\footnotesize\ttfamily void Example\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-Sets up the command for execution. This method is called once before the command begins running 
-
-Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a4b38164af1a8645fae2fdae296317cf4}{lib\+Iterative\+Robot\+::\+Command}}.
 
 \mbox{\Hypertarget{class_example_command_ae7bea17127c1697acbf90d6022eb5b5d}\label{class_example_command_ae7bea17127c1697acbf90d6022eb5b5d}} 
 \index{ExampleCommand@{ExampleCommand}!initialize@{initialize}}
@@ -61,19 +51,13 @@ Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a4b38164af1a864
 \subsubsection{\texorpdfstring{initialize()}{initialize()}}
 {\footnotesize\ttfamily void Example\+Command\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Returns whether or not the command can run right now. If false, the command is ignored 
+
+
+Called once before the command runs. 
+
+Code needed to sets up the command for execution can be put here. This method is called once before the command begins running 
 
 Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a14543c9d38b07e52f9ffb2af88a63f60}{lib\+Iterative\+Robot\+::\+Command}}.
-
-\mbox{\Hypertarget{class_example_command_ae5a4bb67aa6e6c6234c3dca8eb7ad7ec}\label{class_example_command_ae5a4bb67aa6e6c6234c3dca8eb7ad7ec}} 
-\index{ExampleCommand@{ExampleCommand}!interrupted@{interrupted}}
-\index{interrupted@{interrupted}!ExampleCommand@{ExampleCommand}}
-\subsubsection{\texorpdfstring{interrupted()}{interrupted()}}
-{\footnotesize\ttfamily void Example\+Command\+::interrupted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-Runs once when command is finished 
-
-Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a1c17b601d1b69822cabadb92069d1747}{lib\+Iterative\+Robot\+::\+Command}}.
 
 \mbox{\Hypertarget{class_example_command_ab4e52d526bda7fe22705b2d3c44286e0}\label{class_example_command_ab4e52d526bda7fe22705b2d3c44286e0}} 
 \index{ExampleCommand@{ExampleCommand}!isFinished@{isFinished}}
@@ -81,7 +65,14 @@ Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a1c17b601d1b698
 \subsubsection{\texorpdfstring{isFinished()}{isFinished()}}
 {\footnotesize\ttfamily bool Example\+Command\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Runs the command 
+
+
+Called by the Event\+Scheduler while the command is running to check if it is finished. 
+
+\begin{DoxyReturn}{Returns}
+Whether or not the command is finished 
+\end{DoxyReturn}
+
 
 Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a8e4dccdd88f432a716090f532ba097f7}{lib\+Iterative\+Robot\+::\+Command}}.
 

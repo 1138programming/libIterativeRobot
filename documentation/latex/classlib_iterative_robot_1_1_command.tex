@@ -13,51 +13,60 @@ Inheritance diagram for lib\+Iterative\+Robot\+::Command\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}} $\ast$ $>$ \& \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a447ba6e394f165c6d358471a8bbdc76a}{get\+Requirements}} ()
-\item 
 virtual bool \mbox{\hyperlink{classlib_iterative_robot_1_1_command_aebef0fdf029a15ee48fbb778c4265609}{can\+Run}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Whether the command can run or not. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a14543c9d38b07e52f9ffb2af88a63f60}{initialize}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Called once before the command runs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a4b38164af1a8645fae2fdae296317cf4}\label{classlib_iterative_robot_1_1_command_a4b38164af1a8645fae2fdae296317cf4}} 
 virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a4b38164af1a8645fae2fdae296317cf4}{execute}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Runs the command. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a8e4dccdd88f432a716090f532ba097f7}{is\+Finished}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Called by the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} while the command is running to check if it is finished. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_ab30847f09859387b70bb7846f7ce7ca4}\label{classlib_iterative_robot_1_1_command_ab30847f09859387b70bb7846f7ce7ca4}} 
 virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_ab30847f09859387b70bb7846f7ce7ca4}{end}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Runs once when command is finished. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a1c17b601d1b69822cabadb92069d1747}\label{classlib_iterative_robot_1_1_command_a1c17b601d1b69822cabadb92069d1747}} 
 virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a1c17b601d1b69822cabadb92069d1747}{interrupted}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Runs once when a command is interrupted. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a3f3790d1b8033d7253a9f44481032ee9}\label{classlib_iterative_robot_1_1_command_a3f3790d1b8033d7253a9f44481032ee9}} 
 void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a3f3790d1b8033d7253a9f44481032ee9}{run}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Adds the command to the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_ac91308101424f447f80665244b554171}\label{classlib_iterative_robot_1_1_command_ac91308101424f447f80665244b554171}} 
 void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_ac91308101424f447f80665244b554171}{stop}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Removes the command from the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} and interrupts it. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a18df2d81039392daeb0b78c346a70537}{Command}} ()
-\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-int \mbox{\hyperlink{classlib_iterative_robot_1_1_command_af2fd312376da33f5eba582db90389511}{priority}} = 1
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Creates a new command. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a37cc89119a9f76d0dda57ea21c877c7c}\label{classlib_iterative_robot_1_1_command_a37cc89119a9f76d0dda57ea21c877c7c}} 
-static const int {\bfseries Default\+Command\+Priority} = 0
-\end{DoxyCompactItemize}
+static const int \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a37cc89119a9f76d0dda57ea21c877c7c}{Default\+Command\+Priority}} = 0
+\begin{DoxyCompactList}\small\item\em The priority of a default command is 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_ad7b7f328974f5f17a2a4b1593b6c9eb5}{requires}} (\mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}} $\ast$a\+Subsystem)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Adds a subsystem as one of a command\textquotesingle{}s requirements. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}} $\ast$ $>$ \& \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a447ba6e394f165c6d358471a8bbdc76a}{get\+Requirements}} ()
+\begin{DoxyCompactList}\small\item\em Gets the requirements that a command uses. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a54548a957a6b4097837c41fcc660467e}\label{classlib_iterative_robot_1_1_command_a54548a957a6b4097837c41fcc660467e}} 
 Status \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a54548a957a6b4097837c41fcc660467e}{status}} = Idle
+\begin{DoxyCompactList}\small\item\em Keeps track of the status of the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}} $\ast$ $>$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command_abbedf025246921d5cde67aa954b74d35}{subsystem\+Requirements}}
+\item 
+int \mbox{\hyperlink{classlib_iterative_robot_1_1_command_af2fd312376da33f5eba582db90389511}{priority}} = 1
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a9b67dc4c93b18626e753aa0938abbf7d}{Subsystem}}
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a9b67dc4c93b18626e753aa0938abbf7d}\label{classlib_iterative_robot_1_1_command_a9b67dc4c93b18626e753aa0938abbf7d}} 
+class {\bfseries Subsystem}
 \item 
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a2a47195be57876de9e0c9e18467a34a3}\label{classlib_iterative_robot_1_1_command_a2a47195be57876de9e0c9e18467a34a3}} 
 class {\bfseries Event\+Scheduler}
@@ -65,13 +74,13 @@ class {\bfseries Event\+Scheduler}
 
 
 \subsection{Detailed Description}
-The \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} class is the base class for all commands. Commands implement functionality for one or more subsystems, and their execution and interactions are handled by the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}. Commands are added to the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} when their \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a3f3790d1b8033d7253a9f44481032ee9}{run()}} method is called and the command starts if its \mbox{\hyperlink{classlib_iterative_robot_1_1_command_aebef0fdf029a15ee48fbb778c4265609}{can\+Run()}} method returns true. If its \mbox{\hyperlink{classlib_iterative_robot_1_1_command_aebef0fdf029a15ee48fbb778c4265609}{can\+Run()}} method returns false, the command does not start and is removed from the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}. Once a command starts, its \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a14543c9d38b07e52f9ffb2af88a63f60}{initialize()}} method is called once and then its \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a4b38164af1a8645fae2fdae296317cf4}{execute()}} method is called repeatedly. After each time the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a4b38164af1a8645fae2fdae296317cf4}{execute()}} method is called, the command\textquotesingle{}s \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a8e4dccdd88f432a716090f532ba097f7}{is\+Finished()}} method is called and the command ends when it returns true. After a command has finished, its \mbox{\hyperlink{classlib_iterative_robot_1_1_command_ab30847f09859387b70bb7846f7ce7ca4}{end()}} method is called.
+The \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} class is the base class for all commands. Commands implement functionality for one or more subsystems, and their execution and interactions are handled by the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}. Commands are added to the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} when their \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a3f3790d1b8033d7253a9f44481032ee9}{run()}} method is called, and the command starts if its \mbox{\hyperlink{classlib_iterative_robot_1_1_command_aebef0fdf029a15ee48fbb778c4265609}{can\+Run()}} method returns true. If its \mbox{\hyperlink{classlib_iterative_robot_1_1_command_aebef0fdf029a15ee48fbb778c4265609}{can\+Run()}} method returns false, the command does not start and is removed from the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}. Once a command starts, its \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a14543c9d38b07e52f9ffb2af88a63f60}{initialize()}} method is called once and then its \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a4b38164af1a8645fae2fdae296317cf4}{execute()}} method is called repeatedly. After each time the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a4b38164af1a8645fae2fdae296317cf4}{execute()}} method is called, the command\textquotesingle{}s \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a8e4dccdd88f432a716090f532ba097f7}{is\+Finished()}} method is called. The command stops running when \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a8e4dccdd88f432a716090f532ba097f7}{is\+Finished()}} returns true. After a command has finished, its \mbox{\hyperlink{classlib_iterative_robot_1_1_command_ab30847f09859387b70bb7846f7ce7ca4}{end()}} method is called.
 
 Commands can also be removed from the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} by calling their \mbox{\hyperlink{classlib_iterative_robot_1_1_command_ac91308101424f447f80665244b554171}{stop()}} method. Calling the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_ac91308101424f447f80665244b554171}{stop()}} method will interrupt a command.
 
 When a command is interrupted, its \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a1c17b601d1b69822cabadb92069d1747}{interrupted()}} method is called and it is removed from the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}
 
-Subsystems that a command uses should be declared by calling the requires(...) method in its constructor.
+Subsystems that a command uses should be declared by calling the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_ad7b7f328974f5f17a2a4b1593b6c9eb5}{requires()}} method in its constructor.
 
 Every command has a priority which determines how it will interact with other commands. If two commands use one or more of the same subsystems, the one with the higher priority will interrupt the one with the lower priority if the lower priority command is already running, or prevent it from starting if it has been added to the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} but has not yet started running.
 
@@ -84,7 +93,14 @@ Default commands are special commands that have a priority of 0 (the lowest poss
 \subsubsection{\texorpdfstring{Command()}{Command()}}
 {\footnotesize\ttfamily Command\+::\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Removes the command from the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} and interrupts it 
+
+
+Creates a new command. 
+
+\begin{DoxyReturn}{Returns}
+A command 
+\end{DoxyReturn}
+
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_aebef0fdf029a15ee48fbb778c4265609}\label{classlib_iterative_robot_1_1_command_aebef0fdf029a15ee48fbb778c4265609}} 
@@ -93,55 +109,43 @@ Removes the command from the \mbox{\hyperlink{classlib_iterative_robot_1_1_event
 \subsubsection{\texorpdfstring{canRun()}{canRun()}}
 {\footnotesize\ttfamily virtual bool lib\+Iterative\+Robot\+::\+Command\+::can\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Returns the command\textquotesingle{}s requirements as a vector pointer 
+
+
+Whether the command can run or not. 
+
+Called by the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} before a command starts running to check whether it can run or not \begin{DoxyReturn}{Returns}
+Whether or not the command can run 
+\end{DoxyReturn}
+
 
 Implemented in \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_abd75c9b52e6b4ae5af1b6724e865311f}{lib\+Iterative\+Robot\+::\+Command\+Group}}, and \mbox{\hyperlink{class_example_command_ad1df0170d99bcef6c6bc1676551f9539}{Example\+Command}}.
-
-\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_ab30847f09859387b70bb7846f7ce7ca4}\label{classlib_iterative_robot_1_1_command_ab30847f09859387b70bb7846f7ce7ca4}} 
-\index{libIterativeRobot::Command@{libIterativeRobot::Command}!end@{end}}
-\index{end@{end}!libIterativeRobot::Command@{libIterativeRobot::Command}}
-\subsubsection{\texorpdfstring{end()}{end()}}
-{\footnotesize\ttfamily virtual void lib\+Iterative\+Robot\+::\+Command\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
-Returns whether or not the command is finished. The \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a4b38164af1a8645fae2fdae296317cf4}{execute()}} function is called continuously until this method returns true or the command is interrupted 
-
-Implemented in \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a28ad3a1c2f6b4f9aea10efa1a824895e}{lib\+Iterative\+Robot\+::\+Command\+Group}}, and \mbox{\hyperlink{class_example_command_ac3da078fdf1e7a7f94488db815bb0457}{Example\+Command}}.
-
-\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a4b38164af1a8645fae2fdae296317cf4}\label{classlib_iterative_robot_1_1_command_a4b38164af1a8645fae2fdae296317cf4}} 
-\index{libIterativeRobot::Command@{libIterativeRobot::Command}!execute@{execute}}
-\index{execute@{execute}!libIterativeRobot::Command@{libIterativeRobot::Command}}
-\subsubsection{\texorpdfstring{execute()}{execute()}}
-{\footnotesize\ttfamily virtual void lib\+Iterative\+Robot\+::\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
-Sets up the command for execution. This method is called once before the command begins running 
-
-Implemented in \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a5e91d370cafde43548d79945ccb4d8fe}{lib\+Iterative\+Robot\+::\+Command\+Group}}, and \mbox{\hyperlink{class_example_command_af6fead537dd568d80aa3097ca207eda5}{Example\+Command}}.
 
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a447ba6e394f165c6d358471a8bbdc76a}\label{classlib_iterative_robot_1_1_command_a447ba6e394f165c6d358471a8bbdc76a}} 
 \index{libIterativeRobot::Command@{libIterativeRobot::Command}!getRequirements@{getRequirements}}
 \index{getRequirements@{getRequirements}!libIterativeRobot::Command@{libIterativeRobot::Command}}
 \subsubsection{\texorpdfstring{getRequirements()}{getRequirements()}}
-{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}} $\ast$ $>$ \& Command\+::get\+Requirements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}} $\ast$ $>$ \& Command\+::get\+Requirements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-Higher priority commands interrupt lower priority commands \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a14543c9d38b07e52f9ffb2af88a63f60}\label{classlib_iterative_robot_1_1_command_a14543c9d38b07e52f9ffb2af88a63f60}} 
+
+
+Gets the requirements that a command uses. 
+
+Used by the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} to decide whether the command can run. \begin{DoxyReturn}{Returns}
+The command\textquotesingle{}s requirements as a vector pointer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a14543c9d38b07e52f9ffb2af88a63f60}\label{classlib_iterative_robot_1_1_command_a14543c9d38b07e52f9ffb2af88a63f60}} 
 \index{libIterativeRobot::Command@{libIterativeRobot::Command}!initialize@{initialize}}
 \index{initialize@{initialize}!libIterativeRobot::Command@{libIterativeRobot::Command}}
 \subsubsection{\texorpdfstring{initialize()}{initialize()}}
 {\footnotesize\ttfamily virtual void lib\+Iterative\+Robot\+::\+Command\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Returns whether or not the command can run right now. If false, the command is ignored 
+
+
+Called once before the command runs. 
+
+Code needed to sets up the command for execution can be put here. This method is called once before the command begins running 
 
 Implemented in \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a99800c5dbd05ab750aa0bb27518d0467}{lib\+Iterative\+Robot\+::\+Command\+Group}}, and \mbox{\hyperlink{class_example_command_ae7bea17127c1697acbf90d6022eb5b5d}{Example\+Command}}.
-
-\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a1c17b601d1b69822cabadb92069d1747}\label{classlib_iterative_robot_1_1_command_a1c17b601d1b69822cabadb92069d1747}} 
-\index{libIterativeRobot::Command@{libIterativeRobot::Command}!interrupted@{interrupted}}
-\index{interrupted@{interrupted}!libIterativeRobot::Command@{libIterativeRobot::Command}}
-\subsubsection{\texorpdfstring{interrupted()}{interrupted()}}
-{\footnotesize\ttfamily virtual void lib\+Iterative\+Robot\+::\+Command\+::interrupted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
-Runs once when command is finished 
-
-Implemented in \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a5174a8e63675bead12b84e39df0ae90e}{lib\+Iterative\+Robot\+::\+Command\+Group}}, and \mbox{\hyperlink{class_example_command_ae5a4bb67aa6e6c6234c3dca8eb7ad7ec}{Example\+Command}}.
 
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a8e4dccdd88f432a716090f532ba097f7}\label{classlib_iterative_robot_1_1_command_a8e4dccdd88f432a716090f532ba097f7}} 
 \index{libIterativeRobot::Command@{libIterativeRobot::Command}!isFinished@{isFinished}}
@@ -149,7 +153,14 @@ Implemented in \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a5174
 \subsubsection{\texorpdfstring{isFinished()}{isFinished()}}
 {\footnotesize\ttfamily virtual bool lib\+Iterative\+Robot\+::\+Command\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Runs the command 
+
+
+Called by the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} while the command is running to check if it is finished. 
+
+\begin{DoxyReturn}{Returns}
+Whether or not the command is finished 
+\end{DoxyReturn}
+
 
 Implemented in \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a96807a2763adf9e21ebf2cb9e3574e3c}{lib\+Iterative\+Robot\+::\+Command\+Group}}, and \mbox{\hyperlink{class_example_command_ab4e52d526bda7fe22705b2d3c44286e0}{Example\+Command}}.
 
@@ -159,43 +170,33 @@ Implemented in \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a9680
 \subsubsection{\texorpdfstring{requires()}{requires()}}
 {\footnotesize\ttfamily void Command\+::requires (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}} $\ast$}]{a\+Subsystem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-Keeps track of which subsystems the command requires to run \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a3f3790d1b8033d7253a9f44481032ee9}\label{classlib_iterative_robot_1_1_command_a3f3790d1b8033d7253a9f44481032ee9}} 
-\index{libIterativeRobot::Command@{libIterativeRobot::Command}!run@{run}}
-\index{run@{run}!libIterativeRobot::Command@{libIterativeRobot::Command}}
-\subsubsection{\texorpdfstring{run()}{run()}}
-{\footnotesize\ttfamily void Command\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Runs once when command is interrupted \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_ac91308101424f447f80665244b554171}\label{classlib_iterative_robot_1_1_command_ac91308101424f447f80665244b554171}} 
-\index{libIterativeRobot::Command@{libIterativeRobot::Command}!stop@{stop}}
-\index{stop@{stop}!libIterativeRobot::Command@{libIterativeRobot::Command}}
-\subsubsection{\texorpdfstring{stop()}{stop()}}
-{\footnotesize\ttfamily void Command\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Adds the command to the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} 
+Adds a subsystem as one of a command\textquotesingle{}s requirements. 
 
-\subsection{Friends And Related Function Documentation}
-\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a9b67dc4c93b18626e753aa0938abbf7d}\label{classlib_iterative_robot_1_1_command_a9b67dc4c93b18626e753aa0938abbf7d}} 
-\index{libIterativeRobot::Command@{libIterativeRobot::Command}!Subsystem@{Subsystem}}
-\index{Subsystem@{Subsystem}!libIterativeRobot::Command@{libIterativeRobot::Command}}
-\subsubsection{\texorpdfstring{Subsystem}{Subsystem}}
-{\footnotesize\ttfamily friend class \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}}\hspace{0.3cm}{\ttfamily [friend]}}
 
-Keeps track of the status of the command 
+\begin{DoxyParams}{Parameters}
+{\em a\+Subsystem} & The subsystem that the command requires \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Data Documentation}
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_af2fd312376da33f5eba582db90389511}\label{classlib_iterative_robot_1_1_command_af2fd312376da33f5eba582db90389511}} 
 \index{libIterativeRobot::Command@{libIterativeRobot::Command}!priority@{priority}}
 \index{priority@{priority}!libIterativeRobot::Command@{libIterativeRobot::Command}}
 \subsubsection{\texorpdfstring{priority}{priority}}
-{\footnotesize\ttfamily int lib\+Iterative\+Robot\+::\+Command\+::priority = 1}
+{\footnotesize\ttfamily int lib\+Iterative\+Robot\+::\+Command\+::priority = 1\hspace{0.3cm}{\ttfamily [private]}}
 
-The priority of a default command is 0 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a54548a957a6b4097837c41fcc660467e}\label{classlib_iterative_robot_1_1_command_a54548a957a6b4097837c41fcc660467e}} 
-\index{libIterativeRobot::Command@{libIterativeRobot::Command}!status@{status}}
-\index{status@{status}!libIterativeRobot::Command@{libIterativeRobot::Command}}
-\subsubsection{\texorpdfstring{status}{status}}
-{\footnotesize\ttfamily Status lib\+Iterative\+Robot\+::\+Command\+::status = Idle\hspace{0.3cm}{\ttfamily [protected]}}
+Higher priority commands interrupt lower priority commands \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_abbedf025246921d5cde67aa954b74d35}\label{classlib_iterative_robot_1_1_command_abbedf025246921d5cde67aa954b74d35}} 
+\index{libIterativeRobot::Command@{libIterativeRobot::Command}!subsystemRequirements@{subsystemRequirements}}
+\index{subsystemRequirements@{subsystemRequirements}!libIterativeRobot::Command@{libIterativeRobot::Command}}
+\subsubsection{\texorpdfstring{subsystemRequirements}{subsystemRequirements}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}}$\ast$$>$ lib\+Iterative\+Robot\+::\+Command\+::subsystem\+Requirements\hspace{0.3cm}{\ttfamily [private]}}
 
-Adds a subsystem as one of a command\textquotesingle{}s requirements 
+Keeps track of which subsystems the command requires to run
+
+ 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
