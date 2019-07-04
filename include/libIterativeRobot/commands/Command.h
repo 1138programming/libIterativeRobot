@@ -4,35 +4,13 @@
 #include "main.h"
 #include "libIterativeRobot/subsystems/Subsystem.h"
 #include <vector>
+#include "libIterativeRobot/commands/Status.h"
 
 namespace libIterativeRobot {
 
 /**
  * @mainpage Refactored-Chainsaw documentation
  */
-
-/**
- * Here is an embedded script:
- * @htmlonly
- * <p>Test!</p>
- * <script>
- *  alert("Script is working!");
- * </script>
- * @endhtmlonly
- */
-
-/**
- * The Status of a command indicates what the EventScheduler should do with it. An Idle status means that the command
- * has not yet been initialized. Once initialized, a command's status is set to Running. After a command's isFinished
- * function returns true, the command's status is set to Finished. If a command is interrupted, its status is set to
- * Interrupted
- */
-enum Status {
-  Idle = 0,
-  Running,
-  Finished,
-  Interrupted
-};
 
 /**
  * The Command class is the base class for all commands.
@@ -68,7 +46,7 @@ enum Status {
 class Command {
   private:
     /**
-     * Keeps track of which subsystems the command requires to run
+     * @brief Keeps track of which subsystems the command requires to run
      *
      * @htmlonly
      * <script>
@@ -82,12 +60,12 @@ class Command {
      * @endhtmlonly
      */
     std::vector<Subsystem*> subsystemRequirements;
-
+  protected:
     /**
-     * Higher priority commands interrupt lower priority commands
+     * @brief Higher priority commands interrupt lower priority commands
      */
     int priority = 1;
-  protected:
+
     /**
      * @brief Adds a subsystem as one of a command's requirements
      * @param aSubsystem The subsystem that the command requires
@@ -97,7 +75,7 @@ class Command {
     /**
      * @brief Keeps track of the status of the command
      */
-    Status status = Idle;
+    Status status = Status::Idle;
 
     /**
      * @brief Gets the requirements that a command uses
@@ -107,8 +85,20 @@ class Command {
      */
     std::vector<Subsystem*>& getRequirements();
 
+    /**
+     * @brief Accesses commands' requires method
+     */
     friend class Subsystem;
+
+    /**
+     * @brief Accesses commands' priority, status, and subsystem requirements
+     */
     friend class EventScheduler;
+
+    /**
+     * @brief Acceses commands' status and subsystem requirements
+     */
+    friend class CommandGroup;
   public:
     /**
      * @brief The priority of a default command is 0.

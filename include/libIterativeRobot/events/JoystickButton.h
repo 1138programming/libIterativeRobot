@@ -15,11 +15,11 @@ class JoystickButton : public Trigger {
   protected:
   public:
     JoystickButton(pros::Controller* controller, pros::controller_digital_e_t button);
+    bool get();
     void whenPressed(Command* command, Action action = RUN); // Sets pressedCommand
     void whileHeld(Command* command, Action action = RUN); // Sets heldCommand
     void whenReleased(Command* command, Action action = RUN); // Sets depressedCommand
     void whileReleased(Command* command, Action action = RUN); // Sets releasedCommand
-    bool get();
 };
 
 };

@@ -9,6 +9,10 @@ JoystickChannel::JoystickChannel(pros::Controller* controller, pros::controller_
   EventScheduler::getInstance()->addEventListener(this);
 }
 
+bool JoystickChannel::get() {
+  return (abs(controller->get_analog(channel)) > threshold);
+}
+
 void JoystickChannel::whenPassingThresholdForward(Command* command, Action action) {
   whenActivated(command, action);
 }
@@ -27,8 +31,4 @@ void JoystickChannel::whileWithinThreshold(Command* command, Action action) {
 
 void JoystickChannel::setThreshold(std::int32_t threshold) {
   this->threshold = threshold;
-}
-
-bool JoystickChannel::get() {
-  return (abs(controller->get_analog(channel)) > threshold);
 }

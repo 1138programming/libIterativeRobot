@@ -175,17 +175,22 @@ Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:abbedf025246921d5cde67aa954b74d35"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#abbedf025246921d5cde67aa954b74d35">subsystemRequirements</a></td></tr>
+<tr class="memdesc:abbedf025246921d5cde67aa954b74d35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps track of which subsystems the command requires to run.  <a href="#abbedf025246921d5cde67aa954b74d35">More...</a><br /></td></tr>
 <tr class="separator:abbedf025246921d5cde67aa954b74d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2fd312376da33f5eba582db90389511"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#af2fd312376da33f5eba582db90389511">priority</a> = 1</td></tr>
+<tr class="memitem:af2fd312376da33f5eba582db90389511"><td class="memItemLeft" align="right" valign="top"><a id="af2fd312376da33f5eba582db90389511"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#af2fd312376da33f5eba582db90389511">priority</a> = 1</td></tr>
+<tr class="memdesc:af2fd312376da33f5eba582db90389511"><td class="mdescLeft">&#160;</td><td class="mdescRight">Higher priority commands interrupt lower priority commands. <br /></td></tr>
 <tr class="separator:af2fd312376da33f5eba582db90389511"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a9b67dc4c93b18626e753aa0938abbf7d"><td class="memItemLeft" align="right" valign="top"><a id="a9b67dc4c93b18626e753aa0938abbf7d"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>Subsystem</b></td></tr>
+class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#a9b67dc4c93b18626e753aa0938abbf7d">Subsystem</a></td></tr>
+<tr class="memdesc:a9b67dc4c93b18626e753aa0938abbf7d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a> needs to access commands' requires method. <br /></td></tr>
 <tr class="separator:a9b67dc4c93b18626e753aa0938abbf7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a47195be57876de9e0c9e18467a34a3"><td class="memItemLeft" align="right" valign="top"><a id="a2a47195be57876de9e0c9e18467a34a3"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>EventScheduler</b></td></tr>
+class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#a2a47195be57876de9e0c9e18467a34a3">EventScheduler</a></td></tr>
+<tr class="memdesc:a2a47195be57876de9e0c9e18467a34a3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> needs to access commands' priority, status, and subsystem requirements. <br /></td></tr>
 <tr class="separator:a2a47195be57876de9e0c9e18467a34a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -370,29 +375,6 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventScheduler</b></
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="af2fd312376da33f5eba582db90389511"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2fd312376da33f5eba582db90389511">&#9670;&nbsp;</a></span>priority</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int libIterativeRobot::Command::priority = 1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Higher priority commands interrupt lower priority commands </p>
-
-</div>
-</div>
 <a id="abbedf025246921d5cde67aa954b74d35"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abbedf025246921d5cde67aa954b74d35">&#9670;&nbsp;</a></span>subsystemRequirements</h2>
 
@@ -412,7 +394,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventScheduler</b></
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Keeps track of which subsystems the command requires to run</p>
+
+<p>Keeps track of which subsystems the command requires to run. </p>
 <p> 
 <script>
 var rows = document.querySelectorAll(".memItemRight");

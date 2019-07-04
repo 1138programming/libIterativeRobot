@@ -31,7 +31,7 @@ bool CommandGroup::canRun() {
 void CommandGroup::initialize() {
   //comment("Initializing command group\n");
 
-  status = Running;
+  status = Status::Running;
 
   sequentialIndex = 0; // Initializes the sequential index to 0
 
@@ -60,12 +60,12 @@ void CommandGroup::execute() {
       sequentialFinished = false; // The current sequential step is not finished, so set sequentialFinished to false
     } else { // Otherwise, check the command's status
       // If the command's status is not Finished, then the current sequential step is not finished
-      if (command->status != Finished) {
+      if (command->status != Status::Finished) {
         sequentialFinished = false;
       }
 
       // If the command's status is interrupted or the command was added but is not running and has not finished (indicating it could not run because of a higher priority command), then set sequentialInterrupted to true
-      if (command->status == Interrupted || (command->status != Running && command->status != Finished)) {
+      if (command->status == Status::Interrupted || (command->status != Status::Running && command->status != Status::Finished)) {
         sequentialInterrupted = true;
         //comment("Command group status has been set to interrupted, command status is %d, current status is %d\n", command->status, status);
       }
@@ -73,7 +73,7 @@ void CommandGroup::execute() {
   }
 
   //Updates the command group's status based on sequentialInterrupted and sequentialFinished
-  if (sequentialInterrupted) status = Interrupted;
+  if (sequentialInterrupted) status = Status::Interrupted;
   if (sequentialFinished) sequentialIndex++; // If the current sequential step is finished, the command group moves on to the next sequential step
 }
 
@@ -85,7 +85,7 @@ bool CommandGroup::isFinished() {
 
 void CommandGroup::end() {
   //comment("Command group ended\n");
-  status = Finished;
+  status = Status::Finished;
   // Resets sequentialIndex to 0
   sequentialIndex = 0;
 }
@@ -93,7 +93,7 @@ void CommandGroup::end() {
 void CommandGroup::interrupted() {
   //comment("Command group was interrupted\n");
   // Resets the command group's status to idle to let it run again in the future
-  status = Idle;
+  status = Status::Idle;
 
   // Loops through the sequential step and stop any commands and command groups still running
   for (size_t i = 0; i < commands[sequentialIndex].size(); i++) {

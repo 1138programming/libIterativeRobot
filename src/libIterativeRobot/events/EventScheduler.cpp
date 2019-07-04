@@ -51,7 +51,7 @@ void EventScheduler::update() {
       commandGroup = commandGroupQueue[i]; // Sets commandGroup to the command group currently being checked for run-ability
 
       // If the command group's status is interrupted, the command group's interrupted function is called and it is removed from the command group queue
-      if (commandGroup->status == Interrupted) {
+      if (commandGroup->status == Status::Interrupted) {
         //comment("Command group interrupted\n");
         //pros::wait(1000);
         commandGroup->interrupted();
@@ -93,7 +93,7 @@ void EventScheduler::update() {
         usedSubsystems.insert(usedSubsystems.end(), commandGroupRequirements.begin(), commandGroupRequirements.end());
 
         // If the command group is not running, initialize it first
-        if (commandGroup->status != Running) {
+        if (commandGroup->status != Status::Running) {
           commandGroup->initialize();
           //comment("Initialized command group\n");
           //pros::wait(1000);
@@ -117,7 +117,7 @@ void EventScheduler::update() {
         //comment("Command group cannot run\n");
         //pros::wait(1000);
         // If the command group is running, call its interrupted() function
-        if (commandGroup->status == Running) {
+        if (commandGroup->status == Status::Running) {
           //comment("Command group was interrupted\n");
           //pros::wait(1000);
           commandGroup->interrupted();
@@ -226,10 +226,10 @@ void EventScheduler::update() {
         //comment("Command cannot run\n");
         //pros::wait(1000);
         // If the command group is running, call its interrupted() function
-        if (command->status == Running) {
+        if (command->status == Status::Running) {
           //command->interrupted();
           toInterrupt.push_back(command);
-          command->status = Interrupted;
+          command->status = Status::Interrupted;
         }
 
         // Remove the command group from the queue if it is not a default command
@@ -257,9 +257,9 @@ void EventScheduler::update() {
       //comment("  Running command %d, index in queue is %d\n", i, indexes[i]);
       //pros::wait(1000);
       // If the command group is not running, initialize it first
-      if (command->status != Running) {
+      if (command->status != Status::Running) {
         command->initialize();
-        command->status = Running;
+        command->status = Status::Running;
       }
 
       command->execute();
@@ -267,7 +267,7 @@ void EventScheduler::update() {
       // If the command is finished, call its end() function and remove it from the command queue if it is not a default command
       if (command->isFinished()) {
         command->end();
-        command->status = Finished;
+        command->status = Status::Finished;
         if (command->priority > 0) {
           //commandQueue.erase(commandQueue.begin() + indexes[i]);
           commandQueue[indexes[i]] = NULL;
@@ -329,7 +329,7 @@ void EventScheduler::queueCommandGroups() {
 void EventScheduler::removeCommand(Command* command) {
   // Interrupts the command being removed
   command->interrupted();
-  command->status = Interrupted;
+  command->status = Status::Interrupted;
 
   // Removes the command
   size_t index = std::find(commandBuffer.begin(), commandBuffer.end(), command) - commandBuffer.begin(); // Get the index of the command in the commandBuffer vector

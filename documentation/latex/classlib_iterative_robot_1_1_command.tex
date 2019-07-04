@@ -59,18 +59,19 @@ Status \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a54548a957a6b409783
 \begin{DoxyCompactItemize}
 \item 
 std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}} $\ast$ $>$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command_abbedf025246921d5cde67aa954b74d35}{subsystem\+Requirements}}
-\item 
+\begin{DoxyCompactList}\small\item\em Keeps track of which subsystems the command requires to run. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_af2fd312376da33f5eba582db90389511}\label{classlib_iterative_robot_1_1_command_af2fd312376da33f5eba582db90389511}} 
 int \mbox{\hyperlink{classlib_iterative_robot_1_1_command_af2fd312376da33f5eba582db90389511}{priority}} = 1
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Higher priority commands interrupt lower priority commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a9b67dc4c93b18626e753aa0938abbf7d}\label{classlib_iterative_robot_1_1_command_a9b67dc4c93b18626e753aa0938abbf7d}} 
-class {\bfseries Subsystem}
-\item 
+class \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a9b67dc4c93b18626e753aa0938abbf7d}{Subsystem}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}} needs to access commands\textquotesingle{} requires method. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_a2a47195be57876de9e0c9e18467a34a3}\label{classlib_iterative_robot_1_1_command_a2a47195be57876de9e0c9e18467a34a3}} 
-class {\bfseries Event\+Scheduler}
-\end{DoxyCompactItemize}
+class \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a2a47195be57876de9e0c9e18467a34a3}{Event\+Scheduler}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} needs to access commands\textquotesingle{} priority, status, and subsystem requirements. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -182,19 +183,15 @@ Adds a subsystem as one of a command\textquotesingle{}s requirements.
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_af2fd312376da33f5eba582db90389511}\label{classlib_iterative_robot_1_1_command_af2fd312376da33f5eba582db90389511}} 
-\index{libIterativeRobot::Command@{libIterativeRobot::Command}!priority@{priority}}
-\index{priority@{priority}!libIterativeRobot::Command@{libIterativeRobot::Command}}
-\subsubsection{\texorpdfstring{priority}{priority}}
-{\footnotesize\ttfamily int lib\+Iterative\+Robot\+::\+Command\+::priority = 1\hspace{0.3cm}{\ttfamily [private]}}
-
-Higher priority commands interrupt lower priority commands \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_abbedf025246921d5cde67aa954b74d35}\label{classlib_iterative_robot_1_1_command_abbedf025246921d5cde67aa954b74d35}} 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_abbedf025246921d5cde67aa954b74d35}\label{classlib_iterative_robot_1_1_command_abbedf025246921d5cde67aa954b74d35}} 
 \index{libIterativeRobot::Command@{libIterativeRobot::Command}!subsystemRequirements@{subsystemRequirements}}
 \index{subsystemRequirements@{subsystemRequirements}!libIterativeRobot::Command@{libIterativeRobot::Command}}
 \subsubsection{\texorpdfstring{subsystemRequirements}{subsystemRequirements}}
 {\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}}$\ast$$>$ lib\+Iterative\+Robot\+::\+Command\+::subsystem\+Requirements\hspace{0.3cm}{\ttfamily [private]}}
 
-Keeps track of which subsystems the command requires to run
+
+
+Keeps track of which subsystems the command requires to run. 
 
  
 

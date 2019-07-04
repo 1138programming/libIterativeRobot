@@ -17,12 +17,12 @@ class JoystickChannel : public Trigger {
   public:
     static const std::int32_t kDefaultThreshold = 10; // Default threshold
     JoystickChannel(pros::Controller* controller, pros::controller_analog_e_t channel);
+    bool get();
     void whenPassingThresholdForward(Command* command, Action action = RUN);
     void whilePastThreshold(Command* command, Action action = RUN);
     void whenPassingThresholdReverse(Command* command, Action action = RUN);
     void whileWithinThreshold(Command* command, Action action = RUN);
     void setThreshold(std::int32_t threshold);
-    bool get();
 };
 
 };
