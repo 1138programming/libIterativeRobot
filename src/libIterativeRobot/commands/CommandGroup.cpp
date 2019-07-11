@@ -59,13 +59,13 @@ void CommandGroup::execute() {
       added[sequentialIndex][i] = 1; // Set the element in the added 2d vector corresponding to the current command or command group to 1
       sequentialFinished = false; // The current sequential step is not finished, so set sequentialFinished to false
     } else { // Otherwise, check the command's status
-      // If the command's status is not Finished, then the current sequential step is not finished
-      if (command->status != Status::Finished) {
+      // If the command's status is not Finished and waitUntilFinished is true, then the current sequential step is not finished
+      if (command->status != Status::Finished && waitUntilFinished[sequentialIndex][i]) {
         sequentialFinished = false;
       }
 
-      // If the command's status is interrupted or the command was added but is not running and has not finished (indicating it could not run because of a higher priority command), then set sequentialInterrupted to true
-      if (command->status == Status::Interrupted || (command->status != Status::Running && command->status != Status::Finished)) {
+      // If the command's status is interrupted or the command was added but is still idle (indicating it could not run because of a higher priority command), then set sequentialInterrupted to true
+      if (command->status == Status::Interrupted || command->status == Status::Idle) {
         sequentialInterrupted = true;
         //comment("Command group status has been set to interrupted, command status is %d, current status is %d\n", command->status, status);
       }
@@ -104,24 +104,35 @@ void CommandGroup::interrupted() {
   sequentialIndex = 0;
 }
 
-void CommandGroup::addSequentialCommand(Command* aCommand) {
+void CommandGroup::addSequentialCommand(Command* aCommand, bool waitUntilFinished) {
   std::vector<Command*> commandList;
   std::vector<Subsystem*> requirementList;
   std::vector<int> addedList;
+  std::vector<int> waitUntilFinishedList;
 
   commandList.push_back(aCommand);
   requirementList.insert(requirementList.end(), aCommand->getRequirements().begin(), aCommand->getRequirements().end());
   addedList.push_back(0);
+  waitUntilFinishedList.push_back((int)waitUntilFinished);
 
   this->commands.push_back(commandList);
-  this->requirements.push_back(requirementList);
+  if (waitUntilFinished)
+    this->requirements.push_back(requirementList);
   this->added.push_back(addedList);
+  this->waitUntilFinished.push_back(waitUntilFinishedList);
 }
 
-void CommandGroup::addParallelCommand(Command *aCommand) {
+void CommandGroup::addParallelCommand(Command *aCommand, bool waitUntilFinished) {
   this->commands.back().push_back(aCommand);
-  this->requirements.back().insert(this->requirements.back().end(), aCommand->getRequirements().begin(), aCommand->getRequirements().end());
+  if (waitUntilFinished) {
+    for (Subsystem* requirement : aCommand->getRequirements()) {
+      if (std::find(aCommand->getRequirements().begin(), aCommand->getRequirements().end(), requirement) != aCommand->getRequirements().end())
+        this->requirements.back().push_back(requirement);
+    }
+    //this->requirements.back().insert(this->requirements.back().end(), aCommand->getRequirements().begin(), aCommand->getRequirements().end());
+  }
   this->added.back().push_back(0);
+  this->waitUntilFinished.back().push_back((int)waitUntilFinished);
 }
 
 

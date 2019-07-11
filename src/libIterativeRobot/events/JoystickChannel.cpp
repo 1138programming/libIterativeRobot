@@ -6,6 +6,7 @@ using namespace libIterativeRobot;
 JoystickChannel::JoystickChannel(pros::Controller* controller, pros::controller_analog_e_t channel) {
   this->controller = controller;
   this->channel = channel;
+
   EventScheduler::getInstance()->addEventListener(this);
 }
 
