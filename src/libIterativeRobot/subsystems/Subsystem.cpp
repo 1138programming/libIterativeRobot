@@ -15,11 +15,10 @@ void Subsystem::setDefaultCommand(Command *aCommand) {
   aCommand->priority = Command::DefaultCommandPriority; // Give the default command the lowest possible priority
   aCommand->requires(this);
   this->defaultCommand = aCommand;
-  EventScheduler::getInstance()->addCommand(aCommand);
 }
 
 void Subsystem::initDefaultCommand() {
-  // Setup up a default command here
+  defaultCommand->run();
 }
 
 Command* Subsystem::getDefaultCommand() {

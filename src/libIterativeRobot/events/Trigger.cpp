@@ -8,7 +8,7 @@ Trigger::Trigger() {
 
 void Trigger::checkConditions() {
   // Keeps track of the button's current state
-  bool currentState = get();
+  bool currentState = getState();
 
   // Decides which command or command group to run based on the last state and current state of the button. There are four possiblities
   if (currentState) {
@@ -50,33 +50,33 @@ void Trigger::checkConditions() {
 }
 
 void Trigger::whenActivated(Command* command, Action action) {
-  if (action == RUN) {
+  if (action == Action::RUN) {
     runWhenActivatedCommands.push_back(command);
-  } else if (action == STOP) {
+  } else if (action == Action::STOP) {
     stopWhenActivatedCommands.push_back(command);
   }
 }
 
 void Trigger::whileActive(Command* command, Action action) {
-  if (action == RUN) {
+  if (action == Action::RUN) {
     runWhileActiveCommands.push_back(command);
-  } else if (action == STOP) {
+  } else if (action == Action::STOP) {
     stopWhileActiveCommands.push_back(command);
   }
 }
 
 void Trigger::whenDeactivated(Command* command, Action action) {
-  if (action == RUN) {
+  if (action == Action::RUN) {
     runWhenDeactivatedCommands.push_back(command);
-  } else if (action == STOP) {
+  } else if (action == Action::STOP) {
     stopWhenDeactivatedCommands.push_back(command);
   }
 }
 
 void Trigger::whileInactive(Command* command, Action action) {
-  if (action == RUN) {
+  if (action == Action::RUN) {
     runWhileInactiveCommands.push_back(command);
-  } else if (action == STOP) {
+  } else if (action == Action::STOP) {
     stopWhileInactiveCommands.push_back(command);
   }
 }

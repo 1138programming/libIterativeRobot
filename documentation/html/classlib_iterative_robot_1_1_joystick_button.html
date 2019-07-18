@@ -94,6 +94,8 @@ $(document).ready(function(){initNavTree('classlib_iterative_robot_1_1_joystick_
 <div class="title">libIterativeRobot::JoystickButton Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_joystick_button_8h_source.html">JoystickButton.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for libIterativeRobot::JoystickButton:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -109,53 +111,286 @@ $(document).ready(function(){initNavTree('classlib_iterative_robot_1_1_joystick_
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af34169116bcab8a1b5868dddc745e5ec"><td class="memItemLeft" align="right" valign="top"><a id="af34169116bcab8a1b5868dddc745e5ec"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>JoystickButton</b> (pros::Controller *controller, pros::controller_digital_e_t button)</td></tr>
+<tr class="memitem:af34169116bcab8a1b5868dddc745e5ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_joystick_button.html#af34169116bcab8a1b5868dddc745e5ec">JoystickButton</a> (pros::Controller *<a class="el" href="classlib_iterative_robot_1_1_joystick_button.html#a092e3793ba078aff20f17b812345fbda">controller</a>, pros::controller_digital_e_t <a class="el" href="classlib_iterative_robot_1_1_joystick_button.html#a505db434cba7b3ba8e57da5b09ab5efe">button</a>)</td></tr>
+<tr class="memdesc:af34169116bcab8a1b5868dddc745e5ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="classlib_iterative_robot_1_1_joystick_button.html">JoystickButton</a>.  <a href="#af34169116bcab8a1b5868dddc745e5ec">More...</a><br /></td></tr>
 <tr class="separator:af34169116bcab8a1b5868dddc745e5ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3c08c71a1ccd81db8578bdbc10ff8f4"><td class="memItemLeft" align="right" valign="top"><a id="ad3c08c71a1ccd81db8578bdbc10ff8f4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>whenPressed</b> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command, Action action=RUN)</td></tr>
-<tr class="separator:ad3c08c71a1ccd81db8578bdbc10ff8f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9e126abbcbf327f9390a82b7e953ec5"><td class="memItemLeft" align="right" valign="top"><a id="ac9e126abbcbf327f9390a82b7e953ec5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>whileHeld</b> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command, Action action=RUN)</td></tr>
-<tr class="separator:ac9e126abbcbf327f9390a82b7e953ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0d12fea8cd3fa4c25a2cd7eefaeef67"><td class="memItemLeft" align="right" valign="top"><a id="ac0d12fea8cd3fa4c25a2cd7eefaeef67"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>whenReleased</b> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command, Action action=RUN)</td></tr>
-<tr class="separator:ac0d12fea8cd3fa4c25a2cd7eefaeef67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36cb5b1a9c9277a2c4d1ef579e14dbe9"><td class="memItemLeft" align="right" valign="top"><a id="a36cb5b1a9c9277a2c4d1ef579e14dbe9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>whileReleased</b> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command, Action action=RUN)</td></tr>
-<tr class="separator:a36cb5b1a9c9277a2c4d1ef579e14dbe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6f0b1d3362cc9ceae240712e8ef03a5"><td class="memItemLeft" align="right" valign="top"><a id="ab6f0b1d3362cc9ceae240712e8ef03a5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> ()</td></tr>
-<tr class="separator:ab6f0b1d3362cc9ceae240712e8ef03a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac17a3cda9edaf3a38bb87070c47191a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_joystick_button.html#ac17a3cda9edaf3a38bb87070c47191a1">getState</a> ()</td></tr>
+<tr class="memdesc:ac17a3cda9edaf3a38bb87070c47191a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the state of the button.  <a href="#ac17a3cda9edaf3a38bb87070c47191a1">More...</a><br /></td></tr>
+<tr class="separator:ac17a3cda9edaf3a38bb87070c47191a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad31d68d951ae4651731881a94515cbbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_joystick_button.html#ad31d68d951ae4651731881a94515cbbe">whenPressed</a> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command, Action action=Action::RUN)</td></tr>
+<tr class="memdesc:ad31d68d951ae4651731881a94515cbbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to be run or stopped when the button is pressed.  <a href="#ad31d68d951ae4651731881a94515cbbe">More...</a><br /></td></tr>
+<tr class="separator:ad31d68d951ae4651731881a94515cbbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf9016144e1a4e5eaf09183350474081"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_joystick_button.html#abf9016144e1a4e5eaf09183350474081">whileHeld</a> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command, Action action=Action::RUN)</td></tr>
+<tr class="memdesc:abf9016144e1a4e5eaf09183350474081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to be run or stopped while the button is being held.  <a href="#abf9016144e1a4e5eaf09183350474081">More...</a><br /></td></tr>
+<tr class="separator:abf9016144e1a4e5eaf09183350474081"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ad5475d1005ee5d76fce97675f88f40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_joystick_button.html#a9ad5475d1005ee5d76fce97675f88f40">whenReleased</a> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command, Action action=Action::RUN)</td></tr>
+<tr class="memdesc:a9ad5475d1005ee5d76fce97675f88f40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to be run or stopped when the button is released.  <a href="#a9ad5475d1005ee5d76fce97675f88f40">More...</a><br /></td></tr>
+<tr class="separator:a9ad5475d1005ee5d76fce97675f88f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d781e460c7ee3325de48e7a5ade9ebd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_joystick_button.html#a6d781e460c7ee3325de48e7a5ade9ebd">whileReleased</a> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command, Action action=Action::RUN)</td></tr>
+<tr class="memdesc:a6d781e460c7ee3325de48e7a5ade9ebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to be run or stopped while the button is released.  <a href="#a6d781e460c7ee3325de48e7a5ade9ebd">More...</a><br /></td></tr>
+<tr class="separator:a6d781e460c7ee3325de48e7a5ade9ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a092e3793ba078aff20f17b812345fbda"><td class="memItemLeft" align="right" valign="top"><a id="a092e3793ba078aff20f17b812345fbda"></a>
-pros::Controller *&#160;</td><td class="memItemRight" valign="bottom"><b>controller</b></td></tr>
+pros::Controller *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_joystick_button.html#a092e3793ba078aff20f17b812345fbda">controller</a></td></tr>
+<tr class="memdesc:a092e3793ba078aff20f17b812345fbda"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Controller that the button is on. <br /></td></tr>
 <tr class="separator:a092e3793ba078aff20f17b812345fbda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a505db434cba7b3ba8e57da5b09ab5efe"><td class="memItemLeft" align="right" valign="top"><a id="a505db434cba7b3ba8e57da5b09ab5efe"></a>
-pros::controller_digital_e_t&#160;</td><td class="memItemRight" valign="bottom"><b>button</b></td></tr>
+pros::controller_digital_e_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_joystick_button.html#a505db434cba7b3ba8e57da5b09ab5efe">button</a></td></tr>
+<tr class="memdesc:a505db434cba7b3ba8e57da5b09ab5efe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The button with which the <a class="el" href="classlib_iterative_robot_1_1_trigger.html">Trigger</a>'s state is associated with. <br /></td></tr>
 <tr class="separator:a505db434cba7b3ba8e57da5b09ab5efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classlib_iterative_robot_1_1_trigger"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classlib_iterative_robot_1_1_trigger')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classlib_iterative_robot_1_1_trigger.html">libIterativeRobot::Trigger</a></td></tr>
-<tr class="memitem:ac89c07cd514a1af516dd7f773cbedcab inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memItemLeft" align="right" valign="top"><a id="ac89c07cd514a1af516dd7f773cbedcab"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>checkConditions</b> ()</td></tr>
+<tr class="memitem:afcf974790b6e846cd89eba5a802e7fa5 inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_trigger.html#afcf974790b6e846cd89eba5a802e7fa5">Trigger</a> ()</td></tr>
+<tr class="memdesc:afcf974790b6e846cd89eba5a802e7fa5 inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="classlib_iterative_robot_1_1_trigger.html">Trigger</a>.  <a href="classlib_iterative_robot_1_1_trigger.html#afcf974790b6e846cd89eba5a802e7fa5">More...</a><br /></td></tr>
+<tr class="separator:afcf974790b6e846cd89eba5a802e7fa5 inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac89c07cd514a1af516dd7f773cbedcab inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_trigger.html#ac89c07cd514a1af516dd7f773cbedcab">checkConditions</a> ()</td></tr>
+<tr class="memdesc:ac89c07cd514a1af516dd7f773cbedcab inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the <a class="el" href="classlib_iterative_robot_1_1_trigger.html">Trigger</a>'s current state and last state.  <a href="classlib_iterative_robot_1_1_trigger.html#ac89c07cd514a1af516dd7f773cbedcab">More...</a><br /></td></tr>
 <tr class="separator:ac89c07cd514a1af516dd7f773cbedcab inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af36fbbe12844b62498a1c48593e75c92 inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memItemLeft" align="right" valign="top"><a id="af36fbbe12844b62498a1c48593e75c92"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>whenActivated</b> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command, Action action=RUN)</td></tr>
-<tr class="separator:af36fbbe12844b62498a1c48593e75c92 inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7de1ef016c285eb489e0f74e579fce84 inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memItemLeft" align="right" valign="top"><a id="a7de1ef016c285eb489e0f74e579fce84"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>whileActive</b> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command, Action action=RUN)</td></tr>
-<tr class="separator:a7de1ef016c285eb489e0f74e579fce84 inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4b9afc4013722d4e3492d3c9ed97fdd inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memItemLeft" align="right" valign="top"><a id="af4b9afc4013722d4e3492d3c9ed97fdd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>whenDeactivated</b> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command, Action action=RUN)</td></tr>
-<tr class="separator:af4b9afc4013722d4e3492d3c9ed97fdd inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90128b3d0b6b0ccae96cd0fd0472c85b inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memItemLeft" align="right" valign="top"><a id="a90128b3d0b6b0ccae96cd0fd0472c85b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>whileInactive</b> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command, Action action=RUN)</td></tr>
-<tr class="separator:a90128b3d0b6b0ccae96cd0fd0472c85b inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e98ebb42428b05ccab7dda82b9e58dc inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_trigger.html#a1e98ebb42428b05ccab7dda82b9e58dc">whenActivated</a> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command, Action action=Action::RUN)</td></tr>
+<tr class="memdesc:a1e98ebb42428b05ccab7dda82b9e58dc inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to be run or stopped when the <a class="el" href="classlib_iterative_robot_1_1_trigger.html">Trigger</a> is activated.  <a href="classlib_iterative_robot_1_1_trigger.html#a1e98ebb42428b05ccab7dda82b9e58dc">More...</a><br /></td></tr>
+<tr class="separator:a1e98ebb42428b05ccab7dda82b9e58dc inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66c9e7fe16d1907aed3f7b3c51bb8917 inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_trigger.html#a66c9e7fe16d1907aed3f7b3c51bb8917">whileActive</a> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command, Action action=Action::RUN)</td></tr>
+<tr class="memdesc:a66c9e7fe16d1907aed3f7b3c51bb8917 inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to be run or stopped while the <a class="el" href="classlib_iterative_robot_1_1_trigger.html">Trigger</a> is active.  <a href="classlib_iterative_robot_1_1_trigger.html#a66c9e7fe16d1907aed3f7b3c51bb8917">More...</a><br /></td></tr>
+<tr class="separator:a66c9e7fe16d1907aed3f7b3c51bb8917 inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6459a2d4d3ca0903bb88102d0752a419 inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_trigger.html#a6459a2d4d3ca0903bb88102d0752a419">whenDeactivated</a> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command, Action action=Action::RUN)</td></tr>
+<tr class="memdesc:a6459a2d4d3ca0903bb88102d0752a419 inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to be run or stopped when the <a class="el" href="classlib_iterative_robot_1_1_trigger.html">Trigger</a> is deactivated.  <a href="classlib_iterative_robot_1_1_trigger.html#a6459a2d4d3ca0903bb88102d0752a419">More...</a><br /></td></tr>
+<tr class="separator:a6459a2d4d3ca0903bb88102d0752a419 inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7de90fbdaa1d6450f6f1bc532af85686 inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_trigger.html#a7de90fbdaa1d6450f6f1bc532af85686">whileInactive</a> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command, Action action=Action::RUN)</td></tr>
+<tr class="memdesc:a7de90fbdaa1d6450f6f1bc532af85686 inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to be run or stopped while the <a class="el" href="classlib_iterative_robot_1_1_trigger.html">Trigger</a> is inactive.  <a href="classlib_iterative_robot_1_1_trigger.html#a7de90fbdaa1d6450f6f1bc532af85686">More...</a><br /></td></tr>
+<tr class="separator:a7de90fbdaa1d6450f6f1bc532af85686 inherit pro_methods_classlib_iterative_robot_1_1_trigger"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classlib_iterative_robot_1_1_event_listener"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classlib_iterative_robot_1_1_event_listener')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classlib_iterative_robot_1_1_event_listener.html">libIterativeRobot::EventListener</a></td></tr>
+<tr class="memitem:ac8cfe1097cbec18fac9313feccdb0e20 inherit pro_methods_classlib_iterative_robot_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_listener.html#ac8cfe1097cbec18fac9313feccdb0e20">EventListener</a> ()</td></tr>
+<tr class="memdesc:ac8cfe1097cbec18fac9313feccdb0e20 inherit pro_methods_classlib_iterative_robot_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="classlib_iterative_robot_1_1_event_listener.html">EventListener</a>.  <a href="classlib_iterative_robot_1_1_event_listener.html#ac8cfe1097cbec18fac9313feccdb0e20">More...</a><br /></td></tr>
+<tr class="separator:ac8cfe1097cbec18fac9313feccdb0e20 inherit pro_methods_classlib_iterative_robot_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classlib_iterative_robot_1_1_joystick_button.html">JoystickButton</a> class is used to run and stop Commands and CommandGroups using a joystick button. It implements the <a class="el" href="classlib_iterative_robot_1_1_trigger.html">Trigger</a> class and inherits all of its events. The events associated with it are: when the button is pressed, while the button is being held, when the button is released, and while the button is released. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af34169116bcab8a1b5868dddc745e5ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af34169116bcab8a1b5868dddc745e5ec">&#9670;&nbsp;</a></span>JoystickButton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JoystickButton::JoystickButton </td>
+          <td>(</td>
+          <td class="paramtype">pros::Controller *&#160;</td>
+          <td class="paramname"><em>controller</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">pros::controller_digital_e_t&#160;</td>
+          <td class="paramname"><em>button</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new <a class="el" href="classlib_iterative_robot_1_1_joystick_button.html">JoystickButton</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">controller</td><td>The Controller to read the state of the button from </td></tr>
+    <tr><td class="paramname">button</td><td>The button to read </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classlib_iterative_robot_1_1_joystick_button.html">JoystickButton</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac17a3cda9edaf3a38bb87070c47191a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac17a3cda9edaf3a38bb87070c47191a1">&#9670;&nbsp;</a></span>getState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool JoystickButton::getState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the state of the button. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the button is pressed, false otherwise </dd></dl>
+
+<p>Implements <a class="el" href="classlib_iterative_robot_1_1_trigger.html#a785ea056a56974f2965c71fd0520bb87">libIterativeRobot::Trigger</a>.</p>
+
+</div>
+</div>
+<a id="ad31d68d951ae4651731881a94515cbbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad31d68d951ae4651731881a94515cbbe">&#9670;&nbsp;</a></span>whenPressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoystickButton::whenPressed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *&#160;</td>
+          <td class="paramname"><em>command</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Action&#160;</td>
+          <td class="paramname"><em>action</em> = <code>Action::RUN</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to be run or stopped when the button is pressed. </p>
+<p>Calls the <a class="el" href="classlib_iterative_robot_1_1_trigger.html#a1e98ebb42428b05ccab7dda82b9e58dc" title="Sets a Command to be run or stopped when the Trigger is activated.">whenActivated()</a> method from the <a class="el" href="classlib_iterative_robot_1_1_trigger.html">Trigger</a> class with the same parameters</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">command</td><td>The <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to be added </td></tr>
+    <tr><td class="paramname">action</td><td>Specifies whether to run or stop the command. The default value is Action::RUN </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9ad5475d1005ee5d76fce97675f88f40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ad5475d1005ee5d76fce97675f88f40">&#9670;&nbsp;</a></span>whenReleased()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoystickButton::whenReleased </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *&#160;</td>
+          <td class="paramname"><em>command</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Action&#160;</td>
+          <td class="paramname"><em>action</em> = <code>Action::RUN</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to be run or stopped when the button is released. </p>
+<p>Calls the <a class="el" href="classlib_iterative_robot_1_1_trigger.html#a6459a2d4d3ca0903bb88102d0752a419" title="Sets a Command to be run or stopped when the Trigger is deactivated.">whenDeactivated()</a> method from the <a class="el" href="classlib_iterative_robot_1_1_trigger.html">Trigger</a> class with the same parameters</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">command</td><td>The <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to be added </td></tr>
+    <tr><td class="paramname">action</td><td>Specifies whether to run or stop the command. The default value is Action::RUN </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abf9016144e1a4e5eaf09183350474081"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf9016144e1a4e5eaf09183350474081">&#9670;&nbsp;</a></span>whileHeld()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoystickButton::whileHeld </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *&#160;</td>
+          <td class="paramname"><em>command</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Action&#160;</td>
+          <td class="paramname"><em>action</em> = <code>Action::RUN</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to be run or stopped while the button is being held. </p>
+<p>Calls the <a class="el" href="classlib_iterative_robot_1_1_trigger.html#a66c9e7fe16d1907aed3f7b3c51bb8917" title="Sets a Command to be run or stopped while the Trigger is active.">whileActive()</a> method from the <a class="el" href="classlib_iterative_robot_1_1_trigger.html">Trigger</a> class with the same parameters</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">command</td><td>The <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to be added </td></tr>
+    <tr><td class="paramname">action</td><td>Specifies whether to run or stop the command. The default value is Action::RUN </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6d781e460c7ee3325de48e7a5ade9ebd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d781e460c7ee3325de48e7a5ade9ebd">&#9670;&nbsp;</a></span>whileReleased()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoystickButton::whileReleased </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *&#160;</td>
+          <td class="paramname"><em>command</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Action&#160;</td>
+          <td class="paramname"><em>action</em> = <code>Action::RUN</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to be run or stopped while the button is released. </p>
+<p>Calls the <a class="el" href="classlib_iterative_robot_1_1_trigger.html#a7de90fbdaa1d6450f6f1bc532af85686" title="Sets a Command to be run or stopped while the Trigger is inactive.">whileInactive()</a> method from the <a class="el" href="classlib_iterative_robot_1_1_trigger.html">Trigger</a> class with the same parameters</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">command</td><td>The <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to be added </td></tr>
+    <tr><td class="paramname">action</td><td>Specifies whether to run or stop the command. The default value is Action::RUN </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/libIterativeRobot/events/<a class="el" href="_joystick_button_8h_source.html">JoystickButton.h</a></li>
 <li>src/libIterativeRobot/events/JoystickButton.cpp</li>

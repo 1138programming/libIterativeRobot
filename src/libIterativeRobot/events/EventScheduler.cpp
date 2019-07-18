@@ -67,7 +67,7 @@ void EventScheduler::update() {
       //pros::wait(1000);
       std::vector<Subsystem*>& commandGroupRequirements = commandGroup->getRequirements(); // Vector storing the command group's requirements
 
-      // Checks whether the command group can run based off of the its requirements and priority
+      // Checks whether the command group can run based off of its requirements
       if ((usedSubsystems.size() == numSubsystems && commandGroupRequirements.size() != 0) || !canRun) {
         //comment("Command group cannot run\n");
         //pros::wait(1000);

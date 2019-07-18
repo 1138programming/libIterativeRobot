@@ -8,7 +8,7 @@ JoystickButton::JoystickButton(pros::Controller* controller, pros::controller_di
   this->button = button;
 }
 
-bool JoystickButton::get() {
+bool JoystickButton::getState() {
   return (controller->get_digital(button) == 1);
 }
 

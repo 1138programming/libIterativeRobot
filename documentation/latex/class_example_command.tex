@@ -10,9 +10,9 @@ Inheritance diagram for Example\+Command\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{class_example_command_ad1df0170d99bcef6c6bc1676551f9539}{can\+Run}} ()
-\begin{DoxyCompactList}\small\item\em Whether the command can run or not. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Whether the Command can run or not. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_example_command_ae7bea17127c1697acbf90d6022eb5b5d}{initialize}} ()
-\begin{DoxyCompactList}\small\item\em Called once before the command runs. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Called once before the Command runs. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_example_command_af6fead537dd568d80aa3097ca207eda5}\label{class_example_command_af6fead537dd568d80aa3097ca207eda5}} 
 void \mbox{\hyperlink{class_example_command_af6fead537dd568d80aa3097ca207eda5}{execute}} ()
 \begin{DoxyCompactList}\small\item\em Runs the command. \end{DoxyCompactList}\item 
@@ -36,10 +36,12 @@ void \mbox{\hyperlink{class_example_command_ae5a4bb67aa6e6c6234c3dca8eb7ad7ec}{i
 
 
 
-Whether the command can run or not. 
+Whether the Command can run or not. 
 
-Called by the Event\+Scheduler before a command starts running to check whether it can run or not \begin{DoxyReturn}{Returns}
-Whether or not the command can run 
+Called by the Event\+Scheduler before a Command starts running to check whether it can run or not
+
+\begin{DoxyReturn}{Returns}
+Whether or not the Command can run 
 \end{DoxyReturn}
 
 
@@ -53,9 +55,9 @@ Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_aebef0fdf029a15
 
 
 
-Called once before the command runs. 
+Called once before the Command runs. 
 
-Code needed to sets up the command for execution can be put here. This method is called once before the command begins running 
+Code needed to sets up the Command for execution can be put here. This method is called once before the Command begins running 
 
 Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a14543c9d38b07e52f9ffb2af88a63f60}{lib\+Iterative\+Robot\+::\+Command}}.
 

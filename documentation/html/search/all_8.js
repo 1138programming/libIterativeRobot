@@ -1,10 +1,5 @@
 var searchData=
 [
-  ['refactored_2dchainsaw_20documentation',['Refactored-Chainsaw documentation',['../index.html',1,'']]],
-  ['requires',['requires',['../classlib_iterative_robot_1_1_command.html#ad7b7f328974f5f17a2a4b1593b6c9eb5',1,'libIterativeRobot::Command']]],
-  ['robot',['Robot',['../class_robot.html',1,'']]],
-  ['robotbase',['RobotBase',['../classlib_iterative_robot_1_1_robot_base.html',1,'libIterativeRobot']]],
-  ['robotinit',['robotInit',['../class_robot.html#a0ade19d412e58249d9f7a138d306130c',1,'Robot::robotInit()'],['../classlib_iterative_robot_1_1_robot_base.html#a1e690e472e901ac99bb7ce6f3b6a33ea',1,'libIterativeRobot::RobotBase::robotInit()']]],
-  ['run',['run',['../classlib_iterative_robot_1_1_command.html#a3f3790d1b8033d7253a9f44481032ee9',1,'libIterativeRobot::Command']]],
-  ['runrobot',['runRobot',['../classlib_iterative_robot_1_1_robot_base.html#a5a57c611cc6c2444e1c8d2fd514bd25c',1,'libIterativeRobot::RobotBase']]]
+  ['joystickbutton',['JoystickButton',['../classlib_iterative_robot_1_1_joystick_button.html',1,'libIterativeRobot::JoystickButton'],['../classlib_iterative_robot_1_1_joystick_button.html#af34169116bcab8a1b5868dddc745e5ec',1,'libIterativeRobot::JoystickButton::JoystickButton()']]],
+  ['joystickchannel',['JoystickChannel',['../classlib_iterative_robot_1_1_joystick_channel.html',1,'libIterativeRobot::JoystickChannel'],['../classlib_iterative_robot_1_1_joystick_channel.html#a75bf0fa44f1d1b06c263b42140d31bbe',1,'libIterativeRobot::JoystickChannel::JoystickChannel()']]]
 ];

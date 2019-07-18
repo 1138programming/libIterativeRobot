@@ -1,5 +1,9 @@
 \hypertarget{classlib_iterative_robot_1_1_subsystem}{}\section{lib\+Iterative\+Robot\+::Subsystem Class Reference}
 \label{classlib_iterative_robot_1_1_subsystem}\index{libIterativeRobot::Subsystem@{libIterativeRobot::Subsystem}}
+
+
+{\ttfamily \#include $<$Subsystem.\+h$>$}
+
 Inheritance diagram for lib\+Iterative\+Robot\+::Subsystem\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,33 +13,59 @@ Inheritance diagram for lib\+Iterative\+Robot\+::Subsystem\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem_a30bd6c33c84c896f31ed01c8331aab57}{init\+Default\+Command}} ()
-\item 
-\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$ \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem_a7e0c4904d9ff8ad2e4b6bc98d0f9579f}{get\+Default\+Command}} ()
-\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{classlib_iterative_robot_1_1_subsystem_a1d64c8d6709433551ab7ac8ab9015f3f}\label{classlib_iterative_robot_1_1_subsystem_a1d64c8d6709433551ab7ac8ab9015f3f}} 
-\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$ {\bfseries current\+Command} = N\+U\+LL
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem_abdec44abe9ddba76f65abb02f8f62992}{Subsystem}} ()
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_subsystem_a8520e50bb977676222daa241e757ab33}\label{classlib_iterative_robot_1_1_subsystem_a8520e50bb977676222daa241e757ab33}} 
-static size\+\_\+t {\bfseries instances} = 0
-\end{DoxyCompactItemize}
+static size\+\_\+t \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem_a8520e50bb977676222daa241e757ab33}{instances}} = 0
+\begin{DoxyCompactList}\small\item\em the number of Subsystems created \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem_a6fff5c5756245ac750c2b26ee0ed2be7}{set\+Default\+Command}} (\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$a\+Command)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets the default \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} for the \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_subsystem_a30bd6c33c84c896f31ed01c8331aab57}\label{classlib_iterative_robot_1_1_subsystem_a30bd6c33c84c896f31ed01c8331aab57}} 
+void \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem_a30bd6c33c84c896f31ed01c8331aab57}{init\+Default\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Runs the default \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$ \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem_a7e0c4904d9ff8ad2e4b6bc98d0f9579f}{get\+Default\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}}\textquotesingle{}s default \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_subsystem_a1a98d727550c3a59b6a852b3ec7277cb}\label{classlib_iterative_robot_1_1_subsystem_a1a98d727550c3a59b6a852b3ec7277cb}} 
-\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$ {\bfseries default\+Command} = N\+U\+LL
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$ \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem_a1a98d727550c3a59b6a852b3ec7277cb}{default\+Command}} = N\+U\+LL
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} to be used as a default \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_subsystem_a2a47195be57876de9e0c9e18467a34a3}\label{classlib_iterative_robot_1_1_subsystem_a2a47195be57876de9e0c9e18467a34a3}} 
+class \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem_a2a47195be57876de9e0c9e18467a34a3}{Event\+Scheduler}}
+\begin{DoxyCompactList}\small\item\em Allow the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} access to the Subsystems\textquotesingle{} \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem_a7e0c4904d9ff8ad2e4b6bc98d0f9579f}{get\+Default\+Command()}} method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}} class is for encapsulating groups of motors and other objects such as P\+I\+D\+Controllers that interact physically on the robot.
+
+Commands require subsystems, and only one \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} which requires a specific subsystem can run at a time. If another \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} that requires the same subsystem is added to the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}, it will either interrupt the first \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} or fail to run.
+
+Subsystems can have default Commands which run automatically if no other Commands require it 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_subsystem_abdec44abe9ddba76f65abb02f8f62992}\label{classlib_iterative_robot_1_1_subsystem_abdec44abe9ddba76f65abb02f8f62992}} 
+\index{libIterativeRobot::Subsystem@{libIterativeRobot::Subsystem}!Subsystem@{Subsystem}}
+\index{Subsystem@{Subsystem}!libIterativeRobot::Subsystem@{libIterativeRobot::Subsystem}}
+\subsubsection{\texorpdfstring{Subsystem()}{Subsystem()}}
+{\footnotesize\ttfamily Subsystem\+::\+Subsystem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}}. 
+
+\begin{DoxyReturn}{Returns}
+A \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}} 
+\end{DoxyReturn}
 
 
 \subsection{Member Function Documentation}
@@ -43,34 +73,28 @@ void \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem_a6fff5c5756245ac750
 \index{libIterativeRobot::Subsystem@{libIterativeRobot::Subsystem}!getDefaultCommand@{getDefaultCommand}}
 \index{getDefaultCommand@{getDefaultCommand}!libIterativeRobot::Subsystem@{libIterativeRobot::Subsystem}}
 \subsubsection{\texorpdfstring{getDefaultCommand()}{getDefaultCommand()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$ Subsystem\+::get\+Default\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$ Subsystem\+::get\+Default\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-Get this subsystem\textquotesingle{}s default command.
+
+
+Get the \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}}\textquotesingle{}s default \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}}. 
 
 \begin{DoxyReturn}{Returns}
-This subsystem\textquotesingle{}s default command 
+The default \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classlib_iterative_robot_1_1_subsystem_a30bd6c33c84c896f31ed01c8331aab57}\label{classlib_iterative_robot_1_1_subsystem_a30bd6c33c84c896f31ed01c8331aab57}} 
-\index{libIterativeRobot::Subsystem@{libIterativeRobot::Subsystem}!initDefaultCommand@{initDefaultCommand}}
-\index{initDefaultCommand@{initDefaultCommand}!libIterativeRobot::Subsystem@{libIterativeRobot::Subsystem}}
-\subsubsection{\texorpdfstring{initDefaultCommand()}{initDefaultCommand()}}
-{\footnotesize\ttfamily void Subsystem\+::init\+Default\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-Initializes the default command. This should be the only place \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem_a6fff5c5756245ac750c2b26ee0ed2be7}{set\+Default\+Command()}} is called. 
-
-Reimplemented in \mbox{\hyperlink{class_example_subsystem_a147ea127ab9c71f9d86e4f5e5a4e9d5a}{Example\+Subsystem}}.
-
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_subsystem_a6fff5c5756245ac750c2b26ee0ed2be7}\label{classlib_iterative_robot_1_1_subsystem_a6fff5c5756245ac750c2b26ee0ed2be7}} 
 \index{libIterativeRobot::Subsystem@{libIterativeRobot::Subsystem}!setDefaultCommand@{setDefaultCommand}}
 \index{setDefaultCommand@{setDefaultCommand}!libIterativeRobot::Subsystem@{libIterativeRobot::Subsystem}}
 \subsubsection{\texorpdfstring{setDefaultCommand()}{setDefaultCommand()}}
 {\footnotesize\ttfamily void Subsystem\+::set\+Default\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$}]{a\+Command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-Set the default command for this subsystem. Should only be called in \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem_a30bd6c33c84c896f31ed01c8331aab57}{init\+Default\+Command()}}
+
+
+Sets the default \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} for the \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em a\+Command} & a Command$\ast$ to the new default command \\
+{\em a\+Command} & The new default \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} \\
 \hline
 \end{DoxyParams}
 

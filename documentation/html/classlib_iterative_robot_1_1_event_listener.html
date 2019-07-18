@@ -94,6 +94,8 @@ $(document).ready(function(){initNavTree('classlib_iterative_robot_1_1_event_lis
 <div class="title">libIterativeRobot::EventListener Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_event_listener_8h_source.html">EventListener.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for libIterativeRobot::EventListener:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -110,16 +112,115 @@ $(document).ready(function(){initNavTree('classlib_iterative_robot_1_1_event_lis
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:aacbdd1cd66bf22e081add72b127af3a1"><td class="memItemLeft" align="right" valign="top"><a id="aacbdd1cd66bf22e081add72b127af3a1"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>checkConditions</b> ()=0</td></tr>
+<tr class="memitem:ac8cfe1097cbec18fac9313feccdb0e20"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_listener.html#ac8cfe1097cbec18fac9313feccdb0e20">EventListener</a> ()</td></tr>
+<tr class="memdesc:ac8cfe1097cbec18fac9313feccdb0e20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="classlib_iterative_robot_1_1_event_listener.html">EventListener</a>.  <a href="#ac8cfe1097cbec18fac9313feccdb0e20">More...</a><br /></td></tr>
+<tr class="separator:ac8cfe1097cbec18fac9313feccdb0e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacbdd1cd66bf22e081add72b127af3a1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_listener.html#aacbdd1cd66bf22e081add72b127af3a1">checkConditions</a> ()=0</td></tr>
+<tr class="memdesc:aacbdd1cd66bf22e081add72b127af3a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called repeatedly by the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>.  <a href="#aacbdd1cd66bf22e081add72b127af3a1">More...</a><br /></td></tr>
 <tr class="separator:aacbdd1cd66bf22e081add72b127af3a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a2a47195be57876de9e0c9e18467a34a3"><td class="memItemLeft" align="right" valign="top"><a id="a2a47195be57876de9e0c9e18467a34a3"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>EventScheduler</b></td></tr>
+<tr class="memitem:a2a47195be57876de9e0c9e18467a34a3"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_listener.html#a2a47195be57876de9e0c9e18467a34a3">EventScheduler</a></td></tr>
 <tr class="separator:a2a47195be57876de9e0c9e18467a34a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classlib_iterative_robot_1_1_event_listener.html">EventListener</a> class is the base class for event listeners such as the <a class="el" href="classlib_iterative_robot_1_1_trigger.html">Trigger</a> class. When an addEventListener is instantiated, it is automatically added to the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>, which calls its checkConditions method repeatedly. This is used to run or stop Commands or CommandGroups when certain conditions are met. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac8cfe1097cbec18fac9313feccdb0e20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8cfe1097cbec18fac9313feccdb0e20">&#9670;&nbsp;</a></span>EventListener()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventListener::EventListener </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <a class="el" href="classlib_iterative_robot_1_1_event_listener.html">EventListener</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classlib_iterative_robot_1_1_event_listener.html">EventListener</a></dd></dl>
+<p>Adds itself to the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> to be checked repeatedly</p>
+<p> 
+<script>
+var rows = document.querySelectorAll(".memItemRight");
+for (var i = 0; i < rows.length; i++) {
+  let index = rows[i].innerHTML.indexOf("=0");
+  if (index !== -1)
+    rows[i].innerHTML = rows[i].innerHTML.slice(0, index) + " = 0";
+}
+</script>
+ </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aacbdd1cd66bf22e081add72b127af3a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacbdd1cd66bf22e081add72b127af3a1">&#9670;&nbsp;</a></span>checkConditions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void libIterativeRobot::EventListener::checkConditions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called repeatedly by the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>. </p>
+<p>Should be used to run Commands or CommandGroups when certain conditions are met, specified by classes implementing checkConditions </p>
+
+<p>Implemented in <a class="el" href="classlib_iterative_robot_1_1_trigger.html#ac89c07cd514a1af516dd7f773cbedcab">libIterativeRobot::Trigger</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a2a47195be57876de9e0c9e18467a34a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a47195be57876de9e0c9e18467a34a3">&#9670;&nbsp;</a></span>EventScheduler</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Accesses the <a class="el" href="classlib_iterative_robot_1_1_event_listener.html#aacbdd1cd66bf22e081add72b127af3a1" title="Called repeatedly by the EventScheduler.">checkConditions()</a> method; </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/libIterativeRobot/events/<a class="el" href="_event_listener_8h_source.html">EventListener.h</a></li>
 <li>src/libIterativeRobot/events/EventListener.cpp</li>

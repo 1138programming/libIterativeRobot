@@ -10,7 +10,7 @@ JoystickChannel::JoystickChannel(pros::Controller* controller, pros::controller_
   EventScheduler::getInstance()->addEventListener(this);
 }
 
-bool JoystickChannel::get() {
+bool JoystickChannel::getState() {
   return (abs(controller->get_analog(channel)) > threshold);
 }
 

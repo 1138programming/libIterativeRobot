@@ -88,15 +88,17 @@ $(document).ready(function(){initNavTree('classlib_iterative_robot_1_1_subsystem
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classlib_iterative_robot_1_1_subsystem-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">libIterativeRobot::Subsystem Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_subsystem_8h_source.html">Subsystem.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for libIterativeRobot::Subsystem:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -111,56 +113,72 @@ $(document).ready(function(){initNavTree('classlib_iterative_robot_1_1_subsystem
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a30bd6c33c84c896f31ed01c8331aab57"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_subsystem.html#a30bd6c33c84c896f31ed01c8331aab57">initDefaultCommand</a> ()</td></tr>
-<tr class="separator:a30bd6c33c84c896f31ed01c8331aab57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e0c4904d9ff8ad2e4b6bc98d0f9579f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_subsystem.html#a7e0c4904d9ff8ad2e4b6bc98d0f9579f">getDefaultCommand</a> ()</td></tr>
-<tr class="separator:a7e0c4904d9ff8ad2e4b6bc98d0f9579f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a1d64c8d6709433551ab7ac8ab9015f3f"><td class="memItemLeft" align="right" valign="top"><a id="a1d64c8d6709433551ab7ac8ab9015f3f"></a>
-<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>currentCommand</b> = NULL</td></tr>
-<tr class="separator:a1d64c8d6709433551ab7ac8ab9015f3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdec44abe9ddba76f65abb02f8f62992"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_subsystem.html#abdec44abe9ddba76f65abb02f8f62992">Subsystem</a> ()</td></tr>
+<tr class="memdesc:abdec44abe9ddba76f65abb02f8f62992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a>.  <a href="#abdec44abe9ddba76f65abb02f8f62992">More...</a><br /></td></tr>
+<tr class="separator:abdec44abe9ddba76f65abb02f8f62992"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a8520e50bb977676222daa241e757ab33"><td class="memItemLeft" align="right" valign="top"><a id="a8520e50bb977676222daa241e757ab33"></a>
-static size_t&#160;</td><td class="memItemRight" valign="bottom"><b>instances</b> = 0</td></tr>
+static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_subsystem.html#a8520e50bb977676222daa241e757ab33">instances</a> = 0</td></tr>
+<tr class="memdesc:a8520e50bb977676222daa241e757ab33"><td class="mdescLeft">&#160;</td><td class="mdescRight">the number of Subsystems created <br /></td></tr>
 <tr class="separator:a8520e50bb977676222daa241e757ab33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a6fff5c5756245ac750c2b26ee0ed2be7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_subsystem.html#a6fff5c5756245ac750c2b26ee0ed2be7">setDefaultCommand</a> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *aCommand)</td></tr>
+<tr class="memdesc:a6fff5c5756245ac750c2b26ee0ed2be7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the default <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> for the <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a>.  <a href="#a6fff5c5756245ac750c2b26ee0ed2be7">More...</a><br /></td></tr>
 <tr class="separator:a6fff5c5756245ac750c2b26ee0ed2be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30bd6c33c84c896f31ed01c8331aab57"><td class="memItemLeft" align="right" valign="top"><a id="a30bd6c33c84c896f31ed01c8331aab57"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_subsystem.html#a30bd6c33c84c896f31ed01c8331aab57">initDefaultCommand</a> ()</td></tr>
+<tr class="memdesc:a30bd6c33c84c896f31ed01c8331aab57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the default <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a>. <br /></td></tr>
+<tr class="separator:a30bd6c33c84c896f31ed01c8331aab57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e0c4904d9ff8ad2e4b6bc98d0f9579f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_subsystem.html#a7e0c4904d9ff8ad2e4b6bc98d0f9579f">getDefaultCommand</a> ()</td></tr>
+<tr class="memdesc:a7e0c4904d9ff8ad2e4b6bc98d0f9579f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a>'s default <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a>.  <a href="#a7e0c4904d9ff8ad2e4b6bc98d0f9579f">More...</a><br /></td></tr>
+<tr class="separator:a7e0c4904d9ff8ad2e4b6bc98d0f9579f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a1a98d727550c3a59b6a852b3ec7277cb"><td class="memItemLeft" align="right" valign="top"><a id="a1a98d727550c3a59b6a852b3ec7277cb"></a>
-<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>defaultCommand</b> = NULL</td></tr>
+<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_subsystem.html#a1a98d727550c3a59b6a852b3ec7277cb">defaultCommand</a> = NULL</td></tr>
+<tr class="memdesc:a1a98d727550c3a59b6a852b3ec7277cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to be used as a default <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a>. <br /></td></tr>
 <tr class="separator:a1a98d727550c3a59b6a852b3ec7277cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a2a47195be57876de9e0c9e18467a34a3"><td class="memItemLeft" align="right" valign="top"><a id="a2a47195be57876de9e0c9e18467a34a3"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_subsystem.html#a2a47195be57876de9e0c9e18467a34a3">EventScheduler</a></td></tr>
+<tr class="memdesc:a2a47195be57876de9e0c9e18467a34a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> access to the Subsystems' <a class="el" href="classlib_iterative_robot_1_1_subsystem.html#a7e0c4904d9ff8ad2e4b6bc98d0f9579f" title="Get the Subsystem&#39;s default Command.">getDefaultCommand()</a> method. <br /></td></tr>
+<tr class="separator:a2a47195be57876de9e0c9e18467a34a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7e0c4904d9ff8ad2e4b6bc98d0f9579f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e0c4904d9ff8ad2e4b6bc98d0f9579f">&#9670;&nbsp;</a></span>getDefaultCommand()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a> class is for encapsulating groups of motors and other objects such as PIDControllers that interact physically on the robot.</p>
+<p>Commands require subsystems, and only one <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> which requires a specific subsystem can run at a time. If another <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> that requires the same subsystem is added to the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>, it will either interrupt the first <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> or fail to run.</p>
+<p>Subsystems can have default Commands which run automatically if no other Commands require it </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="abdec44abe9ddba76f65abb02f8f62992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdec44abe9ddba76f65abb02f8f62992">&#9670;&nbsp;</a></span>Subsystem()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> * Subsystem::getDefaultCommand </td>
+          <td class="memname">Subsystem::Subsystem </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get this subsystem's default command.</p>
-<dl class="section return"><dt>Returns</dt><dd>This subsystem's default command </dd></dl>
+
+<p>Creates a <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a> </dd></dl>
 
 </div>
 </div>
-<a id="a30bd6c33c84c896f31ed01c8331aab57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30bd6c33c84c896f31ed01c8331aab57">&#9670;&nbsp;</a></span>initDefaultCommand()</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7e0c4904d9ff8ad2e4b6bc98d0f9579f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e0c4904d9ff8ad2e4b6bc98d0f9579f">&#9670;&nbsp;</a></span>getDefaultCommand()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,7 +187,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Subsystem::initDefaultCommand </td>
+          <td class="memname"><a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> * Subsystem::getDefaultCommand </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -177,13 +195,13 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Initializes the default command. This should be the only place <a class="el" href="classlib_iterative_robot_1_1_subsystem.html#a6fff5c5756245ac750c2b26ee0ed2be7">setDefaultCommand()</a> is called. </p>
 
-<p>Reimplemented in <a class="el" href="class_example_subsystem.html#a147ea127ab9c71f9d86e4f5e5a4e9d5a">ExampleSubsystem</a>.</p>
+<p>Get the <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a>'s default <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The default <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> </dd></dl>
 
 </div>
 </div>
@@ -210,10 +228,11 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set the default command for this subsystem. Should only be called in <a class="el" href="classlib_iterative_robot_1_1_subsystem.html#a30bd6c33c84c896f31ed01c8331aab57">initDefaultCommand()</a></p>
+
+<p>Sets the default <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> for the <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">aCommand</td><td>a Command* to the new default command </td></tr>
+    <tr><td class="paramname">aCommand</td><td>The new default <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> </td></tr>
   </table>
   </dd>
 </dl>

@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['defaultcommandpriority',['DefaultCommandPriority',['../classlib_iterative_robot_1_1_command.html#a37cc89119a9f76d0dda57ea21c877c7c',1,'libIterativeRobot::Command']]],
-  ['disabledinit',['disabledInit',['../class_robot.html#a34f8bfa41ab64deae701c5583f619e78',1,'Robot::disabledInit()'],['../classlib_iterative_robot_1_1_robot_base.html#a12cfc52a6bac5b5a9ad7e61b47e9ecd2',1,'libIterativeRobot::RobotBase::disabledInit()']]],
-  ['disabledperiodic',['disabledPeriodic',['../class_robot.html#a9d35b3c9b4de467c7435d0cc6f17b33b',1,'Robot::disabledPeriodic()'],['../classlib_iterative_robot_1_1_robot_base.html#a8e1e85e215343baaaf3bdeedb89d9890',1,'libIterativeRobot::RobotBase::disabledPeriodic()']]]
+  ['canrun',['canRun',['../classlib_iterative_robot_1_1_command.html#aebef0fdf029a15ee48fbb778c4265609',1,'libIterativeRobot::Command::canRun()'],['../classlib_iterative_robot_1_1_command_group.html#abd75c9b52e6b4ae5af1b6724e865311f',1,'libIterativeRobot::CommandGroup::canRun()'],['../class_example_command.html#ad1df0170d99bcef6c6bc1676551f9539',1,'ExampleCommand::canRun()']]],
+  ['channel',['channel',['../classlib_iterative_robot_1_1_joystick_channel.html#a2985ecdc2e4e6cd768b379abe7726aef',1,'libIterativeRobot::JoystickChannel']]],
+  ['checkconditions',['checkConditions',['../classlib_iterative_robot_1_1_event_listener.html#aacbdd1cd66bf22e081add72b127af3a1',1,'libIterativeRobot::EventListener::checkConditions()'],['../classlib_iterative_robot_1_1_trigger.html#ac89c07cd514a1af516dd7f773cbedcab',1,'libIterativeRobot::Trigger::checkConditions()']]],
+  ['command',['Command',['../classlib_iterative_robot_1_1_command.html',1,'libIterativeRobot::Command'],['../classlib_iterative_robot_1_1_command.html#a18df2d81039392daeb0b78c346a70537',1,'libIterativeRobot::Command::Command()']]],
+  ['commandgroup',['CommandGroup',['../classlib_iterative_robot_1_1_command_group.html',1,'libIterativeRobot::CommandGroup'],['../classlib_iterative_robot_1_1_command.html#a74a5eec0a51871fda0db6a47a7eae304',1,'libIterativeRobot::Command::CommandGroup()'],['../classlib_iterative_robot_1_1_command_group.html#a862143e691209986739c234cb0fc4cc8',1,'libIterativeRobot::CommandGroup::CommandGroup()']]],
+  ['commands',['commands',['../classlib_iterative_robot_1_1_command_group.html#aa7a293ed14071e183070e00580ccbecf',1,'libIterativeRobot::CommandGroup']]],
+  ['controller',['controller',['../classlib_iterative_robot_1_1_joystick_button.html#a092e3793ba078aff20f17b812345fbda',1,'libIterativeRobot::JoystickButton::controller()'],['../classlib_iterative_robot_1_1_joystick_channel.html#a78323bb91c0512d9c9c7b914fc710f65',1,'libIterativeRobot::JoystickChannel::controller()']]]
 ];

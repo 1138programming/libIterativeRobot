@@ -59,8 +59,8 @@ void CommandGroup::execute() {
       added[sequentialIndex][i] = 1; // Set the element in the added 2d vector corresponding to the current command or command group to 1
       sequentialFinished = false; // The current sequential step is not finished, so set sequentialFinished to false
     } else { // Otherwise, check the command's status
-      // If the command's status is not Finished and waitUntilFinished is true, then the current sequential step is not finished
-      if (command->status != Status::Finished && waitUntilFinished[sequentialIndex][i]) {
+      // If the command's status is not Finished and forget is false, then the current sequential step is not finished
+      if (command->status != Status::Finished && !forget[sequentialIndex][i]) {
         sequentialFinished = false;
       }
 
@@ -86,8 +86,6 @@ bool CommandGroup::isFinished() {
 void CommandGroup::end() {
   //comment("Command group ended\n");
   status = Status::Finished;
-  // Resets sequentialIndex to 0
-  sequentialIndex = 0;
 }
 
 void CommandGroup::interrupted() {
@@ -99,32 +97,29 @@ void CommandGroup::interrupted() {
   for (size_t i = 0; i < commands[sequentialIndex].size(); i++) {
     commands[sequentialIndex][i]->stop();
   }
-
-  // Resets sequentialIndex to 0
-  sequentialIndex = 0;
 }
 
-void CommandGroup::addSequentialCommand(Command* aCommand, bool waitUntilFinished) {
+void CommandGroup::addSequentialCommand(Command* aCommand, bool forget) {
   std::vector<Command*> commandList;
   std::vector<Subsystem*> requirementList;
   std::vector<int> addedList;
-  std::vector<int> waitUntilFinishedList;
+  std::vector<bool> forgetList;
 
   commandList.push_back(aCommand);
   requirementList.insert(requirementList.end(), aCommand->getRequirements().begin(), aCommand->getRequirements().end());
   addedList.push_back(0);
-  waitUntilFinishedList.push_back((int)waitUntilFinished);
+  forgetList.push_back(forget);
 
   this->commands.push_back(commandList);
-  if (waitUntilFinished)
+  if (!forget)
     this->requirements.push_back(requirementList);
   this->added.push_back(addedList);
-  this->waitUntilFinished.push_back(waitUntilFinishedList);
+  this->forget.push_back(forgetList);
 }
 
-void CommandGroup::addParallelCommand(Command *aCommand, bool waitUntilFinished) {
+void CommandGroup::addParallelCommand(Command *aCommand, bool forget) {
   this->commands.back().push_back(aCommand);
-  if (waitUntilFinished) {
+  if (!forget) {
     for (Subsystem* requirement : aCommand->getRequirements()) {
       if (std::find(aCommand->getRequirements().begin(), aCommand->getRequirements().end(), requirement) != aCommand->getRequirements().end())
         this->requirements.back().push_back(requirement);
@@ -132,7 +127,7 @@ void CommandGroup::addParallelCommand(Command *aCommand, bool waitUntilFinished)
     //this->requirements.back().insert(this->requirements.back().end(), aCommand->getRequirements().begin(), aCommand->getRequirements().end());
   }
   this->added.back().push_back(0);
-  this->waitUntilFinished.back().push_back((int)waitUntilFinished);
+  this->forget.back().push_back(forget);
 }
 
 
