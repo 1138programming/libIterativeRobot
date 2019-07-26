@@ -52,8 +52,9 @@ std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{classlib_iterativ
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_ae6779a068983b84e265c0ff4fc74488d}\label{classlib_iterative_robot_1_1_command_group_ae6779a068983b84e265c0ff4fc74488d}} 
 std\+::vector$<$ std\+::vector$<$ bool $>$ $>$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_ae6779a068983b84e265c0ff4fc74488d}{forget}}
 \begin{DoxyCompactList}\small\item\em Keeps track of which Commands and Command\+Groups the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} should forget. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_ae6ba0e30e4caa58f4b019ab496487ab7}\label{classlib_iterative_robot_1_1_command_group_ae6ba0e30e4caa58f4b019ab496487ab7}} 
 size\+\_\+t \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_ae6ba0e30e4caa58f4b019ab496487ab7}{sequential\+Index}} = 0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The current sequential step the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} is running. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -247,13 +248,7 @@ Holds all of the commands added to the \mbox{\hyperlink{classlib_iterative_robot
 
 Holds all of the requirements of commands added to the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}}. 
 
-2d vector keeping track of all requirements of Commands and Command\+Groups. Each vector in the 2d vector represents the requirements of the Commands and Command\+Groups in a sequential step. Commands or Command\+Groups added whose forget flag has been set to true do not have their requirements added \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_ae6ba0e30e4caa58f4b019ab496487ab7}\label{classlib_iterative_robot_1_1_command_group_ae6ba0e30e4caa58f4b019ab496487ab7}} 
-\index{libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}!sequentialIndex@{sequentialIndex}}
-\index{sequentialIndex@{sequentialIndex}!libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}}
-\subsubsection{\texorpdfstring{sequentialIndex}{sequentialIndex}}
-{\footnotesize\ttfamily size\+\_\+t lib\+Iterative\+Robot\+::\+Command\+Group\+::sequential\+Index = 0\hspace{0.3cm}{\ttfamily [private]}}
-
-The current sequential step the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} is running 
+2d vector keeping track of all requirements of Commands and Command\+Groups. Each vector in the 2d vector represents the requirements of the Commands and Command\+Groups in a sequential step. Commands or Command\+Groups added whose forget flag has been set to true do not have their requirements added 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

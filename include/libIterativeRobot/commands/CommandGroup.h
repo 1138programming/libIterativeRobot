@@ -51,7 +51,7 @@ class CommandGroup : public Command {
     std::vector<std::vector<bool>> forget;
 
     /**
-     * The current sequential step the CommandGroup is running
+     * @brief The current sequential step the CommandGroup is running
      */
     size_t sequentialIndex = 0;
   public:

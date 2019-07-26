@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['setdefaultcommand',['setDefaultCommand',['../classlib_iterative_robot_1_1_subsystem.html#a6fff5c5756245ac750c2b26ee0ed2be7',1,'libIterativeRobot::Subsystem']]],
-  ['setthreshold',['setThreshold',['../classlib_iterative_robot_1_1_joystick_channel.html#a5177f15ef0ffef2e47b14633163d438f',1,'libIterativeRobot::JoystickChannel']]],
-  ['stop',['stop',['../classlib_iterative_robot_1_1_command.html#ac91308101424f447f80665244b554171',1,'libIterativeRobot::Command']]],
-  ['subsystem',['Subsystem',['../classlib_iterative_robot_1_1_subsystem.html#abdec44abe9ddba76f65abb02f8f62992',1,'libIterativeRobot::Subsystem']]]
+  ['removecommand',['removeCommand',['../classlib_iterative_robot_1_1_event_scheduler.html#a038be4eb06e564fe47d326b458a8985c',1,'libIterativeRobot::EventScheduler']]],
+  ['removecommandgroup',['removeCommandGroup',['../classlib_iterative_robot_1_1_event_scheduler.html#a6c1501cbee6a630b2b63881aa200fdf4',1,'libIterativeRobot::EventScheduler']]],
+  ['requires',['requires',['../classlib_iterative_robot_1_1_command.html#ad7b7f328974f5f17a2a4b1593b6c9eb5',1,'libIterativeRobot::Command']]],
+  ['robotinit',['robotInit',['../class_robot.html#a0ade19d412e58249d9f7a138d306130c',1,'Robot::robotInit()'],['../classlib_iterative_robot_1_1_robot_base.html#a1e690e472e901ac99bb7ce6f3b6a33ea',1,'libIterativeRobot::RobotBase::robotInit()']]],
+  ['run',['run',['../classlib_iterative_robot_1_1_command.html#a3f3790d1b8033d7253a9f44481032ee9',1,'libIterativeRobot::Command']]],
+  ['runrobot',['runRobot',['../classlib_iterative_robot_1_1_robot_base.html#a5a57c611cc6c2444e1c8d2fd514bd25c',1,'libIterativeRobot::RobotBase']]]
 ];

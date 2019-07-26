@@ -89,7 +89,6 @@ $(document).ready(function(){initNavTree('classlib_iterative_robot_1_1_event_sch
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
@@ -98,106 +97,506 @@ $(document).ready(function(){initNavTree('classlib_iterative_robot_1_1_event_sch
 <div class="title">libIterativeRobot::EventScheduler Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_event_scheduler_8h_source.html">EventScheduler.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9643c8e8dd7a87a1a3419415c7cc46bc"><td class="memItemLeft" align="right" valign="top"><a id="a9643c8e8dd7a87a1a3419415c7cc46bc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></tr>
+<tr class="memitem:a9643c8e8dd7a87a1a3419415c7cc46bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a9643c8e8dd7a87a1a3419415c7cc46bc">update</a> ()</td></tr>
+<tr class="memdesc:a9643c8e8dd7a87a1a3419415c7cc46bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks EventListeners and handles the logic for Commands and CommandGroups.  <a href="#a9643c8e8dd7a87a1a3419415c7cc46bc">More...</a><br /></td></tr>
 <tr class="separator:a9643c8e8dd7a87a1a3419415c7cc46bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6e214ce9686a58eb37fb71796531b4e"><td class="memItemLeft" align="right" valign="top"><a id="ad6e214ce9686a58eb37fb71796531b4e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addEventListener</b> (<a class="el" href="classlib_iterative_robot_1_1_event_listener.html">EventListener</a> *eventListener)</td></tr>
+<tr class="memitem:ad6e214ce9686a58eb37fb71796531b4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#ad6e214ce9686a58eb37fb71796531b4e">addEventListener</a> (<a class="el" href="classlib_iterative_robot_1_1_event_listener.html">EventListener</a> *eventListener)</td></tr>
+<tr class="memdesc:ad6e214ce9686a58eb37fb71796531b4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an <a class="el" href="classlib_iterative_robot_1_1_event_listener.html">EventListener</a> for the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> to keep track of.  <a href="#ad6e214ce9686a58eb37fb71796531b4e">More...</a><br /></td></tr>
 <tr class="separator:ad6e214ce9686a58eb37fb71796531b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac82a5f0c53789fe6170085b033efbbc"><td class="memItemLeft" align="right" valign="top"><a id="aac82a5f0c53789fe6170085b033efbbc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addCommand</b> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *commandToRun)</td></tr>
+<tr class="memitem:aac82a5f0c53789fe6170085b033efbbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#aac82a5f0c53789fe6170085b033efbbc">addCommand</a> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *commandToRun)</td></tr>
+<tr class="memdesc:aac82a5f0c53789fe6170085b033efbbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>.  <a href="#aac82a5f0c53789fe6170085b033efbbc">More...</a><br /></td></tr>
 <tr class="separator:aac82a5f0c53789fe6170085b033efbbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24dfdf47117ffa162f74042345f57d94"><td class="memItemLeft" align="right" valign="top"><a id="a24dfdf47117ffa162f74042345f57d94"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addCommandGroup</b> (<a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> *commandGroupToRun)</td></tr>
+<tr class="memitem:a24dfdf47117ffa162f74042345f57d94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a24dfdf47117ffa162f74042345f57d94">addCommandGroup</a> (<a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> *commandGroupToRun)</td></tr>
+<tr class="memdesc:a24dfdf47117ffa162f74042345f57d94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> to the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>.  <a href="#a24dfdf47117ffa162f74042345f57d94">More...</a><br /></td></tr>
 <tr class="separator:a24dfdf47117ffa162f74042345f57d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a038be4eb06e564fe47d326b458a8985c"><td class="memItemLeft" align="right" valign="top"><a id="a038be4eb06e564fe47d326b458a8985c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>removeCommand</b> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command)</td></tr>
+<tr class="memitem:a038be4eb06e564fe47d326b458a8985c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a038be4eb06e564fe47d326b458a8985c">removeCommand</a> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *command)</td></tr>
+<tr class="memdesc:a038be4eb06e564fe47d326b458a8985c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> from the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>.  <a href="#a038be4eb06e564fe47d326b458a8985c">More...</a><br /></td></tr>
 <tr class="separator:a038be4eb06e564fe47d326b458a8985c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c1501cbee6a630b2b63881aa200fdf4"><td class="memItemLeft" align="right" valign="top"><a id="a6c1501cbee6a630b2b63881aa200fdf4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>removeCommandGroup</b> (<a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> *commandGroup)</td></tr>
+<tr class="memitem:a6c1501cbee6a630b2b63881aa200fdf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a6c1501cbee6a630b2b63881aa200fdf4">removeCommandGroup</a> (<a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> *commandGroup)</td></tr>
+<tr class="memdesc:a6c1501cbee6a630b2b63881aa200fdf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> from the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>.  <a href="#a6c1501cbee6a630b2b63881aa200fdf4">More...</a><br /></td></tr>
 <tr class="separator:a6c1501cbee6a630b2b63881aa200fdf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1130cfd602dec9e4091571b47b60f378"><td class="memItemLeft" align="right" valign="top"><a id="a1130cfd602dec9e4091571b47b60f378"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>trackSubsystem</b> (<a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a> *aSubsystem)</td></tr>
+<tr class="memitem:a1130cfd602dec9e4091571b47b60f378"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a1130cfd602dec9e4091571b47b60f378">trackSubsystem</a> (<a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a> *aSubsystem)</td></tr>
+<tr class="memdesc:a1130cfd602dec9e4091571b47b60f378"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a> for the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> to track.  <a href="#a1130cfd602dec9e4091571b47b60f378">More...</a><br /></td></tr>
 <tr class="separator:a1130cfd602dec9e4091571b47b60f378"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc46d20d5b6e1b6d308bf64dd12ea791"><td class="memItemLeft" align="right" valign="top"><a id="acc46d20d5b6e1b6d308bf64dd12ea791"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>commandInScheduler</b> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *aCommand)</td></tr>
-<tr class="separator:acc46d20d5b6e1b6d308bf64dd12ea791"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af47242d40b09df43698bb00cbe4f9300"><td class="memItemLeft" align="right" valign="top"><a id="af47242d40b09df43698bb00cbe4f9300"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>commandGroupInScheduler</b> (<a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> *aCommandGroup)</td></tr>
-<tr class="separator:af47242d40b09df43698bb00cbe4f9300"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d45ea3763e171da6e3990acdd864df3"><td class="memItemLeft" align="right" valign="top"><a id="a8d45ea3763e171da6e3990acdd864df3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> (bool addDefaultCommand=false)</td></tr>
-<tr class="separator:a8d45ea3763e171da6e3990acdd864df3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad67e946fc54ad0a755a36ed5b87279b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#ad67e946fc54ad0a755a36ed5b87279b4">initialize</a> (bool noDefaultCommands=false)</td></tr>
+<tr class="memdesc:ad67e946fc54ad0a755a36ed5b87279b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> for the autonomous or teleop periods.  <a href="#ad67e946fc54ad0a755a36ed5b87279b4">More...</a><br /></td></tr>
+<tr class="separator:ad67e946fc54ad0a755a36ed5b87279b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a04480f5533265708f49b23e622ffe9cb"><td class="memItemLeft" align="right" valign="top"><a id="a04480f5533265708f49b23e622ffe9cb"></a>
-static <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()</td></tr>
+<tr class="memitem:a04480f5533265708f49b23e622ffe9cb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a04480f5533265708f49b23e622ffe9cb">getInstance</a> ()</td></tr>
+<tr class="memdesc:a04480f5533265708f49b23e622ffe9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the singleton instance of the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>.  <a href="#a04480f5533265708f49b23e622ffe9cb">More...</a><br /></td></tr>
 <tr class="separator:a04480f5533265708f49b23e622ffe9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr class="memitem:a5c2a1365cdcf713b0dbe722b9156290e"><td class="memItemLeft" align="right" valign="top"><a id="a5c2a1365cdcf713b0dbe722b9156290e"></a>
-static const int&#160;</td><td class="memItemRight" valign="bottom"><b>millisecondTimeout</b> = 25</td></tr>
-<tr class="separator:a5c2a1365cdcf713b0dbe722b9156290e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:a5d0af0bdbbb5948ab06075ef12fc8aa0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a5d0af0bdbbb5948ab06075ef12fc8aa0">EventScheduler</a> ()</td></tr>
+<tr class="memdesc:a5d0af0bdbbb5948ab06075ef12fc8aa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>.  <a href="#a5d0af0bdbbb5948ab06075ef12fc8aa0">More...</a><br /></td></tr>
+<tr class="separator:a5d0af0bdbbb5948ab06075ef12fc8aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92692ad8573d974bae62c62fccf808c4"><td class="memItemLeft" align="right" valign="top"><a id="a92692ad8573d974bae62c62fccf808c4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clearScheduler</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a92692ad8573d974bae62c62fccf808c4">clearScheduler</a> ()</td></tr>
+<tr class="memdesc:a92692ad8573d974bae62c62fccf808c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all Commands and CommandGroups from their respective buffers and queues. <br /></td></tr>
 <tr class="separator:a92692ad8573d974bae62c62fccf808c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc46d20d5b6e1b6d308bf64dd12ea791"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#acc46d20d5b6e1b6d308bf64dd12ea791">commandInScheduler</a> (<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *aCommand)</td></tr>
+<tr class="memdesc:acc46d20d5b6e1b6d308bf64dd12ea791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a given <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> is in the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>.  <a href="#acc46d20d5b6e1b6d308bf64dd12ea791">More...</a><br /></td></tr>
+<tr class="separator:acc46d20d5b6e1b6d308bf64dd12ea791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af47242d40b09df43698bb00cbe4f9300"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#af47242d40b09df43698bb00cbe4f9300">commandGroupInScheduler</a> (<a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> *aCommandGroup)</td></tr>
+<tr class="memdesc:af47242d40b09df43698bb00cbe4f9300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a given <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> is in the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>.  <a href="#af47242d40b09df43698bb00cbe4f9300">More...</a><br /></td></tr>
+<tr class="separator:af47242d40b09df43698bb00cbe4f9300"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0334c1b83511053b6da8583caf6b87be"><td class="memItemLeft" align="right" valign="top"><a id="a0334c1b83511053b6da8583caf6b87be"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>queueCommands</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a0334c1b83511053b6da8583caf6b87be">queueCommands</a> ()</td></tr>
+<tr class="memdesc:a0334c1b83511053b6da8583caf6b87be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the commands in the commandBuffer to the commandQueue. <br /></td></tr>
 <tr class="separator:a0334c1b83511053b6da8583caf6b87be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4df12d213a4ea996c942fdf1b85033b1"><td class="memItemLeft" align="right" valign="top"><a id="a4df12d213a4ea996c942fdf1b85033b1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>queueCommandGroups</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a4df12d213a4ea996c942fdf1b85033b1">queueCommandGroups</a> ()</td></tr>
+<tr class="memdesc:a4df12d213a4ea996c942fdf1b85033b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the CommandGroups in the commandGroupBuffer to the commandGroupQueue. <br /></td></tr>
 <tr class="separator:a4df12d213a4ea996c942fdf1b85033b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a54fd5203a21eb54497840e03ec179f30"><td class="memItemLeft" align="right" valign="top"><a id="a54fd5203a21eb54497840e03ec179f30"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>numSubsystems</b> = 0</td></tr>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a54fd5203a21eb54497840e03ec179f30">numSubsystems</a> = 0</td></tr>
+<tr class="memdesc:a54fd5203a21eb54497840e03ec179f30"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of subsystems being tracked by the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>. <br /></td></tr>
 <tr class="separator:a54fd5203a21eb54497840e03ec179f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37e13e6049f502dbadbc0c81345ff206"><td class="memItemLeft" align="right" valign="top"><a id="a37e13e6049f502dbadbc0c81345ff206"></a>
-std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>subsystems</b></td></tr>
+std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a37e13e6049f502dbadbc0c81345ff206">subsystems</a></td></tr>
+<tr class="memdesc:a37e13e6049f502dbadbc0c81345ff206"><td class="mdescLeft">&#160;</td><td class="mdescRight">The subsystems the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> is tracking. <br /></td></tr>
 <tr class="separator:a37e13e6049f502dbadbc0c81345ff206"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc088d35399b0b1eaa20d573acbdd21e"><td class="memItemLeft" align="right" valign="top"><a id="abc088d35399b0b1eaa20d573acbdd21e"></a>
-std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_event_listener.html">EventListener</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>eventListeners</b></td></tr>
+std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_event_listener.html">EventListener</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#abc088d35399b0b1eaa20d573acbdd21e">eventListeners</a></td></tr>
+<tr class="memdesc:abc088d35399b0b1eaa20d573acbdd21e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Eventlisteners the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> is tracking. <br /></td></tr>
 <tr class="separator:abc088d35399b0b1eaa20d573acbdd21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24710c3528945cb3ed1e9ae61267b570"><td class="memItemLeft" align="right" valign="top"><a id="a24710c3528945cb3ed1e9ae61267b570"></a>
-std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>commandQueue</b></td></tr>
+std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a24710c3528945cb3ed1e9ae61267b570">commandQueue</a></td></tr>
+<tr class="memdesc:a24710c3528945cb3ed1e9ae61267b570"><td class="mdescLeft">&#160;</td><td class="mdescRight">A queue for Commands for the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> to process. <br /></td></tr>
 <tr class="separator:a24710c3528945cb3ed1e9ae61267b570"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a355d50b2ab9edbb9295cd0a540422be6"><td class="memItemLeft" align="right" valign="top"><a id="a355d50b2ab9edbb9295cd0a540422be6"></a>
-std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>commandGroupQueue</b></td></tr>
+std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a355d50b2ab9edbb9295cd0a540422be6">commandGroupQueue</a></td></tr>
+<tr class="memdesc:a355d50b2ab9edbb9295cd0a540422be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">A queue for CommandGroups for the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> to process. <br /></td></tr>
 <tr class="separator:a355d50b2ab9edbb9295cd0a540422be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ddae49a738b69e0e73b4b529a585226"><td class="memItemLeft" align="right" valign="top"><a id="a1ddae49a738b69e0e73b4b529a585226"></a>
-std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>commandBuffer</b></td></tr>
+<tr class="memitem:a1ddae49a738b69e0e73b4b529a585226"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a1ddae49a738b69e0e73b4b529a585226">commandBuffer</a></td></tr>
+<tr class="memdesc:a1ddae49a738b69e0e73b4b529a585226"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores Commands after they are added to the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>.  <a href="#a1ddae49a738b69e0e73b4b529a585226">More...</a><br /></td></tr>
 <tr class="separator:a1ddae49a738b69e0e73b4b529a585226"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37b0c1d9ec0c00e7729bec67ebbd9986"><td class="memItemLeft" align="right" valign="top"><a id="a37b0c1d9ec0c00e7729bec67ebbd9986"></a>
-std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>commandGroupBuffer</b></td></tr>
+<tr class="memitem:a37b0c1d9ec0c00e7729bec67ebbd9986"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a37b0c1d9ec0c00e7729bec67ebbd9986">commandGroupBuffer</a></td></tr>
+<tr class="memdesc:a37b0c1d9ec0c00e7729bec67ebbd9986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores CommandGroups after they are added to the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>.  <a href="#a37b0c1d9ec0c00e7729bec67ebbd9986">More...</a><br /></td></tr>
 <tr class="separator:a37b0c1d9ec0c00e7729bec67ebbd9986"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91ac686fb045bce48f6debdb0a351c20"><td class="memItemLeft" align="right" valign="top"><a id="a91ac686fb045bce48f6debdb0a351c20"></a>
-std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>toExecute</b></td></tr>
+std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a91ac686fb045bce48f6debdb0a351c20">toExecute</a></td></tr>
+<tr class="memdesc:a91ac686fb045bce48f6debdb0a351c20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores Commands that the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> determines can run. <br /></td></tr>
 <tr class="separator:a91ac686fb045bce48f6debdb0a351c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71178c1be52c39a822b93f8bb9574fe0"><td class="memItemLeft" align="right" valign="top"><a id="a71178c1be52c39a822b93f8bb9574fe0"></a>
-std::vector&lt; <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>toInterrupt</b></td></tr>
-<tr class="separator:a71178c1be52c39a822b93f8bb9574fe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1abfda2ac89947e8bb5c06478c87a5ba"><td class="memItemLeft" align="right" valign="top"><a id="a1abfda2ac89947e8bb5c06478c87a5ba"></a>
-std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>indexes</b></td></tr>
+std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a1abfda2ac89947e8bb5c06478c87a5ba">indexes</a></td></tr>
+<tr class="memdesc:a1abfda2ac89947e8bb5c06478c87a5ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the indexes of Commands in the commandQueue that need to be run. <br /></td></tr>
 <tr class="separator:a1abfda2ac89947e8bb5c06478c87a5ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab621dadcaf39710a2c591c72ade16885"><td class="memItemLeft" align="right" valign="top"><a id="ab621dadcaf39710a2c591c72ade16885"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>defaultAdded</b> = false</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#ab621dadcaf39710a2c591c72ade16885">defaultAdded</a> = false</td></tr>
+<tr class="memdesc:ab621dadcaf39710a2c591c72ade16885"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether or not the default Commands have been added to the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> yet. <br /></td></tr>
 <tr class="separator:ab621dadcaf39710a2c591c72ade16885"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a1f4587720421057eebddc0248bf9a05f"><td class="memItemLeft" align="right" valign="top"><a id="a1f4587720421057eebddc0248bf9a05f"></a>
-static <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>instance</b> = NULL</td></tr>
+static <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a1f4587720421057eebddc0248bf9a05f">instance</a> = NULL</td></tr>
+<tr class="memdesc:a1f4587720421057eebddc0248bf9a05f"><td class="mdescLeft">&#160;</td><td class="mdescRight">An instance of the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>. <br /></td></tr>
 <tr class="separator:a1f4587720421057eebddc0248bf9a05f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> is in charge of executing Commands and CommandGroups. It handles the logic involved in deciding which Commands should be running at any given time and which Commands should be interrupted.</p>
+<p>In order for the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> to function correctly, EventScheduler-&gt;<a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a04480f5533265708f49b23e622ffe9cb" title="Gets the singleton instance of the EventScheduler.">getInstance()</a>-&gt;<a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a9643c8e8dd7a87a1a3419415c7cc46bc" title="Checks EventListeners and handles the logic for Commands and CommandGroups.">update()</a> must be called repeatedly during the autonomous period and the teleop period. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5d0af0bdbbb5948ab06075ef12fc8aa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d0af0bdbbb5948ab06075ef12fc8aa0">&#9670;&nbsp;</a></span>EventScheduler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventScheduler::EventScheduler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aac82a5f0c53789fe6170085b033efbbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac82a5f0c53789fe6170085b033efbbc">&#9670;&nbsp;</a></span>addCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventScheduler::addCommand </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *&#160;</td>
+          <td class="paramname"><em>commandToRun</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>. </p>
+<p>The provided <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> is stored in the commandBuffer until it can be added to the commandQueue</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commandToRun</td><td>The <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to add </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a24dfdf47117ffa162f74042345f57d94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24dfdf47117ffa162f74042345f57d94">&#9670;&nbsp;</a></span>addCommandGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventScheduler::addCommandGroup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> *&#160;</td>
+          <td class="paramname"><em>commandGroupToRun</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> to the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>. </p>
+<p>The provided <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> is stored in the commandGroupBuffer until it can be added to the commandGroupQueue</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commandGroupToRun</td><td>The <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> to add </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad6e214ce9686a58eb37fb71796531b4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6e214ce9686a58eb37fb71796531b4e">&#9670;&nbsp;</a></span>addEventListener()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventScheduler::addEventListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlib_iterative_robot_1_1_event_listener.html">EventListener</a> *&#160;</td>
+          <td class="paramname"><em>eventListener</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds an <a class="el" href="classlib_iterative_robot_1_1_event_listener.html">EventListener</a> for the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> to keep track of. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eventListener</td><td>The <a class="el" href="classlib_iterative_robot_1_1_event_listener.html">EventListener</a> to add </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af47242d40b09df43698bb00cbe4f9300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af47242d40b09df43698bb00cbe4f9300">&#9670;&nbsp;</a></span>commandGroupInScheduler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EventScheduler::commandGroupInScheduler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> *&#160;</td>
+          <td class="paramname"><em>aCommandGroup</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if a given <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> is in the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>. </p>
+<p>Checks both the commandGroupBuffer and commandGroupQueue for the provided <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aCommandGroup</td><td>The <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> to search for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> is found or not </dd></dl>
+
+</div>
+</div>
+<a id="acc46d20d5b6e1b6d308bf64dd12ea791"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc46d20d5b6e1b6d308bf64dd12ea791">&#9670;&nbsp;</a></span>commandInScheduler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EventScheduler::commandInScheduler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *&#160;</td>
+          <td class="paramname"><em>aCommand</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if a given <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> is in the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>. </p>
+<p>Checks both the commandBuffer and commandQueue for the provided <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aCommand</td><td>The <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to search for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> is found or not </dd></dl>
+
+</div>
+</div>
+<a id="a04480f5533265708f49b23e622ffe9cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04480f5533265708f49b23e622ffe9cb">&#9670;&nbsp;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> * EventScheduler::getInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the singleton instance of the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>. </p>
+<p>If the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> instance does not yet exist, it is created.</p>
+<dl class="section return"><dt>Returns</dt><dd>The Event Scheduler instance </dd></dl>
+
+</div>
+</div>
+<a id="ad67e946fc54ad0a755a36ed5b87279b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad67e946fc54ad0a755a36ed5b87279b4">&#9670;&nbsp;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventScheduler::initialize </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>noDefaultCommands</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prepares the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> for the autonomous or teleop periods. </p>
+<p>Removes all Commands and CommandGroups from the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> by calling the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a92692ad8573d974bae62c62fccf808c4" title="Removes all Commands and CommandGroups from their respective buffers and queues.">clearScheduler()</a> method. Also provides the option to not add default Commands</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">noDefaultCommands</td><td>Whether or not default Commands should be added. If true, default Commands are not added, and if false, they are added </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a038be4eb06e564fe47d326b458a8985c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a038be4eb06e564fe47d326b458a8985c">&#9670;&nbsp;</a></span>removeCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventScheduler::removeCommand </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> *&#160;</td>
+          <td class="paramname"><em>command</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> from the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>. </p>
+<p>The provided <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> is interrupted, and then searched for in the commandBuffer and commandQueue. If it is found, it is removed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">command</td><td>The <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> to remove </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6c1501cbee6a630b2b63881aa200fdf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c1501cbee6a630b2b63881aa200fdf4">&#9670;&nbsp;</a></span>removeCommandGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventScheduler::removeCommandGroup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> *&#160;</td>
+          <td class="paramname"><em>commandGroup</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes a <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> from the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>. </p>
+<p>The provided <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> is interrupted, and then searched for in the commandGroupBuffer and Group. If it is found, it is removed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commandGroup</td><td>The <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> to remove </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1130cfd602dec9e4091571b47b60f378"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1130cfd602dec9e4091571b47b60f378">&#9670;&nbsp;</a></span>trackSubsystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventScheduler::trackSubsystem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a> *&#160;</td>
+          <td class="paramname"><em>aSubsystem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a> for the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> to track. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aSubsystem</td><td>The <a class="el" href="classlib_iterative_robot_1_1_subsystem.html">Subsystem</a> to track </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9643c8e8dd7a87a1a3419415c7cc46bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9643c8e8dd7a87a1a3419415c7cc46bc">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventScheduler::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks EventListeners and handles the logic for Commands and CommandGroups. </p>
+<p>This functions is responsible for comparing the priorities of Commands and CommandGroups as well as their requirements. If a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> shares a requirement with a higher priority <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a>, it cannot run. If it is already running, it is interrupted. If a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> can run but it has not yet been executed, it is initialized. It is then run and if it has finished, its end() method is called. The same logic is applied to CommandGroups. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a1ddae49a738b69e0e73b4b529a585226"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ddae49a738b69e0e73b4b529a585226">&#9670;&nbsp;</a></span>commandBuffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a>*&gt; libIterativeRobot::EventScheduler::commandBuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stores Commands after they are added to the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>. </p>
+<p>It acts as a buffer for the commandQueue, since undefined behavior can occur if Commands are added to it while the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> is looping through it. Its contents are eventually added to the commandQueue. </p>
+
+</div>
+</div>
+<a id="a37b0c1d9ec0c00e7729bec67ebbd9986"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37b0c1d9ec0c00e7729bec67ebbd9986">&#9670;&nbsp;</a></span>commandGroupBuffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a>*&gt; libIterativeRobot::EventScheduler::commandGroupBuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stores CommandGroups after they are added to the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>. </p>
+<p>It acts as a buffer for the commandGroupQueue, since undefined behavior can occur if CommandGroups are added to it while the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> is looping through it. Its contents are eventuallt added to the commandGroupQueue </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/libIterativeRobot/events/<a class="el" href="_event_scheduler_8h_source.html">EventScheduler.h</a></li>
 <li>src/libIterativeRobot/events/EventScheduler.cpp</li>

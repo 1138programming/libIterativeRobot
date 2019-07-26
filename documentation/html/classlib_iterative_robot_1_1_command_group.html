@@ -176,7 +176,9 @@ std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight"
 std::vector&lt; std::vector&lt; bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command_group.html#ae6779a068983b84e265c0ff4fc74488d">forget</a></td></tr>
 <tr class="memdesc:ae6779a068983b84e265c0ff4fc74488d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps track of which Commands and CommandGroups the <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> should forget. <br /></td></tr>
 <tr class="separator:ae6779a068983b84e265c0ff4fc74488d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6ba0e30e4caa58f4b019ab496487ab7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command_group.html#ae6ba0e30e4caa58f4b019ab496487ab7">sequentialIndex</a> = 0</td></tr>
+<tr class="memitem:ae6ba0e30e4caa58f4b019ab496487ab7"><td class="memItemLeft" align="right" valign="top"><a id="ae6ba0e30e4caa58f4b019ab496487ab7"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command_group.html#ae6ba0e30e4caa58f4b019ab496487ab7">sequentialIndex</a> = 0</td></tr>
+<tr class="memdesc:ae6ba0e30e4caa58f4b019ab496487ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current sequential step the <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> is running. <br /></td></tr>
 <tr class="separator:ae6ba0e30e4caa58f4b019ab496487ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -554,29 +556,6 @@ Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 
 <p>Holds all of the requirements of commands added to the <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a>. </p>
 <p>2d vector keeping track of all requirements of Commands and CommandGroups. Each vector in the 2d vector represents the requirements of the Commands and CommandGroups in a sequential step. Commands or CommandGroups added whose forget flag has been set to true do not have their requirements added </p>
-
-</div>
-</div>
-<a id="ae6ba0e30e4caa58f4b019ab496487ab7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6ba0e30e4caa58f4b019ab496487ab7">&#9670;&nbsp;</a></span>sequentialIndex</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t libIterativeRobot::CommandGroup::sequentialIndex = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>The current sequential step the <a class="el" href="classlib_iterative_robot_1_1_command_group.html">CommandGroup</a> is running </p>
 
 </div>
 </div>
