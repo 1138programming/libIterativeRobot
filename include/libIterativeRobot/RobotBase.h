@@ -23,12 +23,12 @@ class RobotBase {
      */
     RobotState lastState = RobotState::None;
 
-    template<class RobotMain> static void _privateRunRobot();
-
     /**
      * @brief
      */
     void doOneCycle();
+
+    RobotBase();
   protected:
     /**
       * @brief Runs when the robot starts up.
@@ -65,27 +65,8 @@ class RobotBase {
       */
     virtual void disabledPeriodic() = 0;
 
+    void _privateRunRobot(void* param);
   public:
-    RobotBase();
-
-    /**
-      * Run the robot.
-      *
-      * This should be called with the main robot class as the template argument.
-      * For example, if your robot is named `ExampleRobot`, you would call
-      * it with `RobotBase::runRobot<ExampleRobot>()`
-      */
-    template <class RobotMain> static void runRobot() {
-      // Just saying, if this doesn't work, try using the reinterepret cast on the method instead, instead of its pointer
-      // reinterpret_cast<void (*)(void*)>(&_privateRunRobot<RobotMain>)
-      pros::Task(
-        reinterpret_cast<void (*)(void*)>(&_privateRunRobot<RobotMain>),
-        NULL,
-        TASK_PRIORITY_DEFAULT,
-        TASK_STACK_DEPTH_DEFAULT,
-        "libIterativeRobot Task"
-      );
-    };
 };
 
 };

@@ -21,7 +21,15 @@ class Robot : public libIterativeRobot::RobotBase {
     static Robot* getInstance();
 
     static ExampleSubsystem* exampleSubsystem;
-};
 
+    /**
+      * Run the robot.
+      *
+      * This should be called with the main robot class as the template argument.
+      * For example, if your robot is named `ExampleRobot`, you would call
+      * it with `RobotBase::runRobot<ExampleRobot>()`
+      */
+    void runRobot();
+};
 
 #endif // _ROBOT_H_

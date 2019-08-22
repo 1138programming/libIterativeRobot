@@ -5,43 +5,14 @@
 using namespace libIterativeRobot;
 
 RobotBase::RobotBase() {
-  //robotInit();
 }
 
-template<class RobotMain> static void _runPrivateRobot() {
-    RobotMain* robotInstance = RobotMain::getInstance();
+void RobotBase::_privateRunRobot(void* param) {
+    //RobotMain* robotInstance = RobotMain::getInstance();
     while (true) {
-      robotInstance->doOneCycle();
+      doOneCycle();
     }
 }
-
-// void RobotBase::robotInit() {
-//   printf("Robot created.\n");
-// }
-//
-// void RobotBase::autonInit() {
-//   printf("Default autonInit() function\n");
-// }
-//
-// void RobotBase::autonPeriodic() {
-//   printf("Default autonPeriodic() function\n");
-// }
-//
-// void RobotBase::teleopInit() {
-//   printf("Default teleopInit() function\n");
-// }
-//
-// void RobotBase::teleopPeriodic() {
-//   printf("Default teleopPeriodic() function\n");
-// }
-//
-// void RobotBase::disabledInit() {
-//   printf("Default disabledInit() function\n");
-// }
-//
-// void RobotBase::disabledPeriodic() {
-//   printf("Default disabledPeriodic() function");
-// }
 
 void RobotBase::doOneCycle() {
   // This is my "tribute" of sorts to Squeak Smalltalk, the most
@@ -56,6 +27,9 @@ void RobotBase::doOneCycle() {
   // have the user select which mode they may want, due to this,
   // we might take advantage of that and allow the user to manually
   // switch modes when they are not in a competition.
+  if (lastState == RobotState::None) {
+    robotInit();
+  }
   if (pros::competition::is_disabled()) {
     // Robot is currently disabled
     if (lastState == RobotState::Disabled) {
