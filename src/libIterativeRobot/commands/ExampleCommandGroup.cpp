@@ -5,6 +5,5 @@
 using namespace libIterativeRobot;
 
 ExampleCommandGroup::ExampleCommandGroup() {
-//  addSequentialCommand(new ExampleWaitCommand());
   addSequentialCommand(new ExampleCommand());
 }
