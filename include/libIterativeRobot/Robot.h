@@ -8,6 +8,7 @@
 class Robot : public libIterativeRobot::RobotBase {
   private:
     static Robot* instance;
+    Robot();
   protected:
     void robotInit();
     void autonInit();
@@ -17,19 +18,9 @@ class Robot : public libIterativeRobot::RobotBase {
     void disabledInit();
     void disabledPeriodic();
   public:
-    Robot();
     static Robot* getInstance();
 
     static ExampleSubsystem* exampleSubsystem;
-
-    /**
-      * Run the robot.
-      *
-      * This should be called with the main robot class as the template argument.
-      * For example, if your robot is named `ExampleRobot`, you would call
-      * it with `RobotBase::runRobot<ExampleRobot>()`
-      */
-    void runRobot();
 };
 
 #endif // _ROBOT_H_

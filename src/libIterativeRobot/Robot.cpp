@@ -44,18 +44,6 @@ void Robot::disabledPeriodic() {
   //printf("Default disabledPeriodic() function\n");
 }
 
-void Robot::runRobot() {
-  // Just saying, if this doesn't work, try using the reinterepret cast on the method instead, instead of its pointer
-  // reinterpret_cast<void (*)(void*)>(&_privateRunRobot<RobotMain>)
-  pros::Task(
-    reinterpret_cast<void (*)(void*)>(_privateRunRobot),
-    NULL,
-    TASK_PRIORITY_DEFAULT,
-    TASK_STACK_DEPTH_DEFAULT,
-    "libIterativeRobot Task"
-  );
-}
-
 Robot* Robot::getInstance() {
     if (instance == NULL) {
         instance = new Robot();

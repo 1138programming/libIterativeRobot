@@ -28,7 +28,10 @@ class RobotBase {
      */
     void doOneCycle();
 
-    RobotBase();
+    //void _privateRunRobot(void* param);
+    //void my_task_fn(void* param);
+    static void _privateRunRobot(void* param);
+    void printStuff();
   protected:
     /**
       * @brief Runs when the robot starts up.
@@ -65,8 +68,16 @@ class RobotBase {
       */
     virtual void disabledPeriodic() = 0;
 
-    void _privateRunRobot(void* param);
+    RobotBase();
   public:
+    /**
+      * Run the robot.
+      *
+      * This should be called with the main robot class as the template argument.
+      * For example, if your robot is named `ExampleRobot`, you would call
+      * it with `RobotBase::runRobot<ExampleRobot>()`
+      */
+    void runRobot();
 };
 
 };

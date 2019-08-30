@@ -54,6 +54,34 @@ class CommandGroup : public Command {
      * @brief The current sequential step the CommandGroup is running
      */
     size_t sequentialIndex = 0;
+
+  protected:
+    /**
+     * @brief Adds a sequential Command or CommandGroup
+     *
+     * When this method is called, a new sequential step is added to which all subsequent parallel Commands are
+     * a part of, until a new Command is added sequentially. This method should be called in the constructor.
+     *
+     * @param aCommand The Command or CommandGroup to be added sequentially
+     * @param forget Whether or not the CommandGroup should forget about aCommand once it is added to the EventScheduler.
+     * If true, the CommandGroup will not wait for aCommand to finish before moving on the next sequential step. The default
+     * value is false
+     */
+    void addSequentialCommand(Command* aCommand, bool forget = false);
+
+    /**
+     * @brief Adds a parallel Command or CommandGroup
+     *
+     * When this method is called, a Command or CommandGroup is added to the current sequential step. This method should
+     * be called in the constructor.
+     *
+     * @param aCommand The Command or CommandGroup to be added in parallel
+     * @param forget Whether or not the CommandGroup should forget about aCommand once it is added to the EventScheduler.
+     * If true, the CommandGroup will not wait for aCommand to finish before moving on the next sequential step. The default
+     * value is false.
+     */
+    void addParallelCommand(Command* aCommand, bool forget = false);
+
   public:
     /**
      * @brief Gets the requirements of the current sequential step
@@ -111,32 +139,6 @@ class CommandGroup : public Command {
      * sequential step that triggerred the interruption
      */
     void interrupted(); // Run when command group was interrupted
-
-    /**
-     * @brief Adds a sequential Command or CommandGroup
-     *
-     * When this method is called, a new sequential step is added to which all subsequent parallel Commands are
-     * a part of, until a new Command is added sequentially. This method should be called in the constructor.
-     *
-     * @param aCommand The Command or CommandGroup to be added sequentially
-     * @param forget Whether or not the CommandGroup should forget about aCommand once it is added to the EventScheduler.
-     * If true, the CommandGroup will not wait for aCommand to finish before moving on the next sequential step. The default
-     * value is false
-     */
-    void addSequentialCommand(Command* aCommand, bool forget = false);
-
-    /**
-     * @brief Adds a parallel Command or CommandGroup
-     *
-     * When this method is called, a Command or CommandGroup is added to the current sequential step. This method should
-     * be called in the constructor.
-     *
-     * @param aCommand The Command or CommandGroup to be added in parallel
-     * @param forget Whether or not the CommandGroup should forget about aCommand once it is added to the EventScheduler.
-     * If true, the CommandGroup will not wait for aCommand to finish before moving on the next sequential step. The default
-     * value is false.
-     */
-    void addParallelCommand(Command* aCommand, bool forget = false);
 
     /*
      * @brief Adds the CommandGroup to the EventScheduler

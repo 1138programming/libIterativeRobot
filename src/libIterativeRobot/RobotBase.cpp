@@ -1,4 +1,5 @@
 #include "RobotBase.h"
+#include "Robot.h"
 #include "pros/misc.hpp"
 #include "events/EventScheduler.h"
 
@@ -7,11 +8,40 @@ using namespace libIterativeRobot;
 RobotBase::RobotBase() {
 }
 
+void RobotBase::printStuff() {
+  printf("Private function called succesfully\n");
+}
+
 void RobotBase::_privateRunRobot(void* param) {
     //RobotMain* robotInstance = RobotMain::getInstance();
+    printf("Run robot starting...\n");
+    RobotBase* robot = reinterpret_cast<RobotBase*>(param);
     while (true) {
-      doOneCycle();
+      printf("Loop is running\n");
+      pros::delay(1000);
+      robot->doOneCycle();
+      //robot->printStuff();
     }
+}
+
+/*void my_task_fn(void* param) {
+  while (true) {
+    printf("Loop is running\n");
+  }
+}*/
+
+void RobotBase::runRobot() {
+  // Just saying, if this doesn't work, try using the reinterepret cast on the method instead, instead of its pointer
+  // reinterpret_cast<void (*)(void*)>(&_privateRunRobot<RobotMain>)
+  printf("Initializing task\n");
+  pros::Task(
+    //reinterpret_cast<void (*)(void*)>(&my_task_fn),
+    reinterpret_cast<void (*)(void*)>(&_privateRunRobot),
+    reinterpret_cast<void *>(this),
+    TASK_PRIORITY_DEFAULT,
+    TASK_STACK_DEPTH_DEFAULT,
+    "libIterativeRobot Task"
+  );
 }
 
 void RobotBase::doOneCycle() {
@@ -27,38 +57,50 @@ void RobotBase::doOneCycle() {
   // have the user select which mode they may want, due to this,
   // we might take advantage of that and allow the user to manually
   // switch modes when they are not in a competition.
+  printf("do one cycle\n");
+  pros::delay(1000);
   if (lastState == RobotState::None) {
     robotInit();
   }
   if (pros::competition::is_disabled()) {
+    printf("is disabled\n");
+    pros::delay(1000);
     // Robot is currently disabled
     if (lastState == RobotState::Disabled) {
-      EventScheduler::getInstance()->update();
+      //EventScheduler::getInstance()->update();
       disabledPeriodic();
     } else {
       lastState = RobotState::Disabled;
-      EventScheduler::getInstance()->initialize();
+      //EventScheduler::getInstance()->initialize();
       disabledInit();
     }
   } else {
     if (pros::competition::is_autonomous()) {
+      printf("is autonomous\n");
+      pros::delay(1000);
       // Robot is in autonomous mode
       if (lastState == RobotState::Auton) {
-        EventScheduler::getInstance()->update();
+        //EventScheduler::getInstance()->update();
         autonPeriodic();
       } else {
         lastState = RobotState::Auton;
-        EventScheduler::getInstance()->initialize(true);
+        //EventScheduler::getInstance()->initialize(true);
         autonInit();
       }
     } else {
+      printf("is teleop, state is %d\n", lastState);
+      pros::delay(1000);
       // Robot is in teleop
       if (lastState == RobotState::Teleop) {
-        EventScheduler::getInstance()->update();
+        //EventScheduler::getInstance()->update();
+        printf("periodic\n");
+        pros::delay(1000);
         teleopPeriodic();
       } else {
         lastState = RobotState::Teleop;
-        EventScheduler::getInstance()->initialize(true); // Add default commands too
+        //EventScheduler::getInstance()->initialize(true); // Add default commands too
+        printf("init\n");
+        pros::delay(1000);
         teleopInit();
       }
     }

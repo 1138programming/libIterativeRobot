@@ -10,10 +10,16 @@ EventScheduler::EventScheduler() {
 }
 
 void EventScheduler::update() {
+  printf("Starting event scheduler, checking EventListeners\n");
+  pros::delay(1000);
+
   // Calls each event listener's check conditions function
   for (EventListener* listener : eventListeners) {
     listener->checkConditions();
   }
+
+  printf("Initializing default commands\n");
+  pros::delay(1000);
 
   // Initializes each subsystem's default command
   if (!defaultAdded) {
@@ -23,6 +29,9 @@ void EventScheduler::update() {
     defaultAdded = true;
   }
   queueCommandGroups();
+
+  printf("Starting on scheduling CommandGroups\n");
+  pros::delay(1000);
 
   //Schedule command groups, running those that can run, finishing those that are finished, and interrupting those that have been interrupted
   std::vector<Subsystem*> usedSubsystems; // Vector keeping track of which subsystems have already been claimed by a command or command group
@@ -88,6 +97,9 @@ void EventScheduler::update() {
       }
     }
   }
+
+  printf("Starting on scheduling Commands\n");
+  pros::delay(1000);
 
   // Adds the Commands in the commandBuffer into the commandQueue
   queueCommands();
