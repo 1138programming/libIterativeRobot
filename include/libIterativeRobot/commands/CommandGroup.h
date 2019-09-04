@@ -32,15 +32,6 @@ class CommandGroup : public Command {
     std::vector<std::vector<Command*>> commands;
 
     /**
-     * @brief Holds all of the requirements of commands added to the CommandGroup
-     *
-     * 2d vector keeping track of all requirements of Commands and CommandGroups. Each vector in the 2d vector
-     * represents the requirements of the Commands and CommandGroups in a sequential step. Commands or CommandGroups
-     * added whose forget flag has been set to true do not have their requirements added
-     */
-    std::vector<std::vector<Subsystem*>> requirements;
-
-    /**
      * @brief Keeps track of which Commands and CommandGroups have been added to the EventScheduler
      */
     std::vector<std::vector<int>> added;
@@ -84,14 +75,6 @@ class CommandGroup : public Command {
 
   public:
     /**
-     * @brief Gets the requirements of the current sequential step
-     *
-     * Used by the EventScheduler to determine if the CommandGroup can run.
-     * @return The requirements of the Commands and CommandGroups being run in the current sequential step
-     */
-    std::vector<Subsystem*>& getRequirements();
-
-    /**
      * @brief Whether the CommandGroup can run or not
      *
      * Checks if all the Commands and CommandGroups in the current sequential step can run by calling their CanRun methods
@@ -99,7 +82,6 @@ class CommandGroup : public Command {
      * @return Whether or not the CommandGroup can run
      */
     bool canRun();
-
     /**
      * @brief Called once before the CommandGroup runs
      *

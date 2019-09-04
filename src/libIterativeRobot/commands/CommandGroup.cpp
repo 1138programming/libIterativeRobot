@@ -7,11 +7,6 @@ using namespace libIterativeRobot;
 CommandGroup::CommandGroup() {
 }
 
-std::vector<Subsystem*>& CommandGroup::getRequirements() {
-  //comment("Getting command group's current requirements\n");
-  return requirements[sequentialIndex];
-}
-
 bool CommandGroup::canRun() {
   //comment("Checking if command group can run\n");
 
@@ -29,8 +24,6 @@ bool CommandGroup::canRun() {
 }
 
 void CommandGroup::initialize() {
-  printf("Initializing command group\n");
-
   status = Status::Running;
 
   sequentialIndex = 0; // Initializes the sequential index to 0
@@ -44,8 +37,6 @@ void CommandGroup::initialize() {
 }
 
 void CommandGroup::execute() {
-  //printf("Executing command group\n");
-
   bool sequentialFinished = true; // Boolean to check if the current sequential step is finished
   bool sequentialInterrupted = false; // Boolean to check if the current sequential step has been interrupted
   Command* command; // Pointer to a command or command group
@@ -87,7 +78,6 @@ bool CommandGroup::isFinished() {
 void CommandGroup::end() {
   //comment("Command group ended\n");
   status = Status::Finished;
-  printf("Command group finished\n");
 }
 
 void CommandGroup::interrupted() {
@@ -105,31 +95,20 @@ void CommandGroup::interrupted() {
 
 void CommandGroup::addSequentialCommand(Command* aCommand, bool forget) {
   std::vector<Command*> commandList;
-  std::vector<Subsystem*> requirementList;
   std::vector<int> addedList;
   std::vector<bool> forgetList;
 
   commandList.push_back(aCommand);
-  requirementList.insert(requirementList.end(), aCommand->getRequirements().begin(), aCommand->getRequirements().end());
   addedList.push_back(0);
   forgetList.push_back(forget);
 
   this->commands.push_back(commandList);
-  if (!forget)
-    this->requirements.push_back(requirementList);
   this->added.push_back(addedList);
   this->forget.push_back(forgetList);
 }
 
 void CommandGroup::addParallelCommand(Command *aCommand, bool forget) {
   this->commands.back().push_back(aCommand);
-  if (!forget) {
-    for (Subsystem* requirement : aCommand->getRequirements()) {
-      if (std::find(aCommand->getRequirements().begin(), aCommand->getRequirements().end(), requirement) != aCommand->getRequirements().end())
-        this->requirements.back().push_back(requirement);
-    }
-    //this->requirements.back().insert(this->requirements.back().end(), aCommand->getRequirements().begin(), aCommand->getRequirements().end());
-  }
   this->added.back().push_back(0);
   this->forget.back().push_back(forget);
 }
