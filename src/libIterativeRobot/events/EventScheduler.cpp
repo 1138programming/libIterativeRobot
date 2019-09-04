@@ -10,16 +10,16 @@ EventScheduler::EventScheduler() {
 }
 
 void EventScheduler::update() {
-  printf("Starting event scheduler, checking EventListeners\n");
-  pros::delay(1000);
+  //say("Starting event scheduler, checking EventListeners\n");
+  //wait(1000);
 
   // Calls each event listener's check conditions function
   for (EventListener* listener : eventListeners) {
     listener->checkConditions();
   }
 
-  printf("Initializing default commands\n");
-  pros::delay(1000);
+  //say("Initializing default commands\n");
+  //wait(1000);
 
   // Initializes each subsystem's default command
   if (!defaultAdded) {
@@ -30,8 +30,8 @@ void EventScheduler::update() {
   }
   queueCommandGroups();
 
-  printf("Starting on scheduling CommandGroups\n");
-  pros::delay(1000);
+  //say("Starting on scheduling CommandGroups\n");
+  //wait(1000);
 
   //Schedule command groups, running those that can run, finishing those that are finished, and interrupting those that have been interrupted
   std::vector<Subsystem*> usedSubsystems; // Vector keeping track of which subsystems have already been claimed by a command or command group
@@ -98,11 +98,14 @@ void EventScheduler::update() {
     }
   }
 
-  printf("Starting on scheduling Commands\n");
-  pros::delay(1000);
+  //say("Starting on scheduling Commands\n");
+  //wait(1000);
 
   // Adds the Commands in the commandBuffer into the commandQueue
   queueCommands();
+
+  //say("Initializing vectors\n");
+  //wait(1000);
 
   //Schedule commands, running those that can run, finishing those that are finished, and interrupting those that have been interrupted
   usedSubsystems.clear();
@@ -112,21 +115,41 @@ void EventScheduler::update() {
 
   // If the command queue size is not empty, loop through it and schedule commands
   if (commandQueue.size() != 0) {
+    //say("Looping through command queue, size is %d\n", commandQueue.size());
+    //wait(1000);
     // Loops backwards through the command queue. The queue is ordered from lowest priority to highest priority, and commands with the same priority are ordered from most recent to oldest
     for (int i = commandQueue.size() - 1; i >= 0; i--) {
+      //say("0, i is %d\n", i);
+      //wait(1000);
       command = commandQueue[i];
+      //say("Command address is %p\n", command);
+      //wait(1000);
+      //say("1\n");
+      //wait(1000);
       canRun = command->canRun();
+      //say("2\n");
+      //wait(1000);
       std::vector<Subsystem*>& commandRequirements = command->getRequirements();
 
       // Checks whether the command can run based off of its requirements and priority
+      //say("3\n");
+      //wait(1000);
       if ((usedSubsystems.size() == numSubsystems && commandRequirements.size() != 0) || !canRun) {
+        //say("4\n");
+        //wait(1000);
         // Shortcut to not iterate through the usedSubsystems vector if all subsystems are being used and the command requires one or more subsystem, or the command cannot run
         canRun = false;
       } else {
+        //say("5\n");
+        //wait(1000);
         // Loops through the command's requirements
         for (Subsystem* aSubsystem : commandRequirements) {
+          //say("6\n");
+          //wait(1000);
           // If any requirement from the command is already in use by a higher priority command, the command cannot run
           if (std::find(usedSubsystems.begin(), usedSubsystems.end(), aSubsystem) != usedSubsystems.end()) {
+            //say("7\n");
+            //wait(1000);
             canRun = false;
             break;
           }
@@ -155,6 +178,8 @@ void EventScheduler::update() {
       }
     }
 
+    //say("Looping through and executing commands as necessary\n");
+    //wait(1000);
     // Loop through the toExecute vector and initialize, execute, or end the commands as necessary
     unsigned int i = 0;
     for (Command* command : toExecute) {
@@ -192,6 +217,8 @@ void EventScheduler::addCommand(Command* command) {
   // Makes sure the command is not in the scheduler yet and then adds it to the buffer
   if (!commandInScheduler(command)) {
     commandBuffer.push_back(command);
+  } else {
+      //say("Command found in scheduler, it was not added\n");
   }
 }
 
@@ -204,6 +231,7 @@ void EventScheduler::addCommandGroup(CommandGroup* commandGroupToRun) {
 
 void EventScheduler::queueCommands() {
   // Adds the commands in the command buffer into the command queue in order of priority
+  //say("CommandBuffer size is %d\n", commandBuffer.size());
   for (Command* command : commandBuffer) {
     for (size_t i = 0; i < commandQueue.size(); i++) {
       if (command->priority < commandQueue[i]->priority) {
@@ -211,6 +239,7 @@ void EventScheduler::queueCommands() {
         break;
       }
     }
+    //say("Command added to command queue\n");
     commandQueue.push_back(command);
   }
 

@@ -32,11 +32,6 @@ class Subsystem {
     void setDefaultCommand(Command* aCommand);
 
     /**
-      * @brief Runs the default Command
-      */
-    void initDefaultCommand();
-
-    /**
       * @brief Get the Subsystem's default Command.
       * @return The default Command
       */
@@ -51,6 +46,11 @@ class Subsystem {
      * @brief The number of Subsystems created
      */
     static size_t instances;
+
+    /**
+      * @brief Runs the default Command
+      */
+    virtual void initDefaultCommand() = 0;
 
     /**
      * @brief Creates a Subsystem

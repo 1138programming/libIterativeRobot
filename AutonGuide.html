@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AutonGuide</title>
+	</head>
+	<body>
+		<h1>How to write Autonomous Routines<h1>
+		<hr>
+		
+		<h3>About</h3>
+		<p>
+			This guide is for VEX Team programmers. It will teach you how to write autonomous code for your robot. The purpose of having VEX Team programmers write the autonomous code is to minimize the amount of time that VEX Teams need to directly work with the programming team to make changes to autonomous programs. Such changes are usually too simple to warrant having to wait for a programmer to be available to make. They include changing the amount of time a command should run for, adjusting the encoder ticks that the robot should move for, etc. Even writing the structure of the autonomous routine should not be too difficult in most cases.
+		</p>
+		<p>
+			<strong>Note:</strong> If the guide says that you should see something but you do not, please talk to a member of the programming team member to have it corrected.
+		</p>
+		<hr>
+		<h3>Getting started</h3>
+		<p>
+			All autonomi must be written on a programming laptop. This is because only the programming laptops have the software necessary to download the code to the v5 brain. If you would like to write code on your own laptop, you will need to go to the laptop hospital to have the necessary software installed on your laptop. For more information, please talk to a member of the programming team.
+		</p>
+		<p>
+			Once you have acquired a programming laptop, you must navigate to the robot's code in the laptop's files. Usually, this code will be in the following directory: C:\Users\eeuser\Documents\GitHub. In the GitHub folder, find the folder with your team's name on it.
+		</p>
+		<p>
+			Once you have found the folder with your team name on it, go into it. This is the code that runs the your robot. There should be a folder called TeamProgrammerScripts containing the following batch files:
+		</p>
+		<p>
+			<strong>Pull.bat:</strong> Pulls code from GitHub. Please run the Pull.bat file every time you work on your autonomous code so that any updates that were made by the programming team will be available to you.
+		</p>
+		<p>
+			<strong>Push.bat:</strong> Pushes code to GitHub. Whenever you are done working on the autonomous for the day, please run the Push.bat file to upload your changes.
+		</p>
+		<p>
+			<strong>Finalize.bat:</strong> Merges your code with the master branch, which is what will be run during competitions. Run this file once you have finished your autonomous routine completely
+		</p>
+		<p>
+			<strong>Download.bat:</strong> Downloads your code to the robot.
+		</p>
+		<p>
+			<strong>CreateRoutine.bat:</strong> Creates a new autonomous routine.
+		</p>
+		<p>
+			To run a batch file, right click it, and select Run As Administrator. 
+		</p>
+		<hr>
+		
+		<h3>Creating an autonomous routine</h3>
+		<p>
+			To create an autonomous routine, first navigate to src/libIterativeRobot/commands/Autonomous inside your team's project.
+		</p>
+	</body>
+</html>
