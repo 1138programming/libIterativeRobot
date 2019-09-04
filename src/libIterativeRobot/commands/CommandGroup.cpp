@@ -86,12 +86,15 @@ bool CommandGroup::isFinished() {
 void CommandGroup::end() {
   //comment("Command group ended\n");
   status = Status::Finished;
+  printf("Command group finished\n");
 }
 
 void CommandGroup::interrupted() {
   //comment("Command group was interrupted\n");
   // Resets the command group's status to idle to let it run again in the future
   status = Status::Idle;
+
+  //printf("Command group interrupted\n");
 
   // Loops through the sequential step and stop any commands and command groups still running
   for (size_t i = 0; i < commands[sequentialIndex].size(); i++) {

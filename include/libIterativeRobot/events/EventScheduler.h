@@ -74,6 +74,11 @@ class EventScheduler {
     std::vector<CommandGroup*> commandGroupBuffer;
 
     /**
+     *
+     */
+    std::vector<CommandGroup*> intermediateGroupBuffer;
+
+    /**
      * @brief Stores Commands that the EventScheduler determines can run
      */
     std::vector<Command*> toExecute;
@@ -119,9 +124,35 @@ class EventScheduler {
     void queueCommands();
 
     /**
+     * @brief Adds the CommandGroups in the commandGroupBuffer to the intermediateGroupBuffer
+     */
+    void toIntermediateBuffer();
+
+    /**
+     * @brief Adds the CommandGroups in the intermediateGroupBuffer to the commandGroupQueue
+     */
+    void toGroupQueue();
+
+    /**
      * @brief Adds the CommandGroups in the commandGroupBuffer to the commandGroupQueue
      */
     void queueCommandGroups();
+
+    /**
+     * @brief Runs checkConditions on all EventListeners
+     */
+    void checkEventListeners();
+
+    /**
+     * @brief Adds default commands if they have not yet been added
+     */
+    void addDefaultCommands();
+
+    /**
+     * @brief Schedules the CommandGroups in a given vector
+     * @param commandGroups The vector to schedule CommandGroups from
+     */
+    void scheduleCommandGroups(std::vector<CommandGroup*> commandGroups);
   public:
     /**
      * @brief Gets the singleton instance of the EventScheduler

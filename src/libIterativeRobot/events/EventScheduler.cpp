@@ -9,18 +9,14 @@ EventScheduler* EventScheduler::instance = NULL;
 EventScheduler::EventScheduler() {
 }
 
-void EventScheduler::update() {
-  //say("Starting event scheduler, checking EventListeners\n");
-  //wait(1000);
-
+void EventScheduler::checkEventListeners() {
   // Calls each event listener's check conditions function
   for (EventListener* listener : eventListeners) {
     listener->checkConditions();
   }
+}
 
-  //say("Initializing default commands\n");
-  //wait(1000);
-
+void EventScheduler::addDefaultCommands() {
   // Initializes each subsystem's default command
   if (!defaultAdded) {
     for (Subsystem* subsystem : subsystems) {
@@ -28,128 +24,77 @@ void EventScheduler::update() {
     }
     defaultAdded = true;
   }
-  queueCommandGroups();
+}
 
-  //say("Starting on scheduling CommandGroups\n");
-  //wait(1000);
-
-  //Schedule command groups, running those that can run, finishing those that are finished, and interrupting those that have been interrupted
-  std::vector<Subsystem*> usedSubsystems; // Vector keeping track of which subsystems have already been claimed by a command or command group
-  CommandGroup* commandGroup; // Pointer to a command group
-  bool canRun; // Stores whether each command or command group can run or not
-
-  // If the command group queue is not empty, loop through it and schedule command groups
-  if (commandGroupQueue.size() != 0) {
-    // Loops backwards through the command group queue. As a result, more recently added command groups are prioritized
-    for (int i = commandGroupQueue.size() - 1; i >= 0; i--) {
-      commandGroup = commandGroupQueue[i]; // Sets commandGroup to the command group currently being checked
+void EventScheduler::scheduleCommandGroups(std::vector<CommandGroup*> commandGroups) {
+  if (commandGroups.size() != 0) {
+    CommandGroup* commandGroup;
+    for (int i = commandGroups.size() - 1; i >= 0; i--) {
+      commandGroup = commandGroups[i]; // Sets commandGroup to the command group currently being checked
 
       // If the command group's status is interrupted, the command group's interrupted function is called and it is removed from the command group queue
       if (commandGroup->status == Status::Interrupted) {
         commandGroup->interrupted();
-        commandGroupQueue.erase(commandGroupQueue.begin() + i);
+        commandGroups.erase(commandGroups.begin() + i);
         continue; // Skips over the rest of the logic for the current command group
       }
 
-      canRun = commandGroup->canRun(); // Sets canRun to the result of the command group's canRun() function
-
-      std::vector<Subsystem*>& commandGroupRequirements = commandGroup->getRequirements(); // Vector storing the command group's requirements
-
-      // Checks whether the command group can run based off of its requirements
-      if ((usedSubsystems.size() == numSubsystems && commandGroupRequirements.size() != 0) || !canRun) {
-        canRun = false;
-      } else {
-        // Loops through the command group's requirements
-        for (Subsystem* aSubsystem : commandGroupRequirements) {
-          // If any requirement from the current command group is already in use by a more recently added command group, the command group cannot run
-          if (std::find(usedSubsystems.begin(), usedSubsystems.end(), aSubsystem) != usedSubsystems.end()) {
-            canRun = false;
-            break; // There is no need to check the rest of the requirements
-          }
-        }
+      // If the command group is not running, initialize it first
+      if (commandGroup->status != Status::Running) {
+        commandGroup->initialize();
       }
 
-      // Calls the command group's appropriate functions based off of whether it can run and its status
-      if (canRun) {
-        // Adds the command group's requirements to the list of requirements that are in use
-        usedSubsystems.insert(usedSubsystems.end(), commandGroupRequirements.begin(), commandGroupRequirements.end());
+      commandGroup->execute(); // Call the command group's execute function
 
-        // If the command group is not running, initialize it first
-        if (commandGroup->status != Status::Running) {
-          commandGroup->initialize();
-        }
-
-        commandGroup->execute(); // Call the command group's execute function
-
-        // If the command group is finished, call its end() function and remove it from the command group queue
-        if (commandGroup->isFinished()) {
-          commandGroup->end();
-          commandGroupQueue.erase(commandGroupQueue.begin() + i);
-        }
-      } else {
-        // If the command group is running, call its interrupted() function
-        if (commandGroup->status == Status::Running) {
-          commandGroup->interrupted();
-        }
-
-        // Remove the command group from the queue
-        commandGroupQueue.erase(commandGroupQueue.begin() + i);
+      // If the command group is finished, call its end() function and remove it from the command group queue
+      if (commandGroup->isFinished()) {
+        commandGroup->end();
+        commandGroups.erase(commandGroups.begin() + i);
       }
     }
   }
+}
 
-  //say("Starting on scheduling Commands\n");
-  //wait(1000);
+void EventScheduler::update() {
+  checkEventListeners();
+  addDefaultCommands();
 
-  // Adds the Commands in the commandBuffer into the commandQueue
-  queueCommands();
+  // Schedules all command groups
+  queueCommandGroups(); // Dumps the contents of the commandGroupBuffer into the commandGroupQueue
+  scheduleCommandGroups(commandGroupQueue); // Schedule the commands in the commandGroupQueue
+  while (commandGroupBuffer.size() != 0) { // Schedule any CommandGroups added to the commandGroupBuffer
+    toIntermediateBuffer(); // Dump contents of the commandGroupBuffer into the intermediateGroupBuffer
+    scheduleCommandGroups(intermediateGroupBuffer); // Schedule the commands in the intermediateGroupBuffer
+    toGroupQueue(); // Dump the contents of the intermediateGroupBuffer into the commandGroupQueue
+  }
 
-  //say("Initializing vectors\n");
-  //wait(1000);
-
-  //Schedule commands, running those that can run, finishing those that are finished, and interrupting those that have been interrupted
-  usedSubsystems.clear();
+  //Schedule all commands, running those that can run, finishing those that are finished, and interrupting those that have been interrupted
+  std::vector<Subsystem*> usedSubsystems; // Vector keeping track of which subsystems have already been claimed by a command or command group
+  bool canRun; // Stores whether each command or command group can run or not
   toExecute.clear();
   indexes.clear();
   Command* command;
 
+  // Dumps the contents of the commandBuffer into the commandQueue
+  queueCommands();
+
   // If the command queue size is not empty, loop through it and schedule commands
   if (commandQueue.size() != 0) {
-    //say("Looping through command queue, size is %d\n", commandQueue.size());
-    //wait(1000);
     // Loops backwards through the command queue. The queue is ordered from lowest priority to highest priority, and commands with the same priority are ordered from most recent to oldest
     for (int i = commandQueue.size() - 1; i >= 0; i--) {
-      //say("0, i is %d\n", i);
-      //wait(1000);
       command = commandQueue[i];
-      //say("Command address is %p\n", command);
-      //wait(1000);
-      //say("1\n");
-      //wait(1000);
       canRun = command->canRun();
-      //say("2\n");
-      //wait(1000);
       std::vector<Subsystem*>& commandRequirements = command->getRequirements();
 
       // Checks whether the command can run based off of its requirements and priority
-      //say("3\n");
-      //wait(1000);
       if ((usedSubsystems.size() == numSubsystems && commandRequirements.size() != 0) || !canRun) {
-        //say("4\n");
-        //wait(1000);
         // Shortcut to not iterate through the usedSubsystems vector if all subsystems are being used and the command requires one or more subsystem, or the command cannot run
         canRun = false;
       } else {
-        //say("5\n");
-        //wait(1000);
         // Loops through the command's requirements
         for (Subsystem* aSubsystem : commandRequirements) {
-          //say("6\n");
-          //wait(1000);
           // If any requirement from the command is already in use by a higher priority command, the command cannot run
           if (std::find(usedSubsystems.begin(), usedSubsystems.end(), aSubsystem) != usedSubsystems.end()) {
-            //say("7\n");
-            //wait(1000);
             canRun = false;
             break;
           }
@@ -178,8 +123,6 @@ void EventScheduler::update() {
       }
     }
 
-    //say("Looping through and executing commands as necessary\n");
-    //wait(1000);
     // Loop through the toExecute vector and initialize, execute, or end the commands as necessary
     unsigned int i = 0;
     for (Command* command : toExecute) {
@@ -245,6 +188,24 @@ void EventScheduler::queueCommands() {
 
   // Clears the command buffer
   commandBuffer.clear();
+}
+
+void EventScheduler::toIntermediateBuffer() {
+  // Adds all command groups in the command group buffer into the intermediate group buffer
+  for (CommandGroup* commandGroup : commandGroupBuffer)
+    intermediateGroupBuffer.push_back(commandGroup);
+
+  // Clears the command group buffer
+  commandGroupBuffer.clear();
+}
+
+void EventScheduler::toGroupQueue() {
+  // Adds all command groups in the intermediate group buffer into the command group queue
+  for (CommandGroup* commandGroup : intermediateGroupBuffer)
+    commandGroupQueue.push_back(commandGroup);
+
+  // Clears the intermediate group buffer
+  intermediateGroupBuffer.clear();
 }
 
 void EventScheduler::queueCommandGroups() {
