@@ -152,7 +152,7 @@ class EventScheduler {
      * @brief Schedules the CommandGroups in a given vector
      * @param commandGroups The vector to schedule CommandGroups from
      */
-    void scheduleCommandGroups(std::vector<CommandGroup*> commandGroups);
+    void scheduleCommandGroups(std::vector<CommandGroup*>* commandGroups);
   public:
     /**
      * @brief Gets the singleton instance of the EventScheduler

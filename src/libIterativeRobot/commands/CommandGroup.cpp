@@ -29,7 +29,7 @@ bool CommandGroup::canRun() {
 }
 
 void CommandGroup::initialize() {
-  //comment("Initializing command group\n");
+  printf("Initializing command group\n");
 
   status = Status::Running;
 
@@ -44,7 +44,8 @@ void CommandGroup::initialize() {
 }
 
 void CommandGroup::execute() {
-  //comment("Executing command group\n");
+  //printf("Executing command group\n");
+
   bool sequentialFinished = true; // Boolean to check if the current sequential step is finished
   bool sequentialInterrupted = false; // Boolean to check if the current sequential step has been interrupted
   Command* command; // Pointer to a command or command group

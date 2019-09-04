@@ -26,16 +26,16 @@ void EventScheduler::addDefaultCommands() {
   }
 }
 
-void EventScheduler::scheduleCommandGroups(std::vector<CommandGroup*> commandGroups) {
-  if (commandGroups.size() != 0) {
+void EventScheduler::scheduleCommandGroups(std::vector<CommandGroup*>* commandGroups) {
+  if (commandGroups->size() != 0) {
     CommandGroup* commandGroup;
-    for (int i = commandGroups.size() - 1; i >= 0; i--) {
-      commandGroup = commandGroups[i]; // Sets commandGroup to the command group currently being checked
+    for (int i = commandGroups->size() - 1; i >= 0; i--) {
+      commandGroup = (*commandGroups)[i]; // Sets commandGroup to the command group currently being checked
 
       // If the command group's status is interrupted, the command group's interrupted function is called and it is removed from the command group queue
       if (commandGroup->status == Status::Interrupted) {
         commandGroup->interrupted();
-        commandGroups.erase(commandGroups.begin() + i);
+        commandGroups->erase(commandGroups->begin() + i);
         continue; // Skips over the rest of the logic for the current command group
       }
 
@@ -49,22 +49,25 @@ void EventScheduler::scheduleCommandGroups(std::vector<CommandGroup*> commandGro
       // If the command group is finished, call its end() function and remove it from the command group queue
       if (commandGroup->isFinished()) {
         commandGroup->end();
-        commandGroups.erase(commandGroups.begin() + i);
+        commandGroups->erase(commandGroups->begin() + i);
+        //printf("Command group erased, new size is %d, queue size is %d\n", commandGroups->size(), commandGroupQueue.size());
       }
     }
   }
 }
 
 void EventScheduler::update() {
+  //printf("EventScheduler update\n");
   checkEventListeners();
   addDefaultCommands();
 
   // Schedules all command groups
   queueCommandGroups(); // Dumps the contents of the commandGroupBuffer into the commandGroupQueue
-  scheduleCommandGroups(commandGroupQueue); // Schedule the commands in the commandGroupQueue
+  scheduleCommandGroups(&commandGroupQueue); // Schedule the commands in the commandGroupQueue
+  //printf("commandGroupBuffer: %d, intermediateGroupBuffer: %d, commandGroupQueue: %d\n", commandGroupBuffer.size(), intermediateGroupBuffer.size(), commandGroupQueue.size());
   while (commandGroupBuffer.size() != 0) { // Schedule any CommandGroups added to the commandGroupBuffer
     toIntermediateBuffer(); // Dump contents of the commandGroupBuffer into the intermediateGroupBuffer
-    scheduleCommandGroups(intermediateGroupBuffer); // Schedule the commands in the intermediateGroupBuffer
+    scheduleCommandGroups(&intermediateGroupBuffer); // Schedule the commands in the intermediateGroupBuffer
     toGroupQueue(); // Dump the contents of the intermediateGroupBuffer into the commandGroupQueue
   }
 
