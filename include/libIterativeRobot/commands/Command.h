@@ -147,12 +147,12 @@ class Command {
     /**
      * @brief Adds the command to the EventScheduler
      */
-    void run();
+    virtual void run();
 
     /**
      * @brief Removes the command from the EventScheduler and interrupts it
      */
-    void stop();
+    virtual void stop();
 
     /**
      * @brief Creates a new Command

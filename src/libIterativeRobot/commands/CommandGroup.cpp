@@ -76,7 +76,6 @@ bool CommandGroup::isFinished() {
 }
 
 void CommandGroup::end() {
-  //comment("Command group ended\n");
   status = Status::Finished;
 }
 
@@ -115,7 +114,6 @@ void CommandGroup::addParallelCommand(Command *aCommand, bool forget) {
 
 
 void CommandGroup::run() {
-  //comment("Adding command group\n");
   // Adds the command group to the event scheduler
   EventScheduler::getInstance()->addCommandGroup(this);
 }

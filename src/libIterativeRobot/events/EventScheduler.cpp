@@ -63,6 +63,7 @@ void EventScheduler::update() {
 
   // Schedules all command groups
   queueCommandGroups(); // Dumps the contents of the commandGroupBuffer into the commandGroupQueue
+
   scheduleCommandGroups(&commandGroupQueue); // Schedule the commands in the commandGroupQueue
   //printf("commandGroupBuffer: %d, intermediateGroupBuffer: %d, commandGroupQueue: %d\n", commandGroupBuffer.size(), intermediateGroupBuffer.size(), commandGroupQueue.size());
   while (commandGroupBuffer.size() != 0) { // Schedule any CommandGroups added to the commandGroupBuffer
@@ -168,10 +169,10 @@ void EventScheduler::addCommand(Command* command) {
   }
 }
 
-void EventScheduler::addCommandGroup(CommandGroup* commandGroupToRun) {
+void EventScheduler::addCommandGroup(CommandGroup* commandGroup) {
   // If the command group is not already in the scheduler, the command group is added to the end of the buffer
-  if (!commandGroupInScheduler(commandGroupToRun)) {
-    commandGroupBuffer.push_back(commandGroupToRun);
+  if (!commandGroupInScheduler(commandGroup)) {
+    commandGroupBuffer.push_back(commandGroup);
   }
 }
 

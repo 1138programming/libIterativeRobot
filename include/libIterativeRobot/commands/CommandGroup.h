@@ -58,7 +58,7 @@ class CommandGroup : public Command {
      * If true, the CommandGroup will not wait for aCommand to finish before moving on the next sequential step. The default
      * value is false
      */
-    void addSequentialCommand(Command* aCommand, bool forget = false);
+    virtual void addSequentialCommand(Command* aCommand, bool forget = false);
 
     /**
      * @brief Adds a parallel Command or CommandGroup
@@ -71,7 +71,7 @@ class CommandGroup : public Command {
      * If true, the CommandGroup will not wait for aCommand to finish before moving on the next sequential step. The default
      * value is false.
      */
-    void addParallelCommand(Command* aCommand, bool forget = false);
+    virtual void addParallelCommand(Command* aCommand, bool forget = false);
 
   public:
     /**
@@ -81,13 +81,14 @@ class CommandGroup : public Command {
      * This is called by the EventScheduler before a CommandGroup starts running.
      * @return Whether or not the CommandGroup can run
      */
-    bool canRun();
+    virtual bool canRun();
+
     /**
      * @brief Called once before the CommandGroup runs
      *
      * Sets up the CommandGroup to run by setting the sequentialIndex to 0 and setting all of the added flags to false
      */
-    void initialize();
+    virtual void initialize();
 
     /**
      * @brief Adds Commands and CommandGroups to the EventScheduler
@@ -95,7 +96,7 @@ class CommandGroup : public Command {
      * Goes through each sequential step and adds all of the Commands and CommandGroups. Also handles figuring out When
      * a sequential step has finished or when the CommandGroup has been interrupted
      */
-    void execute();
+    virtual void execute();
 
     /**
      * @brief Called by the EventScheduler while the CommandGroup is running to check if it is finished
@@ -105,14 +106,14 @@ class CommandGroup : public Command {
      *
      * @return Whether or not the CommandGroup is finished
      */
-    bool isFinished();
+    virtual bool isFinished();
 
     /**
      * @brief Runs when the CommandGroup is finished
      *
      * Sets the CommandGroup's status to Finished
      */
-    void end();
+    virtual void end();
 
     /**
      * @brief Runs when a CommandGroup is interrupted
@@ -120,17 +121,17 @@ class CommandGroup : public Command {
      * Sets the CommandGroup's status to Idle and then stops all of the Commands and CommandGroups in the current
      * sequential step that triggerred the interruption
      */
-    void interrupted(); // Run when command group was interrupted
+    virtual void interrupted(); // Run when command group was interrupted
 
     /*
      * @brief Adds the CommandGroup to the EventScheduler
      */
-    void run();
+    virtual void run();
 
     /*
      * @brief Removes the CommandGroup from the EventScheduler and interrupts it
      */
-    void stop();
+    virtual void stop();
 
     /**
      * @brief Creates a new CommandGroup

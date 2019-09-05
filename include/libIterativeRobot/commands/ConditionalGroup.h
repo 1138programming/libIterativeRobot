@@ -10,12 +10,12 @@ namespace libIterativeRobot {
       LambdaGroup* lambda;
       virtual void conditionalBody();
     protected:
-      void addSequentialCommand(Command* aCommand, bool forget = false);
-      void addParallelCommand(Command* aCommand, bool forget = false);
+      virtual void addSequentialCommand(Command* aCommand, bool forget = false);
+      virtual void addParallelCommand(Command* aCommand, bool forget = false);
     public:
       ConditionalGroup();
-      void run();
-      void stop();
+      virtual void run();
+      virtual void stop();
   };
 }
 

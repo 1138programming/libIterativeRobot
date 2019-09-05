@@ -186,7 +186,7 @@ class EventScheduler {
      *
      * @param commandToRun The Command to add
      */
-    void addCommand(Command* commandToRun);
+    void addCommand(Command* command);
 
     /**
      * @brief Adds a CommandGroup to the EventScheduler
@@ -195,7 +195,7 @@ class EventScheduler {
      *
      * @param commandGroupToRun The CommandGroup to add
      */
-    void addCommandGroup(CommandGroup* commandGroupToRun);
+    void addCommandGroup(CommandGroup* commandGroup);
 
     /**
      * @brief Removes a Command from the EventScheduler
