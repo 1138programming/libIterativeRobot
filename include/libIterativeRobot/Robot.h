@@ -3,7 +3,6 @@
 
 #include "main.h"
 #include "RobotBase.h"
-#include "subsystems/ExampleSubsystem.h"
 
 class Robot : public libIterativeRobot::RobotBase {
   private:
@@ -19,8 +18,6 @@ class Robot : public libIterativeRobot::RobotBase {
     void disabledPeriodic();
   public:
     static Robot* getInstance();
-
-    static ExampleSubsystem* exampleSubsystem;
 };
 
 #endif // _ROBOT_H_
