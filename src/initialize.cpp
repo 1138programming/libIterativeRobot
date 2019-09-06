@@ -1,5 +1,5 @@
 #include "main.h"
-#include "libIterativeRobot/Robot.h"
+#include "libIterativeRobot/RobotBase.h"
 
 /**
  * Runs initialization code. This occurs as soon as the program is started.
@@ -8,7 +8,7 @@
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
-  Robot::getInstance()->runRobot();
+  libIterativeRobot::RobotBase::initializeRobot();
 }
 
 /**

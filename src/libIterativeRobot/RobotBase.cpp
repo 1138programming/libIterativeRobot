@@ -52,6 +52,7 @@ void RobotBase::doOneCycle() {
       disabledPeriodic();
     } else {
       lastState = RobotState::Disabled;
+      libIterativeRobot::EventScheduler::getInstance()->initialize();
       disabledInit();
     }
   } else {
@@ -59,18 +60,26 @@ void RobotBase::doOneCycle() {
       // Robot is in autonomous mode
       if (lastState == RobotState::Auton) {
         autonPeriodic();
+        libIterativeRobot::EventScheduler::getInstance()->update();
       } else {
         lastState = RobotState::Auton;
+        libIterativeRobot::EventScheduler::getInstance()->initialize();
         autonInit();
       }
     } else {
       // Robot is in teleop
       if (lastState == RobotState::Teleop) {
         teleopPeriodic();
+        libIterativeRobot::EventScheduler::getInstance()->update();
       } else {
         lastState = RobotState::Teleop;
+        libIterativeRobot::EventScheduler::getInstance()->initialize();
         teleopInit();
       }
     }
   }
+}
+
+void RobotBase::initializeRobot() {
+  Robot::getInstance()->runRobot();
 }
