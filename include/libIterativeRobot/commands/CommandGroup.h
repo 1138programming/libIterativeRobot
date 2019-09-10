@@ -123,6 +123,8 @@ class CommandGroup : public Command {
      */
     virtual void interrupted(); // Run when command group was interrupted
 
+    virtual void blocked();
+
     /*
      * @brief Adds the CommandGroup to the EventScheduler
      */

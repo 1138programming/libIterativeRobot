@@ -39,6 +39,7 @@ void CommandGroup::initialize() {
 void CommandGroup::execute() {
   bool sequentialFinished = true; // Boolean to check if the current sequential step is finished
   bool sequentialInterrupted = false; // Boolean to check if the current sequential step has been interrupted
+  bool sequentialBlocked = false;
   Command* command; // Pointer to a command or command group
 
   // Loops through the commands and command groups in the current sequential step
@@ -56,16 +57,19 @@ void CommandGroup::execute() {
         sequentialFinished = false;
       }
 
-      // If the command's status is interrupted or the command was added but is still idle (indicating it could not run because of a higher priority command), then set sequentialInterrupted to true
-      if (command->status == Status::Interrupted || command->status == Status::Idle) {
+      // If the command's status is interrupted or blocked then set sequentialInterrupted or sequentialBlocked to true
+      if (command->status == Status::Interrupted) {
         sequentialInterrupted = true;
         //comment("Command group status has been set to interrupted, command status is %d, current status is %d\n", command->status, status);
+      } else if (command->status == Status::Blocked) {
+        sequentialBlocked = true;
       }
     }
   }
 
   //Updates the command group's status based on sequentialInterrupted and sequentialFinished
   if (sequentialInterrupted) status = Status::Interrupted;
+  if (sequentialBlocked) status = Status::Blocked;
   if (sequentialFinished) sequentialIndex++; // If the current sequential step is finished, the command group moves on to the next sequential step
 }
 
@@ -92,6 +96,14 @@ void CommandGroup::interrupted() {
   }
 }
 
+void CommandGroup::blocked() {
+  status = Status::Idle;
+
+  for (size_t i = 0; i < commands[sequentialIndex].size(); i++) {
+    commands[sequentialIndex][i]->stop();
+  }
+}
+
 void CommandGroup::addSequentialCommand(Command* aCommand, bool forget) {
   std::vector<Command*> commandList;
   std::vector<int> addedList;
@@ -111,7 +123,6 @@ void CommandGroup::addParallelCommand(Command *aCommand, bool forget) {
   this->added.back().push_back(0);
   this->forget.back().push_back(forget);
 }
-
 
 void CommandGroup::run() {
   // Adds the command group to the event scheduler

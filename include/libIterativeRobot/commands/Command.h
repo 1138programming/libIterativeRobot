@@ -145,6 +145,11 @@ class Command {
     virtual void interrupted() = 0;
 
     /**
+     * @brief Runs once when a command is interrupted
+     */
+    virtual void blocked() = 0;
+
+    /**
      * @brief Adds the command to the EventScheduler
      */
     virtual void run();

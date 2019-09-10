@@ -47,7 +47,14 @@
 		
 		<h3>Creating an autonomous routine</h3>
 		<p>
-			To create an autonomous routine, first navigate to src/libIterativeRobot/commands/Autonomous inside your team's project.
+			To create an autonomous routine, run the CreateRoutine batch file. This script will create the files necessary for a new autonomous routine. To access the routine, navigate to src/libIterativeRobot/commands/Autonomous inside your team's project and find the file with the routine's name. Right click on it and select Edit with Notepad++. It will open up a cpp file that should look similar to the following:
 		</p>
+		<code>
+			#include "libIterativeRobot/commands/Autonomous/NewAuton.h"
+			
+			NewAuton::NewAuton() {
+			
+			}
+		</code>
 	</body>
 </html>

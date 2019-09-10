@@ -37,6 +37,10 @@ void EventScheduler::scheduleCommandGroups(std::vector<CommandGroup*>* commandGr
         commandGroup->interrupted();
         commandGroups->erase(commandGroups->begin() + i);
         continue; // Skips over the rest of the logic for the current command group
+      } else if (commandGroup->status == Status::Blocked) {
+        commandGroup->blocked();
+        commandGroups->erase(commandGroups->begin() + i);
+        continue; // Skips over the rest of the logic for the current command group
       }
 
       // If the command group is not running, initialize it first
@@ -118,6 +122,9 @@ void EventScheduler::update() {
         if (command->status == Status::Running) {
           command->status = Status::Interrupted;
           command->interrupted();
+        } else { // Otherwise, call its blocked() function
+          command->status = Status::Blocked;
+          command->blocked();
         }
 
         // Set the command to be removed from the queue if it is not a default command
@@ -222,10 +229,6 @@ void EventScheduler::queueCommandGroups() {
 }
 
 void EventScheduler::removeCommand(Command* command) {
-  // Interrupts the command being removed
-  command->interrupted();
-  command->status = Status::Interrupted;
-
   // Removes the command
   size_t index = std::find(commandBuffer.begin(), commandBuffer.end(), command) - commandBuffer.begin(); // Get the index of the command in the commandBuffer vector
   if (index >= commandBuffer.size()) { // If the command is not in the commandBuffer vector, check in the commandQueue vector
@@ -236,22 +239,32 @@ void EventScheduler::removeCommand(Command* command) {
   } else {
     commandBuffer.erase(commandBuffer.begin() + index); // Remove command from commandBuffer
   }
+
+  // Blocks or interrupts the command being removed
+  if (command->status == Status::Running) {
+    command->interrupted();
+    command->status = Status::Interrupted;
+  } else {
+    command->blocked();
+    command->status = Status::Blocked;
+  }
 }
 
 void EventScheduler::removeCommandGroup(CommandGroup* commandGroup) {
-  // Interrupts the command group being removed
-  commandGroup->interrupted();
-
   // Removes the command group
   size_t index = std::find(commandGroupBuffer.begin(), commandGroupBuffer.end(), commandGroup) - commandGroupBuffer.begin();  // Get the index of the command group in the commandGroupBuffer vector
   if (index >= commandGroupBuffer.size()) { // If the command group is not in the commandGroupBuffer vector, check in the commandGroupQueue vector
     index = std::find(commandGroupQueue.begin(), commandGroupQueue.end(), commandGroup) - commandGroupQueue.begin(); // Get the index of the command group in the commandGroupsQueue vector
-    if (index >= commandGroupQueue.size()) // If the command group is not in the commandGroupQueue vector, return
+    if (index >= commandGroupQueue.size()) { // If the command group is not in the commandGroupQueue vector, return
       return;
+    }
     commandGroupQueue.erase(commandGroupQueue.begin() + index); // Remove command group from commandGroupQueue
   } else {
     commandGroupBuffer.erase(commandGroupBuffer.begin() + index); // Remove command group from commandGroupBuffer
   }
+
+  // Interrupts the command group being removed
+  commandGroup->interrupted();
 }
 
 void EventScheduler::clearScheduler() {
