@@ -83,16 +83,24 @@ void EventScheduler::update() {
   indexes.clear();
   Command* command;
 
+  //printf("Size of commandBuffer is %d, size of commandQueue is %d\n", commandBuffer.size(), commandQueue.size());
+
   // Dumps the contents of the commandBuffer into the commandQueue
   queueCommands();
 
   // If the command queue size is not empty, loop through it and schedule commands
   if (commandQueue.size() != 0) {
+    //printf("There are %d commands in the queue\n", commandQueue.size());
+    //pros::delay(1000);
+
     // Loops backwards through the command queue. The queue is ordered from lowest priority to highest priority, and commands with the same priority are ordered from most recent to oldest
     for (int i = commandQueue.size() - 1; i >= 0; i--) {
       command = commandQueue[i];
       canRun = command->canRun();
       std::vector<Subsystem*>& commandRequirements = command->getRequirements();
+
+      //printf("Command address is %p, command is %d, size of commandQueue is %d\n", command, i, commandQueue.size());
+      //pros::delay(50);
 
       // Checks whether the command can run based off of its requirements and priority
       if ((usedSubsystems.size() == numSubsystems && commandRequirements.size() != 0) || !canRun) {
@@ -171,9 +179,8 @@ void EventScheduler::addCommand(Command* command) {
   // Makes sure the command is not in the scheduler yet and then adds it to the buffer
   if (!commandInScheduler(command)) {
     commandBuffer.push_back(command);
-  } else {
-      //say("Command found in scheduler, it was not added\n");
   }
+  //printf("Command added, address is %p\n", command);
 }
 
 void EventScheduler::addCommandGroup(CommandGroup* commandGroup) {
@@ -190,11 +197,12 @@ void EventScheduler::queueCommands() {
     for (size_t i = 0; i < commandQueue.size(); i++) {
       if (command->priority < commandQueue[i]->priority) {
         commandQueue.insert(commandQueue.begin() + i, command);
-        break;
+        goto alreadyAdded;
       }
     }
     //say("Command added to command queue\n");
     commandQueue.push_back(command);
+    alreadyAdded:;
   }
 
   // Clears the command buffer
