@@ -172,7 +172,7 @@ void EventScheduler::update() {
     }
   }
 
-  delay(5);
+  //delay(5);
 }
 
 void EventScheduler::addCommand(Command* command) {

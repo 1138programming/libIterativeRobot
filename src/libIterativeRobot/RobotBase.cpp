@@ -13,8 +13,11 @@ void RobotBase::printStuff() {
 
 void RobotBase::_privateRunRobot(void* param) {
     RobotBase* robot = reinterpret_cast<RobotBase*>(param);
+    std::uint32_t prev_time = pros::millis();
+    const std::uint32_t delta = 10;
     while (true) {
       robot->doOneCycle();
+      pros::Task::delay_until(&prev_time, delta);
     }
 }
 
