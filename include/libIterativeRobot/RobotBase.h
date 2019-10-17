@@ -23,14 +23,16 @@ namespace libIterativeRobot {
       RobotState lastState = RobotState::None;
 
       /**
-       * @brief
+       * @brief Main loop of the entire robot.
+       *
+       * Runs the function corresponding with the current state. For example, in autonomous code, doOneCycle runs autonInit and autonPeriodic.
        */
       void doOneCycle();
 
-      //void _privateRunRobot(void* param);
-      //void my_task_fn(void* param);
+      /**
+       * @brief
+       */
       static void _privateRunRobot(void* param);
-      void printStuff();
     protected:
       /**
         * @brief Runs when the robot starts up.
@@ -68,16 +70,18 @@ namespace libIterativeRobot {
       virtual void disabledPeriodic() = 0;
 
       /**
-        * Run the robot.
-        *
-        * This should be called with the main robot class as the template argument.
-        * For example, if your robot is named `ExampleRobot`, you would call
-        * it with `RobotBase::runRobot<ExampleRobot>()`
-        */
+       * @brief Starts the task that runs doOneCycle
+       */
       void runRobot();
 
       RobotBase();
     public:
+      /**
+        * @brief Starts the robot
+        *
+        * Creates an instance of the Robot class and calls runRobot on it.
+        * This should be called in the initialize function in initialize.cpp
+        */
       static void initializeRobot();
   };
 }
