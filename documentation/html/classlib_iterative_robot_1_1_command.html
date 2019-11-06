@@ -108,9 +108,9 @@ $(document).ready(function(){initNavTree('classlib_iterative_robot_1_1_command.h
  <div class="center">
   <img src="classlib_iterative_robot_1_1_command.png" usemap="#libIterativeRobot::Command_map" alt=""/>
   <map id="libIterativeRobot::Command_map" name="libIterativeRobot::Command_map">
-<area href="class_example_command.html" alt="ExampleCommand" shape="rect" coords="0,56,245,80"/>
-<area href="classlib_iterative_robot_1_1_command_group.html" alt="libIterativeRobot::CommandGroup" shape="rect" coords="255,56,500,80"/>
-<area href="classlib_iterative_robot_1_1_example_command_group.html" alt="libIterativeRobot::ExampleCommandGroup" shape="rect" coords="255,112,500,136"/>
+<area href="classlib_iterative_robot_1_1_command_group.html" alt="libIterativeRobot::CommandGroup" shape="rect" coords="108,56,314,80"/>
+<area href="classlib_iterative_robot_1_1_conditional_group.html" alt="libIterativeRobot::ConditionalGroup" shape="rect" coords="0,112,206,136"/>
+<area href="classlib_iterative_robot_1_1_lambda_group.html" alt="libIterativeRobot::LambdaGroup" shape="rect" coords="216,112,422,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -137,12 +137,16 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#a1c17b601d1b69822cabadb92069d1747">interrupted</a> ()=0</td></tr>
 <tr class="memdesc:a1c17b601d1b69822cabadb92069d1747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs once when a command is interrupted. <br /></td></tr>
 <tr class="separator:a1c17b601d1b69822cabadb92069d1747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab718f2780211fd0bc61af524e94555a2"><td class="memItemLeft" align="right" valign="top"><a id="ab718f2780211fd0bc61af524e94555a2"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#ab718f2780211fd0bc61af524e94555a2">blocked</a> ()=0</td></tr>
+<tr class="memdesc:ab718f2780211fd0bc61af524e94555a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs once when a command is interrupted. <br /></td></tr>
+<tr class="separator:ab718f2780211fd0bc61af524e94555a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f3790d1b8033d7253a9f44481032ee9"><td class="memItemLeft" align="right" valign="top"><a id="a3f3790d1b8033d7253a9f44481032ee9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#a3f3790d1b8033d7253a9f44481032ee9">run</a> ()</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#a3f3790d1b8033d7253a9f44481032ee9">run</a> ()</td></tr>
 <tr class="memdesc:a3f3790d1b8033d7253a9f44481032ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the command to the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a>. <br /></td></tr>
 <tr class="separator:a3f3790d1b8033d7253a9f44481032ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac91308101424f447f80665244b554171"><td class="memItemLeft" align="right" valign="top"><a id="ac91308101424f447f80665244b554171"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#ac91308101424f447f80665244b554171">stop</a> ()</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#ac91308101424f447f80665244b554171">stop</a> ()</td></tr>
 <tr class="memdesc:ac91308101424f447f80665244b554171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the command from the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> and interrupts it. <br /></td></tr>
 <tr class="separator:ac91308101424f447f80665244b554171"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18df2d81039392daeb0b78c346a70537"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib_iterative_robot_1_1_command.html#a18df2d81039392daeb0b78c346a70537">Command</a> ()</td></tr>
@@ -253,7 +257,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Called by the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> before a <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> starts running to check whether it can run or not</p>
 <dl class="section return"><dt>Returns</dt><dd>Whether or not the <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> can run </dd></dl>
 
-<p>Implemented in <a class="el" href="classlib_iterative_robot_1_1_command_group.html#abd75c9b52e6b4ae5af1b6724e865311f">libIterativeRobot::CommandGroup</a>, and <a class="el" href="class_example_command.html#ad1df0170d99bcef6c6bc1676551f9539">ExampleCommand</a>.</p>
+<p>Implemented in <a class="el" href="classlib_iterative_robot_1_1_command_group.html#abd75c9b52e6b4ae5af1b6724e865311f">libIterativeRobot::CommandGroup</a>.</p>
 
 </div>
 </div>
@@ -312,7 +316,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Called once before the <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> runs. </p>
 <p>Code needed to sets up the <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> for execution can be put here. This method is called once before the <a class="el" href="classlib_iterative_robot_1_1_command.html">Command</a> begins running </p>
 
-<p>Implemented in <a class="el" href="classlib_iterative_robot_1_1_command_group.html#a99800c5dbd05ab750aa0bb27518d0467">libIterativeRobot::CommandGroup</a>, and <a class="el" href="class_example_command.html#ae7bea17127c1697acbf90d6022eb5b5d">ExampleCommand</a>.</p>
+<p>Implemented in <a class="el" href="classlib_iterative_robot_1_1_command_group.html#a99800c5dbd05ab750aa0bb27518d0467">libIterativeRobot::CommandGroup</a>.</p>
 
 </div>
 </div>
@@ -342,7 +346,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>Called by the <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html">EventScheduler</a> while the command is running to check if it is finished. </p>
 <dl class="section return"><dt>Returns</dt><dd>Whether or not the command is finished </dd></dl>
 
-<p>Implemented in <a class="el" href="classlib_iterative_robot_1_1_command_group.html#a96807a2763adf9e21ebf2cb9e3574e3c">libIterativeRobot::CommandGroup</a>, and <a class="el" href="class_example_command.html#ab4e52d526bda7fe22705b2d3c44286e0">ExampleCommand</a>.</p>
+<p>Implemented in <a class="el" href="classlib_iterative_robot_1_1_command_group.html#a96807a2763adf9e21ebf2cb9e3574e3c">libIterativeRobot::CommandGroup</a>.</p>
 
 </div>
 </div>

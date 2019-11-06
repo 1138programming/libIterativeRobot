@@ -90,10 +90,13 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a id="index_a"></a>- a -</h3><ul>
 <li>addCommand()
-: <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#aac82a5f0c53789fe6170085b033efbbc">libIterativeRobot::EventScheduler</a>
+: <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a7092829578475f88390b7a8c54146299">libIterativeRobot::EventScheduler</a>
 </li>
 <li>addCommandGroup()
-: <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a24dfdf47117ffa162f74042345f57d94">libIterativeRobot::EventScheduler</a>
+: <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a0f4f7e7bace3dfd5156e692b2f68d6df">libIterativeRobot::EventScheduler</a>
+</li>
+<li>addDefaultCommands()
+: <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#aca83cc87b630a3de91376108302122d5">libIterativeRobot::EventScheduler</a>
 </li>
 <li>added
 : <a class="el" href="classlib_iterative_robot_1_1_command_group.html#a93fe86db750ed4c728626eace7e66a2f">libIterativeRobot::CommandGroup</a>
@@ -103,22 +106,28 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>addParallelCommand()
 : <a class="el" href="classlib_iterative_robot_1_1_command_group.html#a7255a0b640e74ce74870939b45d23a58">libIterativeRobot::CommandGroup</a>
+, <a class="el" href="classlib_iterative_robot_1_1_conditional_group.html#ad2fb980aee316a64e8127adc4a600848">libIterativeRobot::ConditionalGroup</a>
 </li>
 <li>addSequentialCommand()
 : <a class="el" href="classlib_iterative_robot_1_1_command_group.html#a7e3167a89a45e6b1fc5df9a18c2946b7">libIterativeRobot::CommandGroup</a>
+, <a class="el" href="classlib_iterative_robot_1_1_conditional_group.html#a89bd86d87a13af725243d2f0ade46df6">libIterativeRobot::ConditionalGroup</a>
 </li>
 <li>autonInit()
-: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#a8137d84aef11ed00a46cbc1bbb727a60">libIterativeRobot::RobotBase</a>
+: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#a956f7fff737d98b6e46d2cbb7e9a43dd">libIterativeRobot::RobotBase</a>
 , <a class="el" href="class_robot.html#af5bd4d345ec522b70bdc5cf2b17ffa49">Robot</a>
 </li>
 <li>autonPeriodic()
-: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#ac34d3dcb9388d4a8564eb781919eb825">libIterativeRobot::RobotBase</a>
+: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#ad2a97fc3eb00af6c3083f66868bb7c94">libIterativeRobot::RobotBase</a>
 , <a class="el" href="class_robot.html#a51cab9afb43b369593ca189101b25b26">Robot</a>
 </li>
 </ul>
 
 
 <h3><a id="index_b"></a>- b -</h3><ul>
+<li>blocked()
+: <a class="el" href="classlib_iterative_robot_1_1_command.html#ab718f2780211fd0bc61af524e94555a2">libIterativeRobot::Command</a>
+, <a class="el" href="classlib_iterative_robot_1_1_command_group.html#a399576549aa44d14676eeb97939d857e">libIterativeRobot::CommandGroup</a>
+</li>
 <li>button
 : <a class="el" href="classlib_iterative_robot_1_1_joystick_button.html#a505db434cba7b3ba8e57da5b09ab5efe">libIterativeRobot::JoystickButton</a>
 </li>
@@ -127,8 +136,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a id="index_c"></a>- c -</h3><ul>
 <li>canRun()
-: <a class="el" href="class_example_command.html#ad1df0170d99bcef6c6bc1676551f9539">ExampleCommand</a>
-, <a class="el" href="classlib_iterative_robot_1_1_command.html#aebef0fdf029a15ee48fbb778c4265609">libIterativeRobot::Command</a>
+: <a class="el" href="classlib_iterative_robot_1_1_command.html#aebef0fdf029a15ee48fbb778c4265609">libIterativeRobot::Command</a>
 , <a class="el" href="classlib_iterative_robot_1_1_command_group.html#abd75c9b52e6b4ae5af1b6724e865311f">libIterativeRobot::CommandGroup</a>
 </li>
 <li>channel
@@ -137,6 +145,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>checkConditions()
 : <a class="el" href="classlib_iterative_robot_1_1_event_listener.html#aacbdd1cd66bf22e081add72b127af3a1">libIterativeRobot::EventListener</a>
 , <a class="el" href="classlib_iterative_robot_1_1_trigger.html#ac89c07cd514a1af516dd7f773cbedcab">libIterativeRobot::Trigger</a>
+</li>
+<li>checkEventListeners()
+: <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#af5c6b0f9d31490e9ede73efe4858373a">libIterativeRobot::EventScheduler</a>
 </li>
 <li>clearScheduler()
 : <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a92692ad8573d974bae62c62fccf808c4">libIterativeRobot::EventScheduler</a>
@@ -187,20 +198,22 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="classlib_iterative_robot_1_1_command.html#a37cc89119a9f76d0dda57ea21c877c7c">libIterativeRobot::Command</a>
 </li>
 <li>disabledInit()
-: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#a12cfc52a6bac5b5a9ad7e61b47e9ecd2">libIterativeRobot::RobotBase</a>
+: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#adfb0d0e1e5946827aedd2b97ac155351">libIterativeRobot::RobotBase</a>
 , <a class="el" href="class_robot.html#a34f8bfa41ab64deae701c5583f619e78">Robot</a>
 </li>
 <li>disabledPeriodic()
-: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#a8e1e85e215343baaaf3bdeedb89d9890">libIterativeRobot::RobotBase</a>
+: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#adb4f513ca592875418dcc032f392404a">libIterativeRobot::RobotBase</a>
 , <a class="el" href="class_robot.html#a9d35b3c9b4de467c7435d0cc6f17b33b">Robot</a>
+</li>
+<li>doOneCycle()
+: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#abb65e46433c76fe9d99facd46c1daf95">libIterativeRobot::RobotBase</a>
 </li>
 </ul>
 
 
 <h3><a id="index_e"></a>- e -</h3><ul>
 <li>end()
-: <a class="el" href="class_example_command.html#ac3da078fdf1e7a7f94488db815bb0457">ExampleCommand</a>
-, <a class="el" href="classlib_iterative_robot_1_1_command.html#ab30847f09859387b70bb7846f7ce7ca4">libIterativeRobot::Command</a>
+: <a class="el" href="classlib_iterative_robot_1_1_command.html#ab30847f09859387b70bb7846f7ce7ca4">libIterativeRobot::Command</a>
 , <a class="el" href="classlib_iterative_robot_1_1_command_group.html#a28ad3a1c2f6b4f9aea10efa1a824895e">libIterativeRobot::CommandGroup</a>
 </li>
 <li>EventListener()
@@ -216,8 +229,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 , <a class="el" href="classlib_iterative_robot_1_1_subsystem.html#a2a47195be57876de9e0c9e18467a34a3">libIterativeRobot::Subsystem</a>
 </li>
 <li>execute()
-: <a class="el" href="class_example_command.html#af6fead537dd568d80aa3097ca207eda5">ExampleCommand</a>
-, <a class="el" href="classlib_iterative_robot_1_1_command.html#a4b38164af1a8645fae2fdae296317cf4">libIterativeRobot::Command</a>
+: <a class="el" href="classlib_iterative_robot_1_1_command.html#a4b38164af1a8645fae2fdae296317cf4">libIterativeRobot::Command</a>
 , <a class="el" href="classlib_iterative_robot_1_1_command_group.html#a5e91d370cafde43548d79945ccb4d8fe">libIterativeRobot::CommandGroup</a>
 </li>
 </ul>
@@ -239,7 +251,6 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>getRequirements()
 : <a class="el" href="classlib_iterative_robot_1_1_command.html#a447ba6e394f165c6d358471a8bbdc76a">libIterativeRobot::Command</a>
-, <a class="el" href="classlib_iterative_robot_1_1_command_group.html#abf3d539920648f9dec9dfdef30699c82">libIterativeRobot::CommandGroup</a>
 </li>
 <li>getState()
 : <a class="el" href="classlib_iterative_robot_1_1_joystick_button.html#ac17a3cda9edaf3a38bb87070c47191a1">libIterativeRobot::JoystickButton</a>
@@ -254,13 +265,15 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a1abfda2ac89947e8bb5c06478c87a5ba">libIterativeRobot::EventScheduler</a>
 </li>
 <li>initDefaultCommand()
-: <a class="el" href="classlib_iterative_robot_1_1_subsystem.html#a30bd6c33c84c896f31ed01c8331aab57">libIterativeRobot::Subsystem</a>
+: <a class="el" href="classlib_iterative_robot_1_1_subsystem.html#a957383df386cc39b2584143918fd67ed">libIterativeRobot::Subsystem</a>
 </li>
 <li>initialize()
-: <a class="el" href="class_example_command.html#ae7bea17127c1697acbf90d6022eb5b5d">ExampleCommand</a>
-, <a class="el" href="classlib_iterative_robot_1_1_command.html#a14543c9d38b07e52f9ffb2af88a63f60">libIterativeRobot::Command</a>
+: <a class="el" href="classlib_iterative_robot_1_1_command.html#a14543c9d38b07e52f9ffb2af88a63f60">libIterativeRobot::Command</a>
 , <a class="el" href="classlib_iterative_robot_1_1_command_group.html#a99800c5dbd05ab750aa0bb27518d0467">libIterativeRobot::CommandGroup</a>
 , <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#ad67e946fc54ad0a755a36ed5b87279b4">libIterativeRobot::EventScheduler</a>
+</li>
+<li>initializeRobot()
+: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#aaefe1d1083d84c855750bb8e3d52b0ac">libIterativeRobot::RobotBase</a>
 </li>
 <li>instance
 : <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a1f4587720421057eebddc0248bf9a05f">libIterativeRobot::EventScheduler</a>
@@ -268,14 +281,15 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>instances
 : <a class="el" href="classlib_iterative_robot_1_1_subsystem.html#a8520e50bb977676222daa241e757ab33">libIterativeRobot::Subsystem</a>
 </li>
+<li>intermediateGroupBuffer
+: <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a4a5d6ac28a4a988e4350b060f7214b3d">libIterativeRobot::EventScheduler</a>
+</li>
 <li>interrupted()
-: <a class="el" href="class_example_command.html#ae5a4bb67aa6e6c6234c3dca8eb7ad7ec">ExampleCommand</a>
-, <a class="el" href="classlib_iterative_robot_1_1_command.html#a1c17b601d1b69822cabadb92069d1747">libIterativeRobot::Command</a>
+: <a class="el" href="classlib_iterative_robot_1_1_command.html#a1c17b601d1b69822cabadb92069d1747">libIterativeRobot::Command</a>
 , <a class="el" href="classlib_iterative_robot_1_1_command_group.html#a5174a8e63675bead12b84e39df0ae90e">libIterativeRobot::CommandGroup</a>
 </li>
 <li>isFinished()
-: <a class="el" href="class_example_command.html#ab4e52d526bda7fe22705b2d3c44286e0">ExampleCommand</a>
-, <a class="el" href="classlib_iterative_robot_1_1_command.html#a8e4dccdd88f432a716090f532ba097f7">libIterativeRobot::Command</a>
+: <a class="el" href="classlib_iterative_robot_1_1_command.html#a8e4dccdd88f432a716090f532ba097f7">libIterativeRobot::Command</a>
 , <a class="el" href="classlib_iterative_robot_1_1_command_group.html#a96807a2763adf9e21ebf2cb9e3574e3c">libIterativeRobot::CommandGroup</a>
 </li>
 </ul>
@@ -300,7 +314,8 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a id="index_l"></a>- l -</h3><ul>
 <li>lastState
-: <a class="el" href="classlib_iterative_robot_1_1_trigger.html#ae053034579fc72b555c2052c37c1e410">libIterativeRobot::Trigger</a>
+: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#a3c7fd3122a6bd9772e10ca35145530d2">libIterativeRobot::RobotBase</a>
+, <a class="el" href="classlib_iterative_robot_1_1_trigger.html#ae053034579fc72b555c2052c37c1e410">libIterativeRobot::Trigger</a>
 </li>
 </ul>
 
@@ -336,21 +351,23 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>removeCommandGroup()
 : <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a6c1501cbee6a630b2b63881aa200fdf4">libIterativeRobot::EventScheduler</a>
 </li>
-<li>requirements
-: <a class="el" href="classlib_iterative_robot_1_1_command_group.html#ad804d6ab2feaec9e95dde18706548a89">libIterativeRobot::CommandGroup</a>
-</li>
 <li>requires()
 : <a class="el" href="classlib_iterative_robot_1_1_command.html#ad7b7f328974f5f17a2a4b1593b6c9eb5">libIterativeRobot::Command</a>
 </li>
 <li>robotInit()
-: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#a1e690e472e901ac99bb7ce6f3b6a33ea">libIterativeRobot::RobotBase</a>
+: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#a54d9a7504202639a537b0b4089af8223">libIterativeRobot::RobotBase</a>
 , <a class="el" href="class_robot.html#a0ade19d412e58249d9f7a138d306130c">Robot</a>
+</li>
+<li>RobotState
+: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#a4a63ae91c048bc2f371b175527b3a461">libIterativeRobot::RobotBase</a>
 </li>
 <li>run()
 : <a class="el" href="classlib_iterative_robot_1_1_command.html#a3f3790d1b8033d7253a9f44481032ee9">libIterativeRobot::Command</a>
+, <a class="el" href="classlib_iterative_robot_1_1_command_group.html#a9e76c6d0ef039eca4dc27dd2f0144485">libIterativeRobot::CommandGroup</a>
+, <a class="el" href="classlib_iterative_robot_1_1_conditional_group.html#a6419b0bf4a05ec7bbfb82a9be193cccc">libIterativeRobot::ConditionalGroup</a>
 </li>
 <li>runRobot()
-: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#a5a57c611cc6c2444e1c8d2fd514bd25c">libIterativeRobot::RobotBase</a>
+: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#a508d3e112f7344da4c7ef72d30758b25">libIterativeRobot::RobotBase</a>
 </li>
 <li>runWhenActivatedCommands
 : <a class="el" href="classlib_iterative_robot_1_1_trigger.html#a0216c1f8ae6ad31c6ba15f9c62079828">libIterativeRobot::Trigger</a>
@@ -368,6 +385,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a id="index_s"></a>- s -</h3><ul>
+<li>scheduleCommandGroups()
+: <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#aa516958158457164590a1d092891c05c">libIterativeRobot::EventScheduler</a>
+</li>
 <li>sequentialIndex
 : <a class="el" href="classlib_iterative_robot_1_1_command_group.html#ae6ba0e30e4caa58f4b019ab496487ab7">libIterativeRobot::CommandGroup</a>
 </li>
@@ -382,6 +402,8 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>stop()
 : <a class="el" href="classlib_iterative_robot_1_1_command.html#ac91308101424f447f80665244b554171">libIterativeRobot::Command</a>
+, <a class="el" href="classlib_iterative_robot_1_1_command_group.html#ad521849c9a7f1b3f952b318ee424c5b9">libIterativeRobot::CommandGroup</a>
+, <a class="el" href="classlib_iterative_robot_1_1_conditional_group.html#ad742b411ac174664c0a107bb881c3148">libIterativeRobot::ConditionalGroup</a>
 </li>
 <li>stopWhenActivatedCommands
 : <a class="el" href="classlib_iterative_robot_1_1_trigger.html#a5d326d8b356575d12f7b6577862d3065">libIterativeRobot::Trigger</a>
@@ -410,11 +432,11 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a id="index_t"></a>- t -</h3><ul>
 <li>teleopInit()
-: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#a290bea17acf9bc884a490472e9d2e039">libIterativeRobot::RobotBase</a>
+: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#a36918ce992a84d3b4575d9e45dcf2b12">libIterativeRobot::RobotBase</a>
 , <a class="el" href="class_robot.html#a8fc4fbb8f758d7223d062e1b4a915232">Robot</a>
 </li>
 <li>teleopPeriodic()
-: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#a564ee86d582b598dd0713c067b352aef">libIterativeRobot::RobotBase</a>
+: <a class="el" href="classlib_iterative_robot_1_1_robot_base.html#a28b9b030381651797707e4690cfafc85">libIterativeRobot::RobotBase</a>
 , <a class="el" href="class_robot.html#a78f62f5d6eb05e27bfa1998fc35a519c">Robot</a>
 </li>
 <li>threshold
@@ -422,6 +444,12 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>toExecute
 : <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a91ac686fb045bce48f6debdb0a351c20">libIterativeRobot::EventScheduler</a>
+</li>
+<li>toGroupQueue()
+: <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a5ee3b365b5168aef74afd878e7a82ba1">libIterativeRobot::EventScheduler</a>
+</li>
+<li>toIntermediateBuffer()
+: <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a1b5e99e2665ef24bc985b07bff42a1f6">libIterativeRobot::EventScheduler</a>
 </li>
 <li>trackSubsystem()
 : <a class="el" href="classlib_iterative_robot_1_1_event_scheduler.html#a1130cfd602dec9e4091571b47b60f378">libIterativeRobot::EventScheduler</a>

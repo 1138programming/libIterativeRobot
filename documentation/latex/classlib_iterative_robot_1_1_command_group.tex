@@ -13,39 +13,41 @@ Inheritance diagram for lib\+Iterative\+Robot\+::Command\+Group\+:\begin{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}} $\ast$ $>$ \& \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_abf3d539920648f9dec9dfdef30699c82}{get\+Requirements}} ()
-\begin{DoxyCompactList}\small\item\em Gets the requirements of the current sequential step. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_abd75c9b52e6b4ae5af1b6724e865311f}{can\+Run}} ()
+virtual bool \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_abd75c9b52e6b4ae5af1b6724e865311f}{can\+Run}} ()
 \begin{DoxyCompactList}\small\item\em Whether the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} can run or not. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a99800c5dbd05ab750aa0bb27518d0467}{initialize}} ()
+virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a99800c5dbd05ab750aa0bb27518d0467}{initialize}} ()
 \begin{DoxyCompactList}\small\item\em Called once before the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} runs. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a5e91d370cafde43548d79945ccb4d8fe}{execute}} ()
+virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a5e91d370cafde43548d79945ccb4d8fe}{execute}} ()
 \begin{DoxyCompactList}\small\item\em Adds Commands and Command\+Groups to the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a96807a2763adf9e21ebf2cb9e3574e3c}{is\+Finished}} ()
+virtual bool \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a96807a2763adf9e21ebf2cb9e3574e3c}{is\+Finished}} ()
 \begin{DoxyCompactList}\small\item\em Called by the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} while the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} is running to check if it is finished. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a28ad3a1c2f6b4f9aea10efa1a824895e}{end}} ()
+virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a28ad3a1c2f6b4f9aea10efa1a824895e}{end}} ()
 \begin{DoxyCompactList}\small\item\em Runs when the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} is finished. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a5174a8e63675bead12b84e39df0ae90e}{interrupted}} ()
+virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a5174a8e63675bead12b84e39df0ae90e}{interrupted}} ()
 \begin{DoxyCompactList}\small\item\em Runs when a \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} is interrupted. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a7e3167a89a45e6b1fc5df9a18c2946b7}{add\+Sequential\+Command}} (\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$a\+Command, bool \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_ae6779a068983b84e265c0ff4fc74488d}{forget}}=false)
-\begin{DoxyCompactList}\small\item\em Adds a sequential \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} or \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a7255a0b640e74ce74870939b45d23a58}{add\+Parallel\+Command}} (\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$a\+Command, bool \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_ae6779a068983b84e265c0ff4fc74488d}{forget}}=false)
-\begin{DoxyCompactList}\small\item\em Adds a parallel \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} or \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_a399576549aa44d14676eeb97939d857e}\label{classlib_iterative_robot_1_1_command_group_a399576549aa44d14676eeb97939d857e}} 
+virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a399576549aa44d14676eeb97939d857e}{blocked}} ()
+\begin{DoxyCompactList}\small\item\em Runs once when a command is interrupted. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_a9e76c6d0ef039eca4dc27dd2f0144485}\label{classlib_iterative_robot_1_1_command_group_a9e76c6d0ef039eca4dc27dd2f0144485}} 
-void {\bfseries run} ()
-\item 
+virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a9e76c6d0ef039eca4dc27dd2f0144485}{run}} ()
+\begin{DoxyCompactList}\small\item\em Adds the command to the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_ad521849c9a7f1b3f952b318ee424c5b9}\label{classlib_iterative_robot_1_1_command_group_ad521849c9a7f1b3f952b318ee424c5b9}} 
-void {\bfseries stop} ()
-\item 
+virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_ad521849c9a7f1b3f952b318ee424c5b9}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Removes the command from the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} and interrupts it. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a862143e691209986739c234cb0fc4cc8}{Command\+Group}} ()
 \begin{DoxyCompactList}\small\item\em Creates a new \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a7e3167a89a45e6b1fc5df9a18c2946b7}{add\+Sequential\+Command}} (\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$a\+Command, bool \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_ae6779a068983b84e265c0ff4fc74488d}{forget}}=false)
+\begin{DoxyCompactList}\small\item\em Adds a sequential \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} or \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a7255a0b640e74ce74870939b45d23a58}{add\+Parallel\+Command}} (\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$a\+Command, bool \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_ae6779a068983b84e265c0ff4fc74488d}{forget}}=false)
+\begin{DoxyCompactList}\small\item\em Adds a parallel \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} or \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$ $>$ $>$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_aa7a293ed14071e183070e00580ccbecf}{commands}}
 \begin{DoxyCompactList}\small\item\em Holds all of the commands added to the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}}. \end{DoxyCompactList}\item 
-std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}} $\ast$ $>$ $>$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_ad804d6ab2feaec9e95dde18706548a89}{requirements}}
-\begin{DoxyCompactList}\small\item\em Holds all of the requirements of commands added to the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_a93fe86db750ed4c728626eace7e66a2f}\label{classlib_iterative_robot_1_1_command_group_a93fe86db750ed4c728626eace7e66a2f}} 
 std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group_a93fe86db750ed4c728626eace7e66a2f}{added}}
 \begin{DoxyCompactList}\small\item\em Keeps track of which Commands and Command\+Groups have been added to the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}. \end{DoxyCompactList}\item 
@@ -86,7 +88,7 @@ A \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}}
 \index{libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}!addParallelCommand@{addParallelCommand}}
 \index{addParallelCommand@{addParallelCommand}!libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}}
 \subsubsection{\texorpdfstring{addParallelCommand()}{addParallelCommand()}}
-{\footnotesize\ttfamily void Command\+Group\+::add\+Parallel\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$}]{a\+Command,  }\item[{bool}]{forget = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Command\+Group\+::add\+Parallel\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$}]{a\+Command,  }\item[{bool}]{forget = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 
 
@@ -101,11 +103,15 @@ When this method is called, a \mbox{\hyperlink{classlib_iterative_robot_1_1_comm
 {\em forget} & Whether or not the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} should forget about a\+Command once it is added to the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}. If true, the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} will not wait for a\+Command to finish before moving on the next sequential step. The default value is false. \\
 \hline
 \end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classlib_iterative_robot_1_1_conditional_group_ad2fb980aee316a64e8127adc4a600848}{lib\+Iterative\+Robot\+::\+Conditional\+Group}}.
+
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_a7e3167a89a45e6b1fc5df9a18c2946b7}\label{classlib_iterative_robot_1_1_command_group_a7e3167a89a45e6b1fc5df9a18c2946b7}} 
 \index{libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}!addSequentialCommand@{addSequentialCommand}}
 \index{addSequentialCommand@{addSequentialCommand}!libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}}
 \subsubsection{\texorpdfstring{addSequentialCommand()}{addSequentialCommand()}}
-{\footnotesize\ttfamily void Command\+Group\+::add\+Sequential\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$}]{a\+Command,  }\item[{bool}]{forget = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Command\+Group\+::add\+Sequential\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$}]{a\+Command,  }\item[{bool}]{forget = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 
 
@@ -120,6 +126,10 @@ When this method is called, a new sequential step is added to which all subseque
 {\em forget} & Whether or not the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} should forget about a\+Command once it is added to the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}. If true, the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} will not wait for a\+Command to finish before moving on the next sequential step. The default value is false \\
 \hline
 \end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classlib_iterative_robot_1_1_conditional_group_a89bd86d87a13af725243d2f0ade46df6}{lib\+Iterative\+Robot\+::\+Conditional\+Group}}.
+
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_abd75c9b52e6b4ae5af1b6724e865311f}\label{classlib_iterative_robot_1_1_command_group_abd75c9b52e6b4ae5af1b6724e865311f}} 
 \index{libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}!canRun@{canRun}}
 \index{canRun@{canRun}!libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}}
@@ -165,19 +175,6 @@ Goes through each sequential step and adds all of the Commands and Command\+Grou
 
 Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a4b38164af1a8645fae2fdae296317cf4}{lib\+Iterative\+Robot\+::\+Command}}.
 
-\mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_abf3d539920648f9dec9dfdef30699c82}\label{classlib_iterative_robot_1_1_command_group_abf3d539920648f9dec9dfdef30699c82}} 
-\index{libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}!getRequirements@{getRequirements}}
-\index{getRequirements@{getRequirements}!libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}}
-\subsubsection{\texorpdfstring{getRequirements()}{getRequirements()}}
-{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}} $\ast$ $>$ \& Command\+Group\+::get\+Requirements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Gets the requirements of the current sequential step. 
-
-Used by the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} to determine if the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} can run. \begin{DoxyReturn}{Returns}
-The requirements of the Commands and Command\+Groups being run in the current sequential step 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_a99800c5dbd05ab750aa0bb27518d0467}\label{classlib_iterative_robot_1_1_command_group_a99800c5dbd05ab750aa0bb27518d0467}} 
 \index{libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}!initialize@{initialize}}
 \index{initialize@{initialize}!libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}}
@@ -238,17 +235,7 @@ Implements \mbox{\hyperlink{classlib_iterative_robot_1_1_command_a8e4dccdd88f432
 
 Holds all of the commands added to the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}}. 
 
-2d vector keeping track of all commands and command groups. Each vector in the 2d vector represents a sequential step. All the commands and command groups in each sequential step are run in parallel \mbox{\Hypertarget{classlib_iterative_robot_1_1_command_group_ad804d6ab2feaec9e95dde18706548a89}\label{classlib_iterative_robot_1_1_command_group_ad804d6ab2feaec9e95dde18706548a89}} 
-\index{libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}!requirements@{requirements}}
-\index{requirements@{requirements}!libIterativeRobot::CommandGroup@{libIterativeRobot::CommandGroup}}
-\subsubsection{\texorpdfstring{requirements}{requirements}}
-{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{classlib_iterative_robot_1_1_subsystem}{Subsystem}}$\ast$$>$ $>$ lib\+Iterative\+Robot\+::\+Command\+Group\+::requirements\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Holds all of the requirements of commands added to the \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}}. 
-
-2d vector keeping track of all requirements of Commands and Command\+Groups. Each vector in the 2d vector represents the requirements of the Commands and Command\+Groups in a sequential step. Commands or Command\+Groups added whose forget flag has been set to true do not have their requirements added 
+2d vector keeping track of all commands and command groups. Each vector in the 2d vector represents a sequential step. All the commands and command groups in each sequential step are run in parallel 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

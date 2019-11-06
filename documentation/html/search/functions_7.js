@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['queuecommandgroups',['queueCommandGroups',['../classlib_iterative_robot_1_1_event_scheduler.html#a4df12d213a4ea996c942fdf1b85033b1',1,'libIterativeRobot::EventScheduler']]],
-  ['queuecommands',['queueCommands',['../classlib_iterative_robot_1_1_event_scheduler.html#a0334c1b83511053b6da8583caf6b87be',1,'libIterativeRobot::EventScheduler']]]
+  ['joystickbutton',['JoystickButton',['../classlib_iterative_robot_1_1_joystick_button.html#af34169116bcab8a1b5868dddc745e5ec',1,'libIterativeRobot::JoystickButton']]],
+  ['joystickchannel',['JoystickChannel',['../classlib_iterative_robot_1_1_joystick_channel.html#a75bf0fa44f1d1b06c263b42140d31bbe',1,'libIterativeRobot::JoystickChannel']]]
 ];

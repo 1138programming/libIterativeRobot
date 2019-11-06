@@ -11,9 +11,9 @@ void \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_a9643c8e8dd7a
 \begin{DoxyCompactList}\small\item\em Checks Event\+Listeners and handles the logic for Commands and Command\+Groups. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_ad6e214ce9686a58eb37fb71796531b4e}{add\+Event\+Listener}} (\mbox{\hyperlink{classlib_iterative_robot_1_1_event_listener}{Event\+Listener}} $\ast$event\+Listener)
 \begin{DoxyCompactList}\small\item\em Adds an \mbox{\hyperlink{classlib_iterative_robot_1_1_event_listener}{Event\+Listener}} for the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} to keep track of. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_aac82a5f0c53789fe6170085b033efbbc}{add\+Command}} (\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$command\+To\+Run)
+void \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_a7092829578475f88390b7a8c54146299}{add\+Command}} (\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$command)
 \begin{DoxyCompactList}\small\item\em Adds a \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} to the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_a24dfdf47117ffa162f74042345f57d94}{add\+Command\+Group}} (\mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} $\ast$command\+Group\+To\+Run)
+void \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_a0f4f7e7bace3dfd5156e692b2f68d6df}{add\+Command\+Group}} (\mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} $\ast$command\+Group)
 \begin{DoxyCompactList}\small\item\em Adds a \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} to the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_a038be4eb06e564fe47d326b458a8985c}{remove\+Command}} (\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$command)
 \begin{DoxyCompactList}\small\item\em Removes a \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} from the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}. \end{DoxyCompactList}\item 
@@ -43,9 +43,23 @@ bool \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_af47242d40b09
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a0334c1b83511053b6da8583caf6b87be}\label{classlib_iterative_robot_1_1_event_scheduler_a0334c1b83511053b6da8583caf6b87be}} 
 void \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_a0334c1b83511053b6da8583caf6b87be}{queue\+Commands}} ()
 \begin{DoxyCompactList}\small\item\em Adds the commands in the command\+Buffer to the command\+Queue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a1b5e99e2665ef24bc985b07bff42a1f6}\label{classlib_iterative_robot_1_1_event_scheduler_a1b5e99e2665ef24bc985b07bff42a1f6}} 
+void \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_a1b5e99e2665ef24bc985b07bff42a1f6}{to\+Intermediate\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Adds the Command\+Groups in the command\+Group\+Buffer to the intermediate\+Group\+Buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a5ee3b365b5168aef74afd878e7a82ba1}\label{classlib_iterative_robot_1_1_event_scheduler_a5ee3b365b5168aef74afd878e7a82ba1}} 
+void \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_a5ee3b365b5168aef74afd878e7a82ba1}{to\+Group\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Adds the Command\+Groups in the intermediate\+Group\+Buffer to the command\+Group\+Queue. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a4df12d213a4ea996c942fdf1b85033b1}\label{classlib_iterative_robot_1_1_event_scheduler_a4df12d213a4ea996c942fdf1b85033b1}} 
 void \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_a4df12d213a4ea996c942fdf1b85033b1}{queue\+Command\+Groups}} ()
-\begin{DoxyCompactList}\small\item\em Adds the Command\+Groups in the command\+Group\+Buffer to the command\+Group\+Queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Adds the Command\+Groups in the command\+Group\+Buffer to the command\+Group\+Queue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_af5c6b0f9d31490e9ede73efe4858373a}\label{classlib_iterative_robot_1_1_event_scheduler_af5c6b0f9d31490e9ede73efe4858373a}} 
+void \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_af5c6b0f9d31490e9ede73efe4858373a}{check\+Event\+Listeners}} ()
+\begin{DoxyCompactList}\small\item\em Runs check\+Conditions on all Event\+Listeners. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_aca83cc87b630a3de91376108302122d5}\label{classlib_iterative_robot_1_1_event_scheduler_aca83cc87b630a3de91376108302122d5}} 
+void \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_aca83cc87b630a3de91376108302122d5}{add\+Default\+Commands}} ()
+\begin{DoxyCompactList}\small\item\em Adds default commands if they have not yet been added. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_aa516958158457164590a1d092891c05c}{schedule\+Command\+Groups}} (std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} $\ast$ $>$ $\ast$command\+Groups)
+\begin{DoxyCompactList}\small\item\em Schedules the Command\+Groups in a given vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -68,6 +82,8 @@ std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}
 \begin{DoxyCompactList}\small\item\em Stores Commands after they are added to the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} $\ast$ $>$ \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_a37b0c1d9ec0c00e7729bec67ebbd9986}{command\+Group\+Buffer}}
 \begin{DoxyCompactList}\small\item\em Stores Command\+Groups after they are added to the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} $\ast$ $>$ \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_a4a5d6ac28a4a988e4350b060f7214b3d}{intermediate\+Group\+Buffer}}
+\item 
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a91ac686fb045bce48f6debdb0a351c20}\label{classlib_iterative_robot_1_1_event_scheduler_a91ac686fb045bce48f6debdb0a351c20}} 
 std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$ $>$ \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler_a91ac686fb045bce48f6debdb0a351c20}{to\+Execute}}
 \begin{DoxyCompactList}\small\item\em Stores Commands that the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} determines can run. \end{DoxyCompactList}\item 
@@ -107,11 +123,11 @@ An \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Schedul
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_aac82a5f0c53789fe6170085b033efbbc}\label{classlib_iterative_robot_1_1_event_scheduler_aac82a5f0c53789fe6170085b033efbbc}} 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a7092829578475f88390b7a8c54146299}\label{classlib_iterative_robot_1_1_event_scheduler_a7092829578475f88390b7a8c54146299}} 
 \index{libIterativeRobot::EventScheduler@{libIterativeRobot::EventScheduler}!addCommand@{addCommand}}
 \index{addCommand@{addCommand}!libIterativeRobot::EventScheduler@{libIterativeRobot::EventScheduler}}
 \subsubsection{\texorpdfstring{addCommand()}{addCommand()}}
-{\footnotesize\ttfamily void Event\+Scheduler\+::add\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$}]{command\+To\+Run }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Event\+Scheduler\+::add\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} $\ast$}]{command }\end{DoxyParamCaption})}
 
 
 
@@ -124,11 +140,11 @@ The provided \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} is
 {\em command\+To\+Run} & The \mbox{\hyperlink{classlib_iterative_robot_1_1_command}{Command}} to add \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a24dfdf47117ffa162f74042345f57d94}\label{classlib_iterative_robot_1_1_event_scheduler_a24dfdf47117ffa162f74042345f57d94}} 
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a0f4f7e7bace3dfd5156e692b2f68d6df}\label{classlib_iterative_robot_1_1_event_scheduler_a0f4f7e7bace3dfd5156e692b2f68d6df}} 
 \index{libIterativeRobot::EventScheduler@{libIterativeRobot::EventScheduler}!addCommandGroup@{addCommandGroup}}
 \index{addCommandGroup@{addCommandGroup}!libIterativeRobot::EventScheduler@{libIterativeRobot::EventScheduler}}
 \subsubsection{\texorpdfstring{addCommandGroup()}{addCommandGroup()}}
-{\footnotesize\ttfamily void Event\+Scheduler\+::add\+Command\+Group (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} $\ast$}]{command\+Group\+To\+Run }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Event\+Scheduler\+::add\+Command\+Group (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} $\ast$}]{command\+Group }\end{DoxyParamCaption})}
 
 
 
@@ -262,6 +278,21 @@ The provided \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Comman
 {\em command\+Group} & The \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} to remove \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_aa516958158457164590a1d092891c05c}\label{classlib_iterative_robot_1_1_event_scheduler_aa516958158457164590a1d092891c05c}} 
+\index{libIterativeRobot::EventScheduler@{libIterativeRobot::EventScheduler}!scheduleCommandGroups@{scheduleCommandGroups}}
+\index{scheduleCommandGroups@{scheduleCommandGroups}!libIterativeRobot::EventScheduler@{libIterativeRobot::EventScheduler}}
+\subsubsection{\texorpdfstring{scheduleCommandGroups()}{scheduleCommandGroups()}}
+{\footnotesize\ttfamily void Event\+Scheduler\+::schedule\+Command\+Groups (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}} $\ast$ $>$ $\ast$}]{command\+Groups }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Schedules the Command\+Groups in a given vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Groups} & The vector to schedule Command\+Groups from \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a1130cfd602dec9e4091571b47b60f378}\label{classlib_iterative_robot_1_1_event_scheduler_a1130cfd602dec9e4091571b47b60f378}} 
 \index{libIterativeRobot::EventScheduler@{libIterativeRobot::EventScheduler}!trackSubsystem@{trackSubsystem}}
 \index{trackSubsystem@{trackSubsystem}!libIterativeRobot::EventScheduler@{libIterativeRobot::EventScheduler}}
@@ -310,7 +341,13 @@ It acts as a buffer for the command\+Queue, since undefined behavior can occur i
 
 Stores Command\+Groups after they are added to the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}}. 
 
-It acts as a buffer for the command\+Group\+Queue, since undefined behavior can occur if Command\+Groups are added to it while the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} is looping through it. Its contents are eventuallt added to the command\+Group\+Queue 
+It acts as a buffer for the command\+Group\+Queue, since undefined behavior can occur if Command\+Groups are added to it while the \mbox{\hyperlink{classlib_iterative_robot_1_1_event_scheduler}{Event\+Scheduler}} is looping through it. Its contents are eventuallt added to the command\+Group\+Queue \mbox{\Hypertarget{classlib_iterative_robot_1_1_event_scheduler_a4a5d6ac28a4a988e4350b060f7214b3d}\label{classlib_iterative_robot_1_1_event_scheduler_a4a5d6ac28a4a988e4350b060f7214b3d}} 
+\index{libIterativeRobot::EventScheduler@{libIterativeRobot::EventScheduler}!intermediateGroupBuffer@{intermediateGroupBuffer}}
+\index{intermediateGroupBuffer@{intermediateGroupBuffer}!libIterativeRobot::EventScheduler@{libIterativeRobot::EventScheduler}}
+\subsubsection{\texorpdfstring{intermediateGroupBuffer}{intermediateGroupBuffer}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classlib_iterative_robot_1_1_command_group}{Command\+Group}}$\ast$$>$ lib\+Iterative\+Robot\+::\+Event\+Scheduler\+::intermediate\+Group\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
