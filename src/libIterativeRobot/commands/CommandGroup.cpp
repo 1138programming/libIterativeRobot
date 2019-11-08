@@ -86,7 +86,7 @@ void CommandGroup::end() {
 void CommandGroup::interrupted() {
   //comment("Command group was interrupted\n");
   // Resets the command group's status to idle to let it run again in the future
-  status = Status::Idle;
+  //status = Status::Idle;
 
   //printf("Command group interrupted\n");
 
@@ -97,7 +97,7 @@ void CommandGroup::interrupted() {
 }
 
 void CommandGroup::blocked() {
-  status = Status::Idle;
+  //status = Status::Idle;
 
   for (size_t i = 0; i < commands[sequentialIndex].size(); i++) {
     commands[sequentialIndex][i]->stop();
@@ -125,6 +125,7 @@ void CommandGroup::addParallelCommand(Command *aCommand, bool forget) {
 }
 
 void CommandGroup::run() {
+  this->status = Status::Idle;
   // Adds the command group to the event scheduler
   EventScheduler::getInstance()->addCommandGroup(this);
 }

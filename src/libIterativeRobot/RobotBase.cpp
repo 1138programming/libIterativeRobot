@@ -8,9 +8,6 @@ using namespace libIterativeRobot;
 RobotBase::RobotBase() {
 }
 
-void RobotBase::printStuff() {
-}
-
 void RobotBase::_privateRunRobot(void* param) {
     RobotBase* robot = reinterpret_cast<RobotBase*>(param);
     std::uint32_t prev_time = pros::millis();

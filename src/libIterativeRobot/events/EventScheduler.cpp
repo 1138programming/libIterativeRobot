@@ -147,16 +147,16 @@ void EventScheduler::update() {
     for (Command* command : toExecute) {
       // If the command group is not running, initialize it first
       if (command->status != Status::Running) {
-        command->initialize();
         command->status = Status::Running;
+        command->initialize();
       }
 
       command->execute();
 
       // If the command is finished, call its end() function and remove it from the command queue if it is not a default command
       if (command->isFinished()) {
-        command->end();
         command->status = Status::Finished;
+        command->end();
         if (command->priority > 0) {
           commandQueue[indexes[i]] = NULL;
         }
@@ -179,6 +179,9 @@ void EventScheduler::addCommand(Command* command) {
   // Makes sure the command is not in the scheduler yet and then adds it to the buffer
   if (!commandInScheduler(command)) {
     commandBuffer.push_back(command);
+  } else {
+    command->status = Status::Blocked;
+    command->blocked();
   }
   //printf("Command added, address is %p\n", command);
 }
@@ -241,8 +244,10 @@ void EventScheduler::removeCommand(Command* command) {
   size_t index = std::find(commandBuffer.begin(), commandBuffer.end(), command) - commandBuffer.begin(); // Get the index of the command in the commandBuffer vector
   if (index >= commandBuffer.size()) { // If the command is not in the commandBuffer vector, check in the commandQueue vector
     index = std::find(commandQueue.begin(), commandQueue.end(), command) - commandQueue.begin(); // Get the index of the command in the commandQueue vector
-    if (index >= commandQueue.size()) // If the command is not in the commandQueue vector, return
+    if (index >= commandQueue.size()) { // If the command is not in the commandQueue vector, return
+      // Command not found, return
       return;
+    }
     commandQueue.erase(commandQueue.begin() + index); // Remove command from commandQueue
   } else {
     commandBuffer.erase(commandBuffer.begin() + index); // Remove command from commandBuffer
@@ -250,11 +255,11 @@ void EventScheduler::removeCommand(Command* command) {
 
   // Blocks or interrupts the command being removed
   if (command->status == Status::Running) {
-    command->interrupted();
     command->status = Status::Interrupted;
+    command->interrupted();
   } else {
-    command->blocked();
     command->status = Status::Blocked;
+    command->blocked();
   }
 }
 

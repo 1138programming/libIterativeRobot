@@ -10,10 +10,10 @@ namespace libIterativeRobot {
    */
   enum class Status {
     Idle = 0,
+    Blocked,
     Running,
     Finished,
-    Interrupted,
-    Blocked
+    Interrupted
   };
 }
 

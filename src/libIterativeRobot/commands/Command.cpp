@@ -27,6 +27,7 @@ bool Command::canBeInterruptedBy(Command* aCommand) {
 */
 
 void Command::run() {
+  this->status = Status::Idle;
   EventScheduler::getInstance()->addCommand(this);
 }
 
