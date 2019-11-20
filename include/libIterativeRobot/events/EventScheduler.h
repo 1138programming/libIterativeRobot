@@ -74,7 +74,13 @@ class EventScheduler {
     std::vector<CommandGroup*> commandGroupBuffer;
 
     /**
+     * @brief Temporary storage while scheduling CommandGroups.
      *
+     * After the CommandGroups in commandGroupQueue are scheduled with scheduleCommandGroups, the contents of commandGroupBuffer
+     * are dumped into the intermediatGroupBuffer. This is because when a CommandGroup is run, it may add another CommandGroup to the
+     * which goes into the commandGroupBuffer. In order to handle these newly added CommandGroups, as well as prevent undefined behavior,
+     * scheduler, the contents of commandGroupBuffer are first moved to intermediateGroupBuffer, and then the CommandGroups in
+     * intermediateGroupBuffer are scheduled. This process of dumping and scheduling is repeated until the commandGroupBuffer is empty.
      */
     std::vector<CommandGroup*> intermediateGroupBuffer;
 
@@ -150,6 +156,9 @@ class EventScheduler {
 
     /**
      * @brief Schedules the CommandGroups in a given vector
+     *
+     * Called first on the commandGroupQueue, and then repeatedly on the intermediateGroupBuffer until the commandGroupBuffer is empty.
+     *
      * @param commandGroups The vector to schedule CommandGroups from
      */
     void scheduleCommandGroups(std::vector<CommandGroup*>* commandGroups);
@@ -170,6 +179,7 @@ class EventScheduler {
      * requirements. If a Command shares a requirement with a higher priority Command, it cannot run. If it is already
      * running, it is interrupted. If a Command can run but it has not yet been executed, it is initialized. It is
      * then run and if it has finished, its end() method is called. The same logic is applied to CommandGroups.
+     * This function is called automatically in RobotBase's method doOneTick.
      */
     void update();
 
