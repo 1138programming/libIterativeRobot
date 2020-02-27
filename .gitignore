@@ -1,43 +1,17 @@
-# Prerequisites
-*.d
-
 # Compiled Object files
-*.slo
-*.lo
 *.o
 *.obj
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.lib
-
 # Executables
-*.exe
-*.out
-*.app
 *.bin
 *.elf
 
-# VS Code linter stuff
-.vscode/*
-
-# Binaries + Libraries
-bin/*
-libIterativeRobot@*.zip
-
-# Other stuff
-documentation/*
+# PROS
+bin/
+documentation/
+.vscode/
+compile_commands.json
+temp.log
+temp.errors
+*.ini
+.d/
