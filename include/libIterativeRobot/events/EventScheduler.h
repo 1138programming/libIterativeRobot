@@ -2,7 +2,6 @@
 #define _EVENTS_EVENTSCHEDULER_H_
 
 #include "libIterativeRobot/commands/Command.h"
-#include "libIterativeRobot/commands/CommandGroup.h"
 #include "main.h"
 #include "libIterativeRobot/events/EventListener.h"
 #include "libIterativeRobot/subsystems/Subsystem.h"
@@ -53,36 +52,12 @@ class EventScheduler {
     std::vector<Command*> commandQueue;
 
     /**
-     * @brief A queue for CommandGroups for the EventScheduler to process
-     */
-    std::vector<CommandGroup*> commandGroupQueue;
-
-    /**
      * @brief Stores Commands after they are added to the EventScheduler.
      *
      * It acts as a buffer for the commandQueue, since undefined behavior can occur if Commands are added to it while
      * the EventScheduler is looping through it. Its contents are eventually added to the commandQueue.
      */
     std::vector<Command*> commandBuffer;
-
-    /**
-     * @brief Stores CommandGroups after they are added to the EventScheduler.
-     *
-     * It acts as a buffer for the commandGroupQueue, since undefined behavior can occur if CommandGroups are added
-     * to it while the EventScheduler is looping through it. Its contents are eventuallt added to the commandGroupQueue
-     */
-    std::vector<CommandGroup*> commandGroupBuffer;
-
-    /**
-     * @brief Temporary storage while scheduling CommandGroups.
-     *
-     * After the CommandGroups in commandGroupQueue are scheduled with scheduleCommandGroups, the contents of commandGroupBuffer
-     * are dumped into the intermediatGroupBuffer. This is because when a CommandGroup is run, it may add another CommandGroup to the
-     * which goes into the commandGroupBuffer. In order to handle these newly added CommandGroups, as well as prevent undefined behavior,
-     * scheduler, the contents of commandGroupBuffer are first moved to intermediateGroupBuffer, and then the CommandGroups in
-     * intermediateGroupBuffer are scheduled. This process of dumping and scheduling is repeated until the commandGroupBuffer is empty.
-     */
-    std::vector<CommandGroup*> intermediateGroupBuffer;
 
     /**
      * @brief Stores Commands that the EventScheduler determines can run
@@ -115,34 +90,9 @@ class EventScheduler {
     bool commandInScheduler(Command* aCommand);
 
     /**
-     * @brief Checks if a given CommandGroup is in the EventScheduler
-     *
-     * Checks both the commandGroupBuffer and commandGroupQueue for the provided CommandGroup.
-     *
-     * @param aCommandGroup The CommandGroup to search for
-     * @return Whether the CommandGroup is found or not
-     */
-    bool commandGroupInScheduler(CommandGroup* aCommandGroup);
-
-    /**
      * @brief Adds the commands in the commandBuffer to the commandQueue
      */
     void queueCommands();
-
-    /**
-     * @brief Adds the CommandGroups in the commandGroupBuffer to the intermediateGroupBuffer
-     */
-    void toIntermediateBuffer();
-
-    /**
-     * @brief Adds the CommandGroups in the intermediateGroupBuffer to the commandGroupQueue
-     */
-    void toGroupQueue();
-
-    /**
-     * @brief Adds the CommandGroups in the commandGroupBuffer to the commandGroupQueue
-     */
-    void queueCommandGroups();
 
     /**
      * @brief Runs checkConditions on all EventListeners
@@ -153,15 +103,6 @@ class EventScheduler {
      * @brief Adds default commands if they have not yet been added
      */
     void addDefaultCommands();
-
-    /**
-     * @brief Schedules the CommandGroups in a given vector
-     *
-     * Called first on the commandGroupQueue, and then repeatedly on the intermediateGroupBuffer until the commandGroupBuffer is empty.
-     *
-     * @param commandGroups The vector to schedule CommandGroups from
-     */
-    void scheduleCommandGroups(std::vector<CommandGroup*>* commandGroups);
   public:
     /**
      * @brief Gets the singleton instance of the EventScheduler
@@ -199,15 +140,6 @@ class EventScheduler {
     void addCommand(Command* command);
 
     /**
-     * @brief Adds a CommandGroup to the EventScheduler
-     *
-     * The provided CommandGroup is stored in the commandGroupBuffer until it can be added to the commandGroupQueue
-     *
-     * @param commandGroupToRun The CommandGroup to add
-     */
-    void addCommandGroup(CommandGroup* commandGroup);
-
-    /**
      * @brief Removes a Command from the EventScheduler
      *
      * The provided Command is interrupted, and then searched for in the commandBuffer and commandQueue. If it is found,
@@ -216,16 +148,6 @@ class EventScheduler {
      * @param command The Command to remove
      */
     void removeCommand(Command* command);
-
-    /**
-     * @brief Removes a CommandGroup from the EventScheduler
-     *
-     * The provided CommandGroup is interrupted, and then searched for in the commandGroupBuffer and Group. If it is
-     * found, it is removed.
-     *
-     * @param commandGroup The CommandGroup to remove
-     */
-    void removeCommandGroup(CommandGroup* commandGroup);
 
     /**
      * @brief Adds a Subsystem for the EventScheduler to track

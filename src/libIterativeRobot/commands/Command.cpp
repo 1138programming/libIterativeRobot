@@ -16,15 +16,6 @@ void Command::requires(Subsystem* aSubsystem) {
 std::vector<Subsystem*>& Command::getRequirements() {
   return this->subsystemRequirements;
 }
-/*
-
-  Currently removed due to incompatibilities with the current EventScheduler
-  May be Re-Added later on once bugs are ironed out
-
-bool Command::canBeInterruptedBy(Command* aCommand) {
-  return aCommand->priority > this->priority;
-}
-*/
 
 void Command::run() {
   this->status = Status::Idle;

@@ -140,11 +140,6 @@ class Command {
     virtual void end() = 0;
 
     /**
-     * @brief Runs once when a command is interrupted
-     */
-    virtual void interrupted() = 0;
-
-    /**
      * @brief Runs once when a command is prevented from running by a higher priority command
      *
      * When this is called, the command's initialize function has not run.
