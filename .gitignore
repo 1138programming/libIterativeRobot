@@ -10,7 +10,7 @@
 bin/
 documentation/
 .vscode/
-compile_commands.json
+./compile_commands.json
 temp.log
 temp.errors
 *.ini
